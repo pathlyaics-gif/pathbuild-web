@@ -34,8 +34,8 @@ export const metadata: Metadata = {
       "Discover your ideal career path. Get a personalized roadmap powered by AI.",
   },
   icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
   },
 };
 
