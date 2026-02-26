@@ -8,10 +8,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        pathbuild: {
-          cream: "#FFF8F2",
-          accent: "#E8734A",
-          dark: "#0A0A0A",
+        background: {
+          DEFAULT: "#FFF8F2",
+          alt: "#FFF5EE",
+        },
+        card: "#FFFFFF",
+        accent: {
+          DEFAULT: "#FF8A6C",
+          light: "#FFB09A",
+          dark: "#E86B4A",
+        },
+        navy: {
+          900: "#3D3029",
+          800: "#4A3D35",
+          700: "#5C4E44",
+          600: "#7A5C4F",
+          500: "#8E8480",
+          400: "#B5AFA8",
+          300: "#D4C8C0",
+        },
+        warm: {
+          100: "#FFF5EE",
+          200: "#F0E0D0",
+          300: "#E8D5C5",
         },
       },
       fontFamily: {
@@ -22,6 +41,16 @@ const config: Config = {
           "BlinkMacSystemFont",
           "sans-serif",
         ],
+      },
+      borderRadius: {
+        "2xl": "16px",
+        "3xl": "20px",
+        "4xl": "24px",
+      },
+      boxShadow: {
+        warm: "0 4px 12px rgba(212, 169, 138, 0.12)",
+        "warm-lg": "0 8px 20px rgba(212, 169, 138, 0.20)",
+        glow: "0 4px 12px rgba(255, 138, 108, 0.30)",
       },
     },
   },

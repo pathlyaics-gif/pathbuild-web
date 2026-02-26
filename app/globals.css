@@ -4,17 +4,18 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: #0f0e0c;
-  color: #fff8f2;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@layer base {
+  html {
+    overscroll-behavior: none;
+    scroll-behavior: smooth;
+  }
 
-html {
-  overscroll-behavior: none;
+  body {
+    margin: 0;
+    padding: 0;
+    background: #FFF8F2;
+    color: #3D3029;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
