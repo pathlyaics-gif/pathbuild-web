@@ -34,10 +34,10 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[rgba(255,248,242,0.92)] backdrop-blur-2xl border-b border-warm-200/50 shadow-[0_1px_3px_rgba(212,169,138,0.08)]"
+          ? "bg-[rgba(255,246,239,0.92)] backdrop-blur-2xl border-b border-warm-200/50 shadow-[0_1px_3px_rgba(212,169,138,0.08)]"
           : isHome
             ? "bg-transparent"
-            : "bg-[rgba(255,248,242,0.92)] backdrop-blur-2xl"
+            : "bg-[rgba(255,246,239,0.92)] backdrop-blur-2xl"
       }`}
     >
       <nav className="mx-auto max-w-7xl px-6 lg:px-8">

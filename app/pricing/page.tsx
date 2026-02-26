@@ -79,7 +79,7 @@ export default function PricingPage() {
               key={plan.name}
               className={`rounded-2xl p-8 lg:p-9 flex flex-col transition-all duration-300 ${
                 plan.featured
-                  ? "bg-navy-900 text-white border border-white/[0.06] shadow-[0_8px_30px_rgba(61,48,41,0.3)]"
+                  ? "bg-navy-850 text-white border border-white/[0.06] shadow-[0_8px_30px_rgba(69,56,48,0.3)]"
                   : "border border-warm-200/80 bg-white hover:shadow-warm"
               }`}
             >

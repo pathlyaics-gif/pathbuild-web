@@ -117,7 +117,7 @@ export default function HowItWorksPage() {
           ))}
         </div>
 
-        <div className="text-center mt-16 rounded-2xl bg-navy-900 p-10 lg:p-14">
+        <div className="text-center mt-16 rounded-2xl bg-navy-850 p-10 lg:p-14">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Ready to get started?
           </h2>

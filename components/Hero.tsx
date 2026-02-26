@@ -25,7 +25,7 @@ function AppStoreButton() {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy-900 pt-36 pb-24 md:pt-48 md:pb-36">
+    <section className="relative overflow-hidden bg-navy-850 pt-36 pb-24 md:pt-48 md:pb-36">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-accent/[0.07] blur-[140px]" />
         <div className="absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-accent-dark/[0.04] blur-[120px]" />

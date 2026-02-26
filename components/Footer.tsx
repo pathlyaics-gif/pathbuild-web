@@ -46,7 +46,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-navy-900 text-white">
+    <footer className="bg-navy-850 text-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 pb-12 border-b border-white/[0.06]">
           {FOOTER_SECTIONS.map((section) => (
@@ -72,13 +72,15 @@ export function Footer() {
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
-            <Image
-              src="/icon.png"
-              alt="PathBuild"
-              width={24}
-              height={24}
-              className="rounded-md"
-            />
+            <span className="overflow-hidden rounded-[22%] shrink-0 w-7 h-7">
+              <Image
+                src="/icon.png"
+                alt="PathBuild"
+                width={28}
+                height={28}
+                className="block w-7 h-7"
+              />
+            </span>
             <span className="text-sm font-semibold text-white/70">
               PathBuild
             </span>

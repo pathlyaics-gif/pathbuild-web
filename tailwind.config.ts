@@ -9,8 +9,8 @@ const config: Config = {
     extend: {
       colors: {
         background: {
-          DEFAULT: "#FFF8F2",
-          alt: "#FFF5EE",
+          DEFAULT: "#FFF6EF",
+          alt: "#FFF3EA",
         },
         card: "#FFFFFF",
         accent: {
@@ -18,8 +18,13 @@ const config: Config = {
           light: "#FFB09A",
           dark: "#E86B4A",
         },
+        blush: {
+          DEFAULT: "#FFE8DF",
+          light: "#FFF0EA",
+        },
         navy: {
           900: "#3D3029",
+          850: "#453830",
           800: "#4A3D35",
           700: "#5C4E44",
           600: "#7A5C4F",
@@ -28,9 +33,9 @@ const config: Config = {
           300: "#D4C8C0",
         },
         warm: {
-          100: "#FFF5EE",
-          200: "#F0E0D0",
-          300: "#E8D5C5",
+          100: "#FFF3EA",
+          200: "#F2DDD0",
+          300: "#EDCFBE",
         },
       },
       fontFamily: {

@@ -100,7 +100,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="text-center rounded-2xl bg-navy-900 p-10 lg:p-14">
+        <div className="text-center rounded-2xl bg-navy-850 p-10 lg:p-14">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Built for real people
           </h2>
