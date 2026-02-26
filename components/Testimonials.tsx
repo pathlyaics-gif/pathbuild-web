@@ -37,10 +37,10 @@ export function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-xs font-semibold text-accent uppercase tracking-[0.15em] mb-4">
+          <p className="text-xs font-bold text-accent uppercase tracking-[0.15em] mb-4">
             Testimonials
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold tracking-tight text-navy-900 leading-[1.15]">
+          <h2 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-[1.15]">
             Trusted by career builders
           </h2>
         </motion.div>
@@ -54,28 +54,28 @@ export function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
             >
-              <div className="rounded-2xl border border-warm-200/80 bg-white p-8 lg:p-9 h-full flex flex-col">
+              <div className="rounded-2xl border border-warm-200/80 bg-card p-8 lg:p-9 h-full flex flex-col">
                 <svg
-                  className="w-8 h-8 text-accent/15 mb-5 shrink-0"
+                  className="w-8 h-8 text-accent/20 mb-5 shrink-0"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
-                <blockquote className="text-[14px] leading-[1.75] text-navy-600 mb-8 flex-1 font-light">
+                <blockquote className="text-[14px] leading-[1.75] text-navy-600 mb-8 flex-1">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
                 <div className="flex items-center gap-3 pt-5 border-t border-warm-200/60">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-accent/15 to-accent/5 flex items-center justify-center">
-                    <span className="text-xs font-semibold text-accent">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent/20 to-secondary/15 flex items-center justify-center">
+                    <span className="text-sm font-bold text-accent">
                       {t.initial}
                     </span>
                   </div>
                   <div>
-                    <p className="text-[13px] font-semibold text-navy-900">
+                    <p className="text-[14px] font-bold text-navy-900">
                       {t.name}
                     </p>
-                    <p className="text-[11px] text-navy-400 font-medium">
+                    <p className="text-[12px] text-navy-400 font-semibold">
                       {t.role}
                     </p>
                   </div>

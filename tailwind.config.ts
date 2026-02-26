@@ -9,14 +9,22 @@ const config: Config = {
     extend: {
       colors: {
         background: {
-          DEFAULT: "#FFF6EF",
-          alt: "#FFF3EA",
+          DEFAULT: "#FDF8ED",
+          alt: "#FBF4E6",
         },
-        card: "#FFFFFF",
+        card: "#FEFAF3",
         accent: {
           DEFAULT: "#FF8A6C",
           light: "#FFB09A",
           dark: "#E86B4A",
+        },
+        secondary: {
+          DEFAULT: "#F4978E",
+          light: "#FCCEC7",
+        },
+        gold: {
+          DEFAULT: "#F5C67A",
+          light: "#FCEABB",
         },
         blush: {
           DEFAULT: "#FFE8DF",
@@ -34,13 +42,17 @@ const config: Config = {
         },
         warm: {
           100: "#FFF3EA",
-          200: "#F2DDD0",
-          300: "#EDCFBE",
+          200: "#F0E0D0",
+          300: "#E8D5C5",
+        },
+        sunrise: {
+          from: "#FFECD2",
+          to: "#FCB69F",
         },
       },
       fontFamily: {
         sans: [
-          "Inter",
+          "Nunito",
           "system-ui",
           "-apple-system",
           "BlinkMacSystemFont",

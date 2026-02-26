@@ -52,16 +52,16 @@ const FAQ = [
 
 export default function SupportPage() {
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-36 pb-24">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <div className="text-center mb-20">
-          <p className="text-xs font-semibold text-accent uppercase tracking-[0.15em] mb-4">
+          <p className="text-xs font-bold text-accent uppercase tracking-[0.15em] mb-4">
             Support
           </p>
-          <h1 className="text-3xl md:text-4xl lg:text-[44px] font-bold tracking-tight text-navy-900 leading-[1.15]">
+          <h1 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-[1.15]">
             How can we help?
           </h1>
-          <p className="mt-6 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed font-light">
+          <p className="mt-6 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed">
             Find answers to common questions below, or reach out to our team
             directly.
           </p>
@@ -71,32 +71,32 @@ export default function SupportPage() {
           {FAQ.map((item) => (
             <div
               key={item.question}
-              className="rounded-2xl border border-warm-200/80 bg-white p-7 lg:p-8"
+              className="rounded-2xl border border-warm-200/80 bg-card p-7 lg:p-8"
             >
-              <h3 className="text-[15px] font-semibold text-navy-900 mb-2.5">
+              <h3 className="text-[15px] font-bold text-navy-900 mb-2.5">
                 {item.question}
               </h3>
-              <p className="text-[13px] leading-[1.75] text-navy-500 font-light">
+              <p className="text-[13px] leading-[1.75] text-navy-500">
                 {item.answer}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="text-center rounded-2xl border border-warm-200/80 bg-white p-10 lg:p-14">
-          <div className="w-12 h-12 rounded-xl bg-accent/[0.08] flex items-center justify-center mx-auto mb-5">
+        <div className="text-center rounded-2xl bg-gradient-to-br from-sunrise-from to-sunrise-to p-10 lg:p-14">
+          <div className="w-12 h-12 rounded-xl bg-accent/[0.12] flex items-center justify-center mx-auto mb-5">
             <Mail size={20} className="text-accent" strokeWidth={1.8} />
           </div>
-          <h2 className="text-xl font-bold text-navy-900 mb-3">
+          <h2 className="text-xl font-extrabold text-navy-900 mb-3">
             Still have questions?
           </h2>
-          <p className="text-navy-500 max-w-md mx-auto mb-6 text-[14px] font-light leading-relaxed">
+          <p className="text-navy-500 max-w-md mx-auto mb-6 text-[14px] leading-relaxed">
             Our team is here to help. Send us an email and we will get back to
             you as soon as possible.
           </p>
           <a
             href="mailto:support@pathbuild.app"
-            className="inline-flex items-center rounded-full bg-navy-900 px-6 py-3 text-[13px] font-semibold text-white hover:bg-navy-800 transition-colors"
+            className="inline-flex items-center rounded-full bg-navy-900 text-white px-6 py-3 text-[13px] font-bold hover:bg-navy-800 transition-colors shadow-warm-lg"
           >
             Email Us
           </a>

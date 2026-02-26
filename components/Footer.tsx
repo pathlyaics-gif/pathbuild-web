@@ -46,12 +46,12 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-navy-850 text-white">
+    <footer className="bg-navy-900 text-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 pb-12 border-b border-white/[0.06]">
           {FOOTER_SECTIONS.map((section) => (
             <div key={section.title}>
-              <h3 className="text-[11px] font-semibold text-white/40 uppercase tracking-[0.15em] mb-5">
+              <h3 className="text-[12px] font-bold text-white/40 uppercase tracking-[0.15em] mb-5">
                 {section.title}
               </h3>
               <ul className="space-y-3">
@@ -59,7 +59,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[13px] text-white/50 hover:text-white transition-colors"
+                      className="text-[14px] text-white/50 hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -71,22 +71,22 @@ export function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5">
-            <span className="overflow-hidden rounded-[22%] shrink-0 w-7 h-7">
+          <div className="flex items-center gap-3">
+            <span className="overflow-hidden rounded-[22%] shrink-0 w-8 h-8">
               <Image
                 src="/icon.png"
                 alt="PathBuild"
-                width={28}
-                height={28}
-                className="block w-7 h-7"
+                width={32}
+                height={32}
+                className="block w-8 h-8"
               />
             </span>
-            <span className="text-sm font-semibold text-white/70">
+            <span className="text-[15px] font-bold text-white/70">
               PathBuild
             </span>
           </div>
 
-          <p className="text-[11px] text-white/30">
+          <p className="text-[12px] text-white/30 font-semibold">
             &copy; {new Date().getFullYear()} PathBuild. All rights reserved.
           </p>
 

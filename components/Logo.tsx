@@ -5,7 +5,7 @@ interface LogoProps {
   variant?: "default" | "light";
 }
 
-export function Logo({ size = 38, variant = "default" }: LogoProps) {
+export function Logo({ size = 44, variant = "default" }: LogoProps) {
   const textColor = variant === "light" ? "text-white" : "text-navy-900";
 
   return (
@@ -25,7 +25,7 @@ export function Logo({ size = 38, variant = "default" }: LogoProps) {
         />
       </span>
       <span
-        className={`text-xl font-bold tracking-tight ${textColor}`}
+        className={`text-2xl font-bold tracking-tight ${textColor}`}
         style={{ lineHeight: 1 }}
       >
         PathBuild

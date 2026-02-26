@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 export function FinalCTA() {
   return (
-    <section className="relative py-24 md:py-32 lg:py-40 bg-navy-850 overflow-hidden">
+    <section className="relative py-24 md:py-32 lg:py-40 bg-gradient-to-br from-sunrise-from via-[#FFF3E4] to-sunrise-to overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/[0.04] blur-[120px]" />
-        <div className="absolute bottom-1/4 left-1/3 w-[300px] h-[300px] rounded-full bg-accent-dark/[0.03] blur-[100px]" />
+        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-secondary/[0.06] blur-[120px]" />
+        <div className="absolute bottom-1/4 left-1/3 w-[300px] h-[300px] rounded-full bg-gold/[0.08] blur-[100px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
@@ -17,10 +17,10 @@ export function FinalCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-tight">
             Ready to build your path?
           </h2>
-          <p className="mt-5 text-[16px] text-white/45 max-w-lg mx-auto font-light leading-relaxed">
+          <p className="mt-5 text-[16px] text-navy-500 max-w-lg mx-auto leading-relaxed">
             Join thousands of people taking smarter steps toward their ideal
             career. Start for free today.
           </p>
@@ -35,7 +35,7 @@ export function FinalCTA() {
         >
           <a
             href="#"
-            className="inline-flex items-center gap-3 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm px-6 py-4 text-white hover:bg-white/15 transition-all"
+            className="inline-flex items-center gap-3 rounded-2xl bg-navy-900 px-7 py-4 text-white hover:bg-navy-800 transition-colors shadow-warm-lg"
           >
             <svg
               className="w-7 h-7"
@@ -48,7 +48,7 @@ export function FinalCTA() {
               <div className="text-[10px] leading-none opacity-70 font-medium">
                 Coming Soon on the
               </div>
-              <div className="text-[15px] font-semibold leading-tight">
+              <div className="text-[15px] font-bold leading-tight">
                 App Store
               </div>
             </div>
@@ -56,7 +56,7 @@ export function FinalCTA() {
         </motion.div>
 
         <motion.p
-          className="mt-6 text-[11px] text-white/25 font-medium"
+          className="mt-6 text-[12px] text-navy-400 font-semibold"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

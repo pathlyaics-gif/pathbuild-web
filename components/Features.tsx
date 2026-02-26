@@ -42,15 +42,15 @@ export function Features() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-xs font-semibold text-accent uppercase tracking-[0.15em] mb-4">
+          <p className="text-xs font-bold text-accent uppercase tracking-[0.15em] mb-4">
             Features
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold tracking-tight text-navy-900 leading-[1.15]">
+          <h2 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-[1.15]">
             Everything you need to
             <br />
             design your career
           </h2>
-          <p className="mt-5 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed font-light">
+          <p className="mt-5 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed">
             PathBuild combines AI analysis with actionable planning to help you
             move from uncertainty to clarity.
           </p>
@@ -65,18 +65,18 @@ export function Features() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
             >
-              <div className="group rounded-2xl border border-warm-200/80 bg-white p-8 lg:p-10 transition-all duration-300 hover:shadow-warm hover:border-warm-200">
-                <div className="w-11 h-11 rounded-xl bg-accent/[0.08] flex items-center justify-center mb-6 group-hover:bg-accent/[0.12] transition-colors duration-300">
+              <div className="group rounded-2xl border border-warm-200/80 bg-card p-8 lg:p-10 transition-all duration-300 hover:shadow-warm hover:border-warm-200">
+                <div className="w-12 h-12 rounded-xl bg-accent/[0.1] flex items-center justify-center mb-6 group-hover:bg-accent/[0.15] transition-colors duration-300">
                   <feature.icon
-                    size={20}
+                    size={22}
                     className="text-accent"
                     strokeWidth={1.8}
                   />
                 </div>
-                <h3 className="text-[17px] font-semibold text-navy-900 mb-2.5">
+                <h3 className="text-[18px] font-bold text-navy-900 mb-2.5">
                   {feature.title}
                 </h3>
-                <p className="text-[14px] leading-[1.7] text-navy-500 font-light">
+                <p className="text-[14px] leading-[1.7] text-navy-500">
                   {feature.description}
                 </p>
               </div>

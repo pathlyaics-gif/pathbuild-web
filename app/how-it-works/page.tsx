@@ -63,20 +63,20 @@ const STEPS = [
 
 export default function HowItWorksPage() {
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-36 pb-24">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <div className="text-center mb-20">
-          <p className="text-xs font-semibold text-accent uppercase tracking-[0.15em] mb-4">
+          <p className="text-xs font-bold text-accent uppercase tracking-[0.15em] mb-4">
             How It Works
           </p>
-          <h1 className="text-3xl md:text-4xl lg:text-[44px] font-bold tracking-tight text-navy-900 leading-[1.15]">
+          <h1 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-[1.15]">
             From uncertainty to
             <br />
             <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
               clarity in 5 steps
             </span>
           </h1>
-          <p className="mt-6 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed font-light">
+          <p className="mt-6 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed">
             The process is simple, guided, and takes just a few minutes to get
             started. Here is exactly what happens.
           </p>
@@ -86,11 +86,11 @@ export default function HowItWorksPage() {
           {STEPS.map((step) => (
             <div
               key={step.number}
-              className="rounded-2xl border border-warm-200/80 bg-white p-8 lg:p-10 transition-all duration-300 hover:shadow-warm hover:border-warm-200"
+              className="rounded-2xl border border-warm-200/80 bg-card p-8 lg:p-10 transition-all duration-300 hover:shadow-warm hover:border-warm-200"
             >
               <div className="flex gap-6 md:gap-8">
                 <div className="shrink-0 w-[48px] h-[48px] md:w-[56px] md:h-[56px] rounded-2xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-[0_4px_16px_rgba(255,138,108,0.25)]">
-                  <span className="text-white font-bold text-lg">
+                  <span className="text-white font-extrabold text-lg">
                     {step.number}
                   </span>
                 </div>
@@ -101,14 +101,14 @@ export default function HowItWorksPage() {
                       className="text-accent"
                       strokeWidth={1.8}
                     />
-                    <h3 className="text-[17px] font-semibold text-navy-900">
+                    <h3 className="text-[17px] font-bold text-navy-900">
                       {step.title}
                     </h3>
                   </div>
-                  <p className="text-[14px] leading-[1.7] text-navy-500 font-light mb-2">
+                  <p className="text-[14px] leading-[1.7] text-navy-500 mb-2">
                     {step.description}
                   </p>
-                  <p className="text-[13px] leading-[1.7] text-navy-400 font-light">
+                  <p className="text-[13px] leading-[1.7] text-navy-400">
                     {step.detail}
                   </p>
                 </div>
@@ -117,17 +117,17 @@ export default function HowItWorksPage() {
           ))}
         </div>
 
-        <div className="text-center mt-16 rounded-2xl bg-navy-850 p-10 lg:p-14">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+        <div className="text-center mt-16 rounded-2xl bg-gradient-to-br from-sunrise-from to-sunrise-to p-10 lg:p-14">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-navy-900 mb-4">
             Ready to get started?
           </h2>
-          <p className="text-white/45 max-w-lg mx-auto mb-8 text-[15px] font-light leading-relaxed">
+          <p className="text-navy-500 max-w-lg mx-auto mb-8 text-[15px] leading-relaxed">
             It takes less than 5 minutes to complete your profile and receive
             your personalized career roadmap.
           </p>
           <a
             href="#"
-            className="inline-flex items-center rounded-full bg-white/10 border border-white/15 px-6 py-3 text-sm font-semibold text-white hover:bg-white/15 transition-all"
+            className="inline-flex items-center rounded-full bg-navy-900 text-white px-6 py-3 text-sm font-bold hover:bg-navy-800 transition-colors shadow-warm-lg"
           >
             Start Your Journey
           </a>
