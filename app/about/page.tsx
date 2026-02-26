@@ -36,37 +36,35 @@ const VALUES = [
 
 export default function AboutPage() {
   return (
-    <div className="pt-28 pb-20">
+    <div className="pt-32 pb-24">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+        <div className="text-center mb-20">
+          <p className="text-xs font-semibold text-accent uppercase tracking-[0.15em] mb-4">
             About
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-navy-900 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-[44px] font-bold tracking-tight text-navy-900 leading-[1.15]">
             Helping people find
             <br />
             <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
               career clarity
             </span>
           </h1>
-          <p className="mt-6 text-lg text-navy-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed font-light">
             PathBuild was born from a simple observation: too many talented
             people feel stuck in their careers, not because they lack ability,
             but because they lack clarity.
           </p>
         </div>
 
-        <div className="rounded-3xl border border-warm-200 bg-card p-8 lg:p-12 mb-16">
-          <h2 className="text-2xl font-bold text-navy-900 mb-4">
-            Our Mission
-          </h2>
-          <p className="text-[15px] leading-relaxed text-navy-500 mb-4">
+        <div className="rounded-2xl border border-warm-200/80 bg-white p-8 lg:p-12 mb-16">
+          <h2 className="text-xl font-bold text-navy-900 mb-4">Our Mission</h2>
+          <p className="text-[14px] leading-[1.75] text-navy-500 font-light mb-4">
             We believe everyone deserves a clear path forward in their career.
             Not a vague sense of direction, but a concrete, personalized roadmap
             that accounts for who you are — your strengths, values, constraints,
             and goals.
           </p>
-          <p className="text-[15px] leading-relaxed text-navy-500">
+          <p className="text-[14px] leading-[1.75] text-navy-500 font-light">
             PathBuild combines the analytical power of AI with the nuance of
             career science to deliver something that did not exist before:
             personalized career guidance that is accessible, affordable, and
@@ -75,22 +73,26 @@ export default function AboutPage() {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-navy-900 text-center mb-10">
+          <h2 className="text-xl font-bold text-navy-900 text-center mb-12">
             What We Stand For
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {VALUES.map((value) => (
               <div
                 key={value.title}
-                className="rounded-3xl border border-warm-200 bg-card p-8 transition-all hover:shadow-warm"
+                className="rounded-2xl border border-warm-200/80 bg-white p-8 transition-all duration-300 hover:shadow-warm hover:border-warm-200"
               >
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent/10 to-accent/5 flex items-center justify-center mb-5">
-                  <value.icon size={22} className="text-accent" />
+                <div className="w-11 h-11 rounded-xl bg-accent/[0.08] flex items-center justify-center mb-6">
+                  <value.icon
+                    size={20}
+                    className="text-accent"
+                    strokeWidth={1.8}
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-navy-900 mb-2">
+                <h3 className="text-[17px] font-semibold text-navy-900 mb-2.5">
                   {value.title}
                 </h3>
-                <p className="text-[15px] leading-relaxed text-navy-500">
+                <p className="text-[14px] leading-[1.7] text-navy-500 font-light">
                   {value.description}
                 </p>
               </div>
@@ -98,18 +100,18 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="text-center rounded-3xl bg-navy-900 p-10 lg:p-14">
+        <div className="text-center rounded-2xl bg-navy-900 p-10 lg:p-14">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Built for real people
           </h2>
-          <p className="text-navy-300 max-w-xl mx-auto mb-8">
+          <p className="text-white/45 max-w-lg mx-auto mb-8 text-[15px] font-light leading-relaxed">
             Whether you are a recent graduate, mid-career professional, or
             considering a complete career change — PathBuild meets you where
             you are.
           </p>
           <a
             href="#"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-accent-dark px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity shadow-glow"
+            className="inline-flex items-center rounded-full bg-white/10 border border-white/15 px-6 py-3 text-sm font-semibold text-white hover:bg-white/15 transition-all"
           >
             Get Started Free
           </a>

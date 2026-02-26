@@ -58,38 +58,38 @@ const PLANS = [
 
 export default function PricingPage() {
   return (
-    <div className="pt-28 pb-20">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+    <div className="pt-32 pb-24">
+      <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+          <p className="text-xs font-semibold text-accent uppercase tracking-[0.15em] mb-4">
             Pricing
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-navy-900 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-[44px] font-bold tracking-tight text-navy-900 leading-[1.15]">
             Simple, transparent pricing
           </h1>
-          <p className="mt-6 text-lg text-navy-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed font-light">
             Start for free, upgrade when you are ready. No hidden fees, cancel
             anytime.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {PLANS.map((plan) => (
             <div
               key={plan.name}
-              className={`rounded-3xl p-8 lg:p-10 flex flex-col transition-all ${
+              className={`rounded-2xl p-8 lg:p-9 flex flex-col transition-all duration-300 ${
                 plan.featured
-                  ? "bg-navy-900 text-white border-2 border-accent/30 shadow-glow scale-[1.02]"
-                  : "border border-warm-200 bg-card hover:shadow-warm"
+                  ? "bg-navy-900 text-white border border-white/[0.06] shadow-[0_8px_30px_rgba(61,48,41,0.3)]"
+                  : "border border-warm-200/80 bg-white hover:shadow-warm"
               }`}
             >
               {plan.featured && (
-                <span className="inline-block self-start text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">
+                <span className="inline-block self-start text-[10px] font-semibold text-accent uppercase tracking-[0.12em] bg-accent/10 px-3 py-1.5 rounded-full mb-5">
                   Most Popular
                 </span>
               )}
               <h3
-                className={`text-xl font-bold mb-1 ${
+                className={`text-lg font-bold mb-1 ${
                   plan.featured ? "text-white" : "text-navy-900"
                 }`}
               >
@@ -97,23 +97,23 @@ export default function PricingPage() {
               </h3>
               <div className="flex items-baseline gap-1 mb-3">
                 <span
-                  className={`text-4xl font-bold ${
+                  className={`text-3xl font-bold ${
                     plan.featured ? "text-white" : "text-navy-900"
                   }`}
                 >
                   {plan.price}
                 </span>
                 <span
-                  className={`text-sm ${
-                    plan.featured ? "text-navy-300" : "text-navy-400"
+                  className={`text-sm font-light ${
+                    plan.featured ? "text-white/40" : "text-navy-400"
                   }`}
                 >
                   {plan.period}
                 </span>
               </div>
               <p
-                className={`text-[14px] leading-relaxed mb-8 ${
-                  plan.featured ? "text-navy-300" : "text-navy-500"
+                className={`text-[13px] leading-relaxed mb-8 font-light ${
+                  plan.featured ? "text-white/45" : "text-navy-500"
                 }`}
               >
                 {plan.description}
@@ -123,14 +123,15 @@ export default function PricingPage() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <Check
-                      size={16}
+                      size={14}
                       className={`mt-0.5 shrink-0 ${
                         plan.featured ? "text-accent-light" : "text-accent"
                       }`}
+                      strokeWidth={2.5}
                     />
                     <span
-                      className={`text-[14px] ${
-                        plan.featured ? "text-navy-300" : "text-navy-500"
+                      className={`text-[13px] font-light ${
+                        plan.featured ? "text-white/55" : "text-navy-500"
                       }`}
                     >
                       {feature}
@@ -141,9 +142,9 @@ export default function PricingPage() {
 
               <a
                 href="#"
-                className={`block text-center rounded-full py-3 text-sm font-semibold transition-all ${
+                className={`block text-center rounded-full py-3 text-[13px] font-semibold transition-all ${
                   plan.featured
-                    ? "bg-gradient-to-r from-accent to-accent-dark text-white hover:opacity-90 shadow-glow"
+                    ? "bg-white/10 border border-white/15 text-white hover:bg-white/15"
                     : "border border-warm-200 text-navy-900 hover:bg-warm-100"
                 }`}
               >
@@ -153,7 +154,7 @@ export default function PricingPage() {
           ))}
         </div>
 
-        <p className="text-center text-xs text-navy-400 mt-8">
+        <p className="text-center text-[11px] text-navy-400 mt-8 font-light">
           Payments are processed by Apple. Subscriptions auto-renew unless
           canceled 24 hours before the end of the current period.
         </p>

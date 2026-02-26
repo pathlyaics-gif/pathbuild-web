@@ -63,48 +63,52 @@ const STEPS = [
 
 export default function HowItWorksPage() {
   return (
-    <div className="pt-28 pb-20">
+    <div className="pt-32 pb-24">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
+        <div className="text-center mb-20">
+          <p className="text-xs font-semibold text-accent uppercase tracking-[0.15em] mb-4">
             How It Works
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-navy-900 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-[44px] font-bold tracking-tight text-navy-900 leading-[1.15]">
             From uncertainty to
             <br />
             <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
               clarity in 5 steps
             </span>
           </h1>
-          <p className="mt-6 text-lg text-navy-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed font-light">
             The process is simple, guided, and takes just a few minutes to get
             started. Here is exactly what happens.
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-5">
           {STEPS.map((step) => (
             <div
               key={step.number}
-              className="rounded-3xl border border-warm-200 bg-card p-8 lg:p-10 transition-all hover:shadow-warm"
+              className="rounded-2xl border border-warm-200/80 bg-white p-8 lg:p-10 transition-all duration-300 hover:shadow-warm hover:border-warm-200"
             >
-              <div className="flex gap-6">
-                <div className="shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-lg shadow-accent/20">
-                  <span className="text-white font-bold text-xl">
+              <div className="flex gap-6 md:gap-8">
+                <div className="shrink-0 w-[48px] h-[48px] md:w-[56px] md:h-[56px] rounded-2xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-[0_4px_16px_rgba(255,138,108,0.25)]">
+                  <span className="text-white font-bold text-lg">
                     {step.number}
                   </span>
                 </div>
-                <div>
-                  <div className="flex items-center gap-3 mb-3">
-                    <step.icon size={20} className="text-accent" />
-                    <h3 className="text-xl font-semibold text-navy-900">
+                <div className="pt-0.5">
+                  <div className="flex items-center gap-3 mb-2.5">
+                    <step.icon
+                      size={18}
+                      className="text-accent"
+                      strokeWidth={1.8}
+                    />
+                    <h3 className="text-[17px] font-semibold text-navy-900">
                       {step.title}
                     </h3>
                   </div>
-                  <p className="text-[15px] leading-relaxed text-navy-500 mb-3">
+                  <p className="text-[14px] leading-[1.7] text-navy-500 font-light mb-2">
                     {step.description}
                   </p>
-                  <p className="text-[14px] leading-relaxed text-navy-400">
+                  <p className="text-[13px] leading-[1.7] text-navy-400 font-light">
                     {step.detail}
                   </p>
                 </div>
@@ -113,17 +117,17 @@ export default function HowItWorksPage() {
           ))}
         </div>
 
-        <div className="text-center mt-16 rounded-3xl bg-navy-900 p-10 lg:p-14">
+        <div className="text-center mt-16 rounded-2xl bg-navy-900 p-10 lg:p-14">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Ready to get started?
           </h2>
-          <p className="text-navy-300 max-w-xl mx-auto mb-8">
+          <p className="text-white/45 max-w-lg mx-auto mb-8 text-[15px] font-light leading-relaxed">
             It takes less than 5 minutes to complete your profile and receive
             your personalized career roadmap.
           </p>
           <a
             href="#"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-accent-dark px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity shadow-glow"
+            className="inline-flex items-center rounded-full bg-white/10 border border-white/15 px-6 py-3 text-sm font-semibold text-white hover:bg-white/15 transition-all"
           >
             Start Your Journey
           </a>
