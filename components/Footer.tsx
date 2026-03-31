@@ -71,19 +71,15 @@ export function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="overflow-hidden rounded-[22%] shrink-0 w-8 h-8">
-              <Image
-                src="/icon.png"
-                alt="PathBuild"
-                width={32}
-                height={32}
-                className="block w-8 h-8"
-              />
-            </span>
-            <span className="text-[15px] font-bold text-white/70">
-              PathBuild
-            </span>
+          <div className="flex items-center shrink-0">
+            <Image
+              src="/logo-full.png"
+              alt="PathBuild"
+              width={1024}
+              height={682}
+              className="w-auto object-contain object-left"
+              style={{ height: 28, width: "auto", maxWidth: "min(160px, 45vw)" }}
+            />
           </div>
 
           <p className="text-[12px] text-white/30 font-semibold">
