@@ -1,6 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Shield, Clock, Sparkles } from "lucide-react";
+
+const APP_STORE_URL = "https://apps.apple.com/app/pathbuild/id6743108030";
+
+const TRUST_POINTS = [
+  { icon: Sparkles, text: "Free trial available" },
+  { icon: Shield, text: "Cancel anytime" },
+  { icon: Clock, text: "One mission a day — 30 min" },
+];
 
 export function FinalCTA() {
   return (
@@ -18,11 +27,18 @@ export function FinalCTA() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-tight">
-            Ready to build your path?
+            Your target role is waiting.
+            <br />
+            <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
+              Start your first mission today.
+            </span>
           </h2>
-          <p className="mt-5 text-[16px] text-navy-500 max-w-lg mx-auto leading-relaxed">
-            Join thousands of people taking smarter steps toward their ideal
-            career. Start for free today.
+          <p className="mt-5 text-[16px] text-navy-500 max-w-2xl mx-auto leading-relaxed">
+            Every day without a plan is another day of feeling stuck. PathBuild
+            turns your career goals into a clear target role, gives you one
+            focused daily mission, and tracks your readiness until you are
+            hire-ready. Join thousands of people who stopped overthinking and
+            started building.
           </p>
         </motion.div>
 
@@ -34,8 +50,10 @@ export function FinalCTA() {
           transition={{ duration: 0.7, delay: 0.12 }}
         >
           <a
-            href="#"
-            className="inline-flex items-center gap-3 rounded-2xl bg-navy-900 px-7 py-4 text-white hover:bg-navy-800 transition-colors shadow-warm-lg"
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 rounded-2xl bg-navy-900 px-8 py-4 text-white hover:bg-navy-800 transition-colors shadow-warm-lg"
           >
             <svg
               className="w-7 h-7"
@@ -46,7 +64,7 @@ export function FinalCTA() {
             </svg>
             <div className="text-left">
               <div className="text-[10px] leading-none opacity-70 font-medium">
-                Coming Soon on the
+                Download on the
               </div>
               <div className="text-[15px] font-bold leading-tight">
                 App Store
@@ -55,14 +73,32 @@ export function FinalCTA() {
           </a>
         </motion.div>
 
-        <motion.p
-          className="mt-6 text-[12px] text-navy-400 font-semibold"
+        <motion.div
+          className="mt-8 flex flex-wrap items-center justify-center gap-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.25 }}
         >
-          Free to download. No credit card required.
+          {TRUST_POINTS.map((point) => (
+            <div
+              key={point.text}
+              className="flex items-center gap-2 text-[13px] font-semibold text-navy-500"
+            >
+              <point.icon size={14} className="text-accent" strokeWidth={2} />
+              <span>{point.text}</span>
+            </div>
+          ))}
+        </motion.div>
+
+        <motion.p
+          className="mt-6 text-[12px] text-navy-400 font-semibold"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
+          Free to download. Plans start at $10.83/month billed annually ($129.99/yr).
         </motion.p>
       </div>
     </section>

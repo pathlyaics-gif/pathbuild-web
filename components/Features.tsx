@@ -1,33 +1,66 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Brain, Map, ListChecks, TrendingUp } from "lucide-react";
+import {
+  Target,
+  Map,
+  ListChecks,
+  Flame,
+  Briefcase,
+  FileText,
+  MessageCircle,
+  BarChart3,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 const FEATURES: { icon: LucideIcon; title: string; description: string }[] = [
   {
-    icon: Brain,
-    title: "AI Career Discovery",
+    icon: Target,
+    title: "Daily Mission System",
     description:
-      "Answer questions about your goals, interests, and strengths. Our AI analyzes your unique profile to surface career paths you may never have considered.",
+      "Every day, PathBuild gives you one focused mission tailored to your target role and current progress. Complete it in 30–60 minutes. No guesswork, no overwhelm — just one meaningful task that moves you forward. Build streaks, earn momentum, and watch your readiness grow.",
   },
   {
     icon: Map,
-    title: "Personalized Roadmap",
+    title: "Role-Specific Roadmap",
     description:
-      "Receive a tailored career roadmap with clear milestones, skill requirements, and actionable next steps designed specifically for your situation.",
+      "Your career path is broken into clear stages, requirement areas, and actionable steps. See exactly what your target role demands, what you have already covered, and what is still ahead. Each stage unlocks as you progress — like levels in a game, but for your career.",
+  },
+  {
+    icon: BarChart3,
+    title: "Readiness & Progress Tracking",
+    description:
+      "Track your readiness percentage, velocity, coverage, and streaks in real time. Weekly and monthly recaps show your growth, highlight strengths and blockers, and keep you accountable. You always know how close you are to being hire-ready.",
+  },
+  {
+    icon: FileText,
+    title: "Proof Builder (Resume & LinkedIn)",
+    description:
+      "Every completed mission and milestone becomes hire-ready proof. PathBuild turns your actual progress into polished resume bullet points and LinkedIn copy. No more making things up — your proof is built from real work you have done.",
+  },
+  {
+    icon: Briefcase,
+    title: "Job Posting Analyzer",
+    description:
+      "Paste any job posting and instantly see how well it matches your skills and roadmap. Get a breakdown of requirements you meet, gaps to close, and specific steps to become a stronger candidate. Apply smarter, not just more.",
   },
   {
     icon: ListChecks,
-    title: "Step-by-Step Action Plan",
+    title: "Application Tracker & Pipeline",
     description:
-      "Break down your career transition into daily and weekly micro-steps. Each task is designed to move you forward without overwhelm.",
+      "Track every application in one place — from target companies to interviews. See your pipeline at a glance, manage statuses, and keep your job search organized alongside your career-building progress.",
   },
   {
-    icon: TrendingUp,
-    title: "Goal Tracking & Progress",
+    icon: MessageCircle,
+    title: "Weekly AI Coaching",
     description:
-      "Track your progress, maintain streaks, and adjust your plan as you grow. See how far you have come and what is next on your journey.",
+      "A personalized AI coach checks in weekly, adapts to your pace and blockers, and gives you targeted advice. Think of it as a career mentor who knows your full journey and always has something useful to say.",
+  },
+  {
+    icon: Flame,
+    title: "Interview Prep & Quick Wins",
+    description:
+      "Generate role-specific interview question banks to practice with. Plus, on days when time is short, Quick Win missions give you a lighter way to keep your streak alive and maintain momentum without the full session.",
   },
 ];
 
@@ -48,11 +81,13 @@ export function Features() {
           <h2 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-[1.15]">
             Everything you need to
             <br />
-            design your career
+            get hired
           </h2>
-          <p className="mt-5 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed">
-            PathBuild combines AI analysis with actionable planning to help you
-            move from uncertainty to clarity.
+          <p className="mt-5 text-[16px] text-navy-500 max-w-2xl mx-auto leading-relaxed">
+            PathBuild is not another career quiz or generic to-do app. It is a
+            complete career execution system — daily missions, readiness
+            tracking, proof building, and real tools that take you from
+            &ldquo;I don&rsquo;t know what to do&rdquo; to hired.
           </p>
         </motion.div>
 
@@ -63,9 +98,9 @@ export function Features() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
+              transition={{ duration: 0.6, delay: i * 0.06 }}
             >
-              <div className="group rounded-2xl border border-warm-200/80 bg-card p-8 lg:p-10 transition-all duration-300 hover:shadow-warm hover:border-warm-200">
+              <div className="group rounded-2xl border border-warm-200/80 bg-card p-8 lg:p-10 transition-all duration-300 hover:shadow-warm hover:border-warm-200 h-full">
                 <div className="w-12 h-12 rounded-xl bg-accent/[0.1] flex items-center justify-center mb-6 group-hover:bg-accent/[0.15] transition-colors duration-300">
                   <feature.icon
                     size={22}

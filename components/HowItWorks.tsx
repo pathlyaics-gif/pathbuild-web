@@ -7,31 +7,41 @@ const STEPS = [
     number: 1,
     title: "Tell us about yourself",
     description:
-      "Answer guided questions about your interests, skills, values, constraints, and career goals. It takes less than 5 minutes.",
+      "Answer a quick, tap-friendly questionnaire about your education, experience, interests, strengths, constraints, target income, working style, and daily pace. It takes less than 5 minutes — mostly tapping, not typing.",
+    detail:
+      "PathBuild collects what actually matters: what energizes you, what you are good at, your practical constraints (time, budget, location, family), and how much time you can commit each day (30 or 60 minutes). No right or wrong answers.",
   },
   {
     number: 2,
-    title: "AI analyzes your profile",
+    title: "AI matches you to realistic career paths",
     description:
-      "Our AI engine cross-references your answers against thousands of career paths, market data, and success patterns to find your best matches.",
+      "Our AI cross-references your profile against thousands of career paths, market data, salary trends, and success patterns to surface your best-fit matches — including options you may never have considered.",
+    detail:
+      "Each match comes with a suitability score, difficulty rating, salary range, and a clear breakdown of why it fits your profile. Compare paths side by side and explore what each role actually involves day-to-day.",
   },
   {
     number: 3,
-    title: "Receive your career roadmap",
+    title: "Pick your target role and get your roadmap",
     description:
-      "Get a personalized report with your top career matches, suitability scores, difficulty levels, and a clear path forward for each option.",
+      "Choose the career path that excites you most. PathBuild creates a role-specific roadmap broken into stages, requirement areas, and actionable steps — so you always know what comes next.",
+    detail:
+      "Your roadmap shows every skill, credential, and experience your target role requires. See what you have already covered, what is in progress, and what is still ahead. Stages unlock as you progress, just like levels in a game.",
   },
   {
     number: 4,
-    title: "Follow your step-by-step guide",
+    title: "Complete one daily mission",
     description:
-      "Each career path comes with a detailed action plan broken into weekly micro-steps. Start building toward your future today.",
+      "Every day, PathBuild gives you one focused mission — a guided, step-by-step task designed to build real progress toward your target role. Open the app, do your mission, close the app. That is it.",
+    detail:
+      "Missions take 30–60 minutes depending on your pace setting. Each mission has a brief, micro-steps to check off, and a completion review. Short on time? Quick Win missions keep your streak alive with a lighter touch.",
   },
   {
     number: 5,
-    title: "Track progress and adjust",
+    title: "Build proof, track readiness, get hired",
     description:
-      "Monitor your streaks, completed steps, and milestones. Adjust your plan as you learn and grow. Your roadmap evolves with you.",
+      "As you complete missions, your readiness percentage grows. Completed work automatically becomes resume bullet points and LinkedIn copy. Track applications, analyze job postings, and get weekly AI coaching.",
+    detail:
+      "PathBuild is not a one-time assessment — it is your daily career companion. Weekly recaps, monthly reviews, blocker analysis, and an adaptive AI coach keep you on track until you land the role.",
   },
 ];
 
@@ -50,11 +60,13 @@ export function HowItWorks() {
             How It Works
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-[1.15]">
-            Five steps to clarity
+            Five steps from lost
+            <br />
+            to hire-ready
           </h2>
           <p className="mt-5 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed">
-            From answering a few questions to following your personalized roadmap
-            — the process is simple and guided.
+            Choose a role, do one mission a day, build proof, get hired.
+            The process is simple, guided, and designed to fit into your life.
           </p>
         </motion.div>
 
@@ -80,8 +92,11 @@ export function HowItWorks() {
                     <h3 className="text-[17px] md:text-lg font-bold text-navy-900 mb-1.5">
                       {step.title}
                     </h3>
-                    <p className="text-[14px] leading-[1.7] text-navy-500">
+                    <p className="text-[14px] leading-[1.7] text-navy-500 mb-1.5">
                       {step.description}
+                    </p>
+                    <p className="text-[13px] leading-[1.7] text-navy-400">
+                      {step.detail}
                     </p>
                   </div>
                 </div>

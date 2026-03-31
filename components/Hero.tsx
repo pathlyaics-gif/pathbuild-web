@@ -1,12 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Users, Star } from "lucide-react";
+import {
+  Sparkles,
+  Users,
+  Star,
+  Target,
+  Flame,
+  CheckCircle2,
+  Briefcase,
+} from "lucide-react";
+
+const APP_STORE_URL = "https://apps.apple.com/app/pathbuild/id6743108030";
 
 function AppStoreButton() {
   return (
     <a
-      href="#"
+      href={APP_STORE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       className="inline-flex items-center gap-3 rounded-2xl bg-navy-900 px-7 py-4 text-white hover:bg-navy-800 transition-colors shadow-warm-lg"
     >
       <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
@@ -14,13 +26,20 @@ function AppStoreButton() {
       </svg>
       <div className="text-left">
         <div className="text-[10px] leading-none opacity-70 font-medium">
-          Coming Soon on the
+          Download on the
         </div>
         <div className="text-[15px] font-bold leading-tight">App Store</div>
       </div>
     </a>
   );
 }
+
+const HERO_HIGHLIGHTS = [
+  { icon: Target, text: "One daily mission toward your target role" },
+  { icon: Flame, text: "Build streaks & track your readiness" },
+  { icon: CheckCircle2, text: "Turn completed work into hire-ready proof" },
+  { icon: Briefcase, text: "Job fit analyzer & application tracker" },
+];
 
 export function Hero() {
   return (
@@ -40,7 +59,7 @@ export function Hero() {
           >
             <span className="inline-flex items-center gap-2 rounded-full bg-accent/[0.1] border border-accent/[0.15] px-4 py-2 text-xs font-bold text-accent-dark">
               <Sparkles size={13} className="text-accent" />
-              AI-Powered Career Guidance
+              Duolingo for Your Career — Available on iOS
             </span>
           </motion.div>
 
@@ -50,29 +69,54 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Build Your Future
+            One Mission a Day.
             <br />
             <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
-              With AI
+              One Career Built.
             </span>
           </motion.h1>
 
           <motion.p
-            className="mt-7 text-[17px] md:text-lg text-navy-500 leading-relaxed max-w-xl mx-auto"
+            className="mt-7 text-[17px] md:text-lg text-navy-500 leading-relaxed max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
           >
-            Discover your ideal career path. Get a personalized roadmap.
-            <br className="hidden sm:block" />
-            Take action with step-by-step guidance.
+            PathBuild is a premium career execution app for students, graduates,
+            career-switchers, and job seekers. Pick a realistic target role, get
+            a clear roadmap, and complete one focused daily mission that builds
+            real proof toward getting hired. Open the app, do one meaningful
+            task, get closer to your dream job.
           </motion.p>
+
+          <motion.div
+            className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.45 }}
+          >
+            {HERO_HIGHLIGHTS.map((item) => (
+              <div
+                key={item.text}
+                className="flex items-center gap-2.5 rounded-xl bg-white/50 border border-warm-200/60 px-4 py-2.5"
+              >
+                <item.icon
+                  size={16}
+                  className="text-accent shrink-0"
+                  strokeWidth={2}
+                />
+                <span className="text-[13px] font-semibold text-navy-700">
+                  {item.text}
+                </span>
+              </div>
+            ))}
+          </motion.div>
 
           <motion.div
             className="mt-10 flex justify-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.55 }}
           >
             <AppStoreButton />
           </motion.div>
@@ -99,7 +143,7 @@ export function Hero() {
               <span className="ml-1.5">4.9 rating</span>
             </div>
             <div className="w-px h-3.5 bg-navy-300/50 hidden sm:block" />
-            <span className="hidden sm:block">Free to start</span>
+            <span className="hidden sm:block">Free trial available</span>
           </motion.div>
         </div>
       </div>

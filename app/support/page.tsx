@@ -4,49 +4,89 @@ import { Mail } from "lucide-react";
 export const metadata: Metadata = {
   title: "Support — PathBuild",
   description:
-    "Frequently asked questions and support resources for PathBuild.",
+    "Frequently asked questions and support for PathBuild. Get help with daily missions, subscriptions, career tools, and more.",
 };
 
 const FAQ = [
   {
     question: "What is PathBuild?",
     answer:
-      "PathBuild is an AI-powered career guidance app that helps you discover career paths that fit your unique strengths, values, and goals. You answer a short questionnaire, and our AI generates personalized career matches with detailed roadmaps and step-by-step action plans.",
+      "PathBuild is a premium career execution app for iOS — think \"Duolingo for your career.\" It helps students, graduates, career-switchers, and job seekers choose a realistic target role, get a clear roadmap, and complete one focused daily mission that builds real proof toward getting hired. Instead of overwhelming you with options, PathBuild gives you one meaningful task each day and tracks your readiness until you are hire-ready.",
+  },
+  {
+    question: "How is PathBuild different from a career quiz or generic career app?",
+    answer:
+      "Most career tools give you a list of job titles and stop there. PathBuild goes much further. It creates a role-specific roadmap broken into stages and requirements, gives you one guided mission each day, tracks your readiness percentage in real time, turns your completed work into resume bullets and LinkedIn copy, lets you analyze real job postings, and provides weekly AI coaching. It is an ongoing career execution system — not a one-time assessment.",
+  },
+  {
+    question: "What does a daily mission look like?",
+    answer:
+      "Each daily mission is a focused, step-by-step task that takes 30–60 minutes (depending on your pace setting). Missions include a brief overview of what you will work on, micro-steps to check off, and a completion review. They are designed to build real skills, proof, or progress toward your target role. On busy days, Quick Win missions offer a lighter option to keep your streak alive.",
   },
   {
     question: "How does the AI career matching work?",
     answer:
-      "Our AI engine analyzes your responses to questions about your interests, skills, values, constraints, and career goals. It cross-references your unique profile against thousands of career paths, market data, and success patterns to find your best matches.",
+      "During onboarding, you answer a quick questionnaire about your education, experience, interests, strengths, constraints, target income, working style, and daily pace. Our AI cross-references your unique profile against thousands of career paths, market data, salary trends, and success patterns to find your best-fit matches — each with a suitability score, difficulty rating, and salary range.",
   },
   {
-    question: "Is PathBuild free to use?",
+    question: "What is the readiness percentage?",
     answer:
-      "Yes! You can get started for free. The free plan includes a career questionnaire and your top 3 career matches with basic suitability scores. Premium plans unlock detailed roadmaps, step-by-step action plans, and progress tracking.",
+      "Your readiness percentage shows how close you are to being hire-ready for your target role. It updates in real time as you complete missions, cover requirement areas, and build proof. Along with readiness, you can track velocity (how fast you are progressing), coverage (which areas you have covered), and your streak (consecutive days of completing missions).",
   },
   {
-    question: "How accurate are the career recommendations?",
+    question: "What is the Proof Builder?",
     answer:
-      "Our recommendations are based on your self-reported data combined with real-world career research and market data. They are designed to surface options you may not have considered. We recommend using them as a starting point for exploration, not as definitive career advice.",
+      "As you complete missions and milestones, PathBuild tracks your actual accomplishments and translates them into polished resume bullet points and LinkedIn copy. Instead of making up generic descriptions, your proof is built from real work you have done — so your resume reflects genuine experience and progress.",
   },
   {
-    question: "Can I change my answers after completing the questionnaire?",
+    question: "What is the Job Posting Analyzer?",
     answer:
-      "Yes. You can retake the questionnaire or update your profile at any time. Your career matches and roadmap will update based on your new responses.",
+      "Paste any job posting into PathBuild and instantly see how well it matches your skills and roadmap. You get a breakdown of requirements you already meet, gaps you need to close, and specific steps to become a stronger candidate. It helps you apply smarter — not just more.",
+  },
+  {
+    question: "What does Weekly AI Coaching do?",
+    answer:
+      "Every week, PathBuild provides personalized coaching based on your recent activity, progress, blockers, and goals. It adapts to your pace, gives you encouragement when you need it, course corrections when you are off track, and specific suggestions for what to focus on next. Think of it as a career mentor who knows your full journey.",
+  },
+  {
+    question: "How much does PathBuild cost?",
+    answer:
+      "PathBuild Pro offers two subscription plans: Monthly at $19.99/month and Annual at $129.99/year (which works out to about $10.83/month — saving you over $100 per year compared to monthly billing). New subscribers on the Annual plan can start with a free trial. All payments are processed through Apple.",
+  },
+  {
+    question: "Is there a free trial?",
+    answer:
+      "Yes. New subscribers on the Annual plan can start with a free trial. You get full access to every Pro feature during the trial. If you cancel before the trial ends, you will not be charged. Free trial eligibility is determined by Apple and is limited to one per Apple ID.",
   },
   {
     question: "How do I cancel my subscription?",
     answer:
-      "You can manage and cancel your subscription at any time through your Apple ID Account Settings. Go to Settings > Apple ID > Subscriptions > PathBuild. Cancellation takes effect at the end of your current billing period.",
+      "You can manage and cancel your subscription at any time through your Apple ID Account Settings: Settings → Apple ID → Subscriptions → PathBuild. Cancellation takes effect at the end of your current billing period. You keep full access to Pro features until then.",
+  },
+  {
+    question: "Can I change my target role or retake the questionnaire?",
+    answer:
+      "Yes. You can retake the questionnaire, update your profile, or switch to a different target role at any time. Your roadmap, missions, and progress will update based on your new direction.",
+  },
+  {
+    question: "What is the difference between Standard and Accelerated pace?",
+    answer:
+      "Standard pace is designed for people who can commit about 30 minutes per day to their daily mission. Accelerated pace is for people who can commit about 60 minutes and want to progress faster. You can change your pace setting at any time.",
   },
   {
     question: "Is my data safe?",
     answer:
-      "Absolutely. We take privacy seriously. We never sell your personal information, and we use encryption to protect your data both in transit and at rest. You can delete your account and all associated data at any time. See our Privacy Policy for full details.",
+      "Absolutely. We never sell your personal information. We do not track you across apps (no IDFA). We use encryption to protect your data both in transit and at rest. We do not send your name or email to AI services. And you can delete your account and all associated data at any time from the app settings. See our Privacy Policy for full details.",
   },
   {
     question: "What platforms is PathBuild available on?",
     answer:
-      "PathBuild is currently available on iOS. We are working on bringing the experience to more platforms in the future.",
+      "PathBuild is currently available on iOS (iPhone and iPad). We are actively working on expanding to additional platforms in the future.",
+  },
+  {
+    question: "Who is PathBuild for?",
+    answer:
+      "PathBuild is for anyone who feels lost, stuck, behind, or unfocused about their career — students, recent graduates, career-switchers, job seekers, and people returning to the workforce. If you want to improve your career in 30–60 minutes a day with real guidance and structure, PathBuild is for you. It is not a social feed, not a generic to-do app, and not a huge messy career toolbox. It is focused, structured, and built for real progress.",
   },
 ];
 
@@ -63,7 +103,7 @@ export default function SupportPage() {
           </h1>
           <p className="mt-6 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed">
             Find answers to common questions below, or reach out to our team
-            directly.
+            directly. We are here to help you make the most of PathBuild.
           </p>
         </div>
 
@@ -98,7 +138,7 @@ export default function SupportPage() {
             href="mailto:support@pathbuild.app"
             className="inline-flex items-center rounded-full bg-navy-900 text-white px-6 py-3 text-[13px] font-bold hover:bg-navy-800 transition-colors shadow-warm-lg"
           >
-            Email Us
+            Email Us at support@pathbuild.app
           </a>
         </div>
       </div>

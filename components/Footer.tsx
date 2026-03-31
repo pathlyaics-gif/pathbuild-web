@@ -11,7 +11,7 @@ const FOOTER_SECTIONS = [
       { label: "Features", href: "/#features" },
       { label: "Pricing", href: "/pricing" },
       { label: "How It Works", href: "/how-it-works" },
-      { label: "Download", href: "#" },
+      { label: "Download", href: "https://apps.apple.com/app/pathbuild/id6743108030" },
     ],
   },
   {

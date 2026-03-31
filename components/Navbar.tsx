@@ -55,12 +55,14 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center">
-            <Link
-              href="#"
+            <a
+              href="https://apps.apple.com/app/pathbuild/id6743108030"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-navy-900 text-white px-6 py-2.5 text-[14px] font-bold hover:bg-navy-800 transition-colors"
             >
               Download App
-            </Link>
+            </a>
           </div>
 
           <button
@@ -85,13 +87,15 @@ export function Navbar() {
               </Link>
             ))}
             <div className="pt-2 px-1">
-              <Link
-                href="#"
+              <a
+                href="https://apps.apple.com/app/pathbuild/id6743108030"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block text-center rounded-full bg-navy-900 text-white px-5 py-3 text-[15px] font-bold hover:bg-navy-800 transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 Download App
-              </Link>
+              </a>
             </div>
           </div>
         )}

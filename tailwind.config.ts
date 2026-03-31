@@ -9,7 +9,7 @@ const config: Config = {
     extend: {
       colors: {
         background: {
-          DEFAULT: "#FDF8ED",
+          DEFAULT: "#FCF7EC",
           alt: "#FBF4E6",
         },
         card: "#FEFAF3",
