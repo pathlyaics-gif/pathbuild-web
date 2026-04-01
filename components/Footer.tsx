@@ -118,39 +118,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.08] pt-8 text-[0.8rem] sm:flex-row sm:text-left">
+        <div className="border-t border-white/[0.08] pt-8 text-center text-[0.8rem] sm:text-left">
           <span className="text-white/50">
             © {new Date().getFullYear()} PathBuild. All rights reserved.
           </span>
-          <div className="flex gap-4">
-            <a
-              href="https://twitter.com/pathbuildapp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-9 w-9 items-center justify-center rounded-[10px] border border-white/[0.12] text-[0.85rem] text-white/50 transition-all hover:border-coral hover:bg-coral/10 hover:text-coral-light"
-              aria-label="X / Twitter"
-            >
-              𝕏
-            </a>
-            <a
-              href="https://instagram.com/pathbuildapp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-9 w-9 items-center justify-center rounded-[10px] border border-white/[0.12] text-[0.85rem] text-white/50 transition-all hover:border-coral hover:bg-coral/10 hover:text-coral-light"
-              aria-label="Instagram"
-            >
-              ◉
-            </a>
-            <a
-              href="https://linkedin.com/company/pathbuild"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-9 w-9 items-center justify-center rounded-[10px] border border-white/[0.12] text-[0.85rem] text-white/50 transition-all hover:border-coral hover:bg-coral/10 hover:text-coral-light"
-              aria-label="LinkedIn"
-            >
-              in
-            </a>
-          </div>
         </div>
       </div>
     </footer>
