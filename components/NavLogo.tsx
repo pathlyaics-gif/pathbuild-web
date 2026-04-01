@@ -18,9 +18,9 @@ export function NavLogo({ variant = "dark", className = "" }: NavLogoProps) {
       <Image
         src="/logo-mark.png"
         alt=""
-        width={40}
-        height={40}
-        className="h-9 w-9 shrink-0 object-contain"
+        width={48}
+        height={51}
+        className="h-9 w-auto shrink-0 object-contain"
         priority
       />
       <span

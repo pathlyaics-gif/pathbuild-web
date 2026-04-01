@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-/** Full lockup: app icon + PathBuild wordmark (`public/logo-full.png`, transparent PNG). */
-const LOGO_WIDTH = 1024;
-const LOGO_HEIGHT = 682;
+/** Squircle app icon only — transparent canvas (`public/logo-full.png`). */
+const LOGO_WIDTH = 534;
+const LOGO_HEIGHT = 566;
 
 interface LogoProps {
   /** Display height in CSS pixels; width scales with aspect ratio. */

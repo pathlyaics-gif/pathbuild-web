@@ -41,15 +41,27 @@ export const metadata: Metadata = {
     siteName: "PathBuild",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/logo-full.png",
+        width: 534,
+        height: 566,
+        alt: "PathBuild — winding path and arrow icon",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "PathBuild — Career Execution for iOS",
     description:
       "One focused daily mission. Clear roadmap. Real proof toward getting hired.",
+    images: ["/logo-full.png"],
   },
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+    ],
     apple: "/apple-touch-icon.png",
   },
 };
