@@ -1,27 +1,42 @@
 import type { Metadata } from "next";
+import { DM_Serif_Display, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-dm-serif",
+  display: "swap",
+});
+
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-instrument",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "PathBuild — Build Your Future With AI",
+  title: "PathBuild — Career Execution for iOS",
   description:
-    "Discover your ideal career path. Get a personalized roadmap powered by AI. Take action with step-by-step guidance.",
+    "PathBuild turns vague career goals into a clear roadmap with one focused daily mission — so you always know what to do next and can prove you're ready.",
   metadataBase: new URL("https://pathbuild.app"),
   authors: [{ name: "PathBuild" }],
   keywords: [
-    "career guidance",
-    "AI career advisor",
+    "career execution",
     "career roadmap",
-    "career path finder",
-    "job planning",
+    "daily career mission",
+    "job search",
     "career change",
     "PathBuild",
+    "iOS",
   ],
   openGraph: {
-    title: "PathBuild — Build Your Future With AI",
+    title: "PathBuild — Career Execution for iOS",
     description:
-      "Discover your ideal career path. Get a personalized roadmap powered by AI. Take action with step-by-step guidance.",
+      "From lost to hire-ready, one mission at a time. Premium career execution for iPhone.",
     url: "https://pathbuild.app",
     siteName: "PathBuild",
     locale: "en_US",
@@ -29,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PathBuild — Build Your Future With AI",
+    title: "PathBuild — Career Execution for iOS",
     description:
-      "Discover your ideal career path. Get a personalized roadmap powered by AI.",
+      "One focused daily mission. Clear roadmap. Real proof toward getting hired.",
   },
   icons: {
     icon: "/favicon.png",
@@ -45,8 +60,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="font-sans antialiased">
+    <html lang="en" className={`${dmSerif.variable} ${instrumentSans.variable}`}>
+      <body className={`${instrumentSans.className} font-sans antialiased`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

@@ -2,19 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap");
-
 @layer base {
   html {
     overscroll-behavior: none;
     scroll-behavior: smooth;
+    font-size: 16px;
   }
 
   body {
     margin: 0;
     padding: 0;
-    background: #fdf8ed;
-    color: #3d3029;
+    background: #fbf7f0;
+    color: #1a1410;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
