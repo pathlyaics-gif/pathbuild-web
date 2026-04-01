@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavLogo } from "./NavLogo";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/site";
 
 const APP_STORE =
   "https://apps.apple.com/app/pathbuild/id6743108030";
@@ -69,7 +70,7 @@ export function Footer() {
               About
             </Link>
             <a
-              href="mailto:support@pathbuild.app"
+              href={CONTACT_MAILTO}
               className="mb-3 block text-[0.88rem] text-white/65 transition-colors hover:text-coral-light"
             >
               Contact
@@ -86,7 +87,7 @@ export function Footer() {
               FAQ
             </Link>
             <a
-              href="mailto:support@pathbuild.app"
+              href={CONTACT_MAILTO}
               className="mb-3 block text-[0.88rem] text-white/65 transition-colors hover:text-coral-light"
             >
               Email Us

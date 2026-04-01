@@ -24,8 +24,9 @@ export function PricingPreview() {
             Invest in your career
           </h2>
           <p className="mt-5 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed">
-            Start with a free trial. Two simple plans, no hidden fees, cancel
-            anytime through your Apple ID settings.
+            Get PathBuild on the App Store. Two simple plans, no hidden fees —
+            cancel anytime through your Apple ID settings. Free trial, when
+            offered by Apple, may apply to eligible Annual subscribers only.
           </p>
         </motion.div>
 
@@ -75,7 +76,7 @@ export function PricingPreview() {
                 rel="noopener noreferrer"
                 className="block text-center rounded-full py-3 text-[13px] font-bold border border-warm-200 text-navy-900 hover:bg-warm-100 transition-all"
               >
-                Start Free Trial
+                Try it on the App Store
               </a>
             </div>
           </motion.div>
@@ -153,8 +154,10 @@ export function PricingPreview() {
             <ArrowRight size={15} />
           </Link>
           <p className="mt-4 text-[11px] text-navy-400">
-            Payments processed by Apple. Subscriptions auto-renew unless
-            canceled 24 hours before the end of the current period.
+            Subscriptions are purchased in the App Store. Payments processed by
+            Apple. Auto-renewal can be turned off in Settings. Monthly has no
+            free trial; trial offers, if any, are for eligible Annual plans per
+            Apple.
           </p>
         </motion.div>
       </div>

@@ -143,7 +143,7 @@ export function Hero() {
               <span className="ml-1.5">4.9 rating</span>
             </div>
             <div className="w-px h-3.5 bg-navy-300/50 hidden sm:block" />
-            <span className="hidden sm:block">Free trial available</span>
+            <span className="hidden sm:block">Download on the App Store</span>
           </motion.div>
         </div>
       </div>

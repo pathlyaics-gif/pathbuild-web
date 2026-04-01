@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Mail } from "lucide-react";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Support — PathBuild",
@@ -51,12 +52,12 @@ const FAQ = [
   {
     question: "How much does PathBuild cost?",
     answer:
-      "PathBuild Pro offers two subscription plans: Monthly at $19.99/month and Annual at $129.99/year (which works out to about $10.83/month — saving you over $100 per year compared to monthly billing). New subscribers on the Annual plan can start with a free trial. All payments are processed through Apple.",
+      "PathBuild Pro offers two subscription plans: Monthly at $19.99/month and Annual at $129.99/year (about $10.83/month — saving you over $100 per year vs monthly). Download and subscribe in the App Store; the Monthly plan does not include a free trial. Apple may offer a free trial to eligible new subscribers on the Annual plan only. All payments are processed through Apple.",
   },
   {
     question: "Is there a free trial?",
     answer:
-      "Yes. New subscribers on the Annual plan can start with a free trial. You get full access to every Pro feature during the trial. If you cancel before the trial ends, you will not be charged. Free trial eligibility is determined by Apple and is limited to one per Apple ID.",
+      "The Monthly plan has no free trial. Apple may offer a free trial to eligible new subscribers who choose the Annual plan. When a trial is available, you get full access to every Pro feature during the trial; if you cancel before it ends, you will not be charged. Eligibility and duration are determined by Apple and limited to one per Apple ID.",
   },
   {
     question: "How do I cancel my subscription?",
@@ -135,10 +136,10 @@ export default function SupportPage() {
             you as soon as possible.
           </p>
           <a
-            href="mailto:support@pathbuild.app"
+            href={CONTACT_MAILTO}
             className="inline-flex items-center rounded-full bg-navy-900 text-white px-6 py-3 text-[13px] font-bold hover:bg-navy-800 transition-colors shadow-warm-lg"
           >
-            Email Us at support@pathbuild.app
+            Email us at {CONTACT_EMAIL}
           </a>
         </div>
       </div>

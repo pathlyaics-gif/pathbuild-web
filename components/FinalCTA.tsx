@@ -6,7 +6,7 @@ import { Shield, Clock, Sparkles } from "lucide-react";
 const APP_STORE_URL = "https://apps.apple.com/app/pathbuild/id6743108030";
 
 const TRUST_POINTS = [
-  { icon: Sparkles, text: "Free trial available" },
+  { icon: Sparkles, text: "Subscribe via the App Store" },
   { icon: Shield, text: "Cancel anytime" },
   { icon: Clock, text: "One mission a day — 30 min" },
 ];

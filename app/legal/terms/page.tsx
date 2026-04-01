@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service — PathBuild",
@@ -196,11 +197,13 @@ export default function TermsPage() {
               within 24 hours prior to the end of the current period.
             </li>
             <li>
-              <strong>Free Trial:</strong> PathBuild may offer a free trial
-              period for new subscribers. If you do not cancel before the trial
-              ends, your subscription will automatically convert to a paid
-              subscription. Free trial eligibility is determined by Apple and is
-              limited to one per Apple ID.
+              <strong>Free Trial:</strong> The Monthly plan does not include a
+              free trial. PathBuild may offer a free trial for eligible new
+              subscribers on the Annual plan only, as determined by Apple. If
+              you do not cancel before the trial ends, your subscription will
+              automatically convert to a paid subscription. Free trial
+              eligibility is determined by Apple and is limited to one per Apple
+              ID.
             </li>
             <li>
               <strong>Managing Subscriptions:</strong> You can manage and cancel
@@ -423,10 +426,10 @@ export default function TermsPage() {
           <p>
             If you have any questions about these Terms, please contact us at:{" "}
             <a
-              href="mailto:support@pathbuild.app"
+              href={CONTACT_MAILTO}
               className="text-accent hover:underline"
             >
-              support@pathbuild.app
+              {CONTACT_EMAIL}
             </a>
           </p>
         </div>

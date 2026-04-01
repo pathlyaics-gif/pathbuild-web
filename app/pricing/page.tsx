@@ -4,7 +4,7 @@ import { Check, HelpCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "Pricing — PathBuild",
   description:
-    "PathBuild Pro pricing: Monthly ($19.99/mo) and Annual ($129.99/yr). Start with a free trial. Daily career missions, readiness tracking, proof building, and more.",
+    "PathBuild Pro on the App Store: Monthly ($19.99/mo) and Annual ($129.99/yr). Download to subscribe. Daily missions, readiness tracking, proof building, and more.",
 };
 
 const APP_STORE_URL = "https://apps.apple.com/app/pathbuild/id6743108030";
@@ -30,7 +30,7 @@ const PLANS = [
       "Interview prep question banks",
       "Plan adjustments & roadmap updates",
     ],
-    cta: "Start Free Trial",
+    cta: "Try it on the App Store",
     featured: false,
   },
   {
@@ -55,7 +55,7 @@ const PLANS = [
 const FAQ_PRICING = [
   {
     q: "Is there a free trial?",
-    a: "Yes. New subscribers can start with a free trial on the Annual plan. You get full access to every PathBuild Pro feature during the trial. If you cancel before the trial ends, you will not be charged. Free trial eligibility is determined by Apple and limited to one per Apple ID.",
+    a: "The Monthly plan does not include a free trial. Apple may offer a free trial to eligible new subscribers on the Annual plan only. When available, you get full access to every PathBuild Pro feature during the trial; cancel before it ends to avoid being charged. Eligibility is determined by Apple and limited to one per Apple ID.",
   },
   {
     q: "How do I cancel my subscription?",
@@ -95,8 +95,10 @@ export default function PricingPage() {
             Simple, transparent pricing
           </h1>
           <p className="mt-6 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed">
-            Two plans, no hidden fees, cancel anytime. Start with a free trial
-            and only pay if PathBuild is helping you make real progress.
+            Download PathBuild on the App Store to subscribe. Two plans, no
+            hidden fees — cancel anytime in Settings. Apple may offer a free
+            trial to eligible subscribers on the Annual plan only (not
+            Monthly).
           </p>
         </div>
 
@@ -164,9 +166,11 @@ export default function PricingPage() {
 
         <div className="mt-8 text-center">
           <p className="text-[11px] text-navy-400">
-            Payments are processed by Apple. Subscriptions auto-renew unless
-            canceled at least 24 hours before the end of the current period.
-            Free trial is available for eligible users on the Annual plan.
+            Subscriptions are purchased in the App Store. Payments are processed
+            by Apple. Subscriptions auto-renew unless canceled at least 24 hours
+            before the end of the current period. A free trial, when available,
+            applies to eligible new subscribers on the Annual plan only — not
+            Monthly.
           </p>
         </div>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — PathBuild",
@@ -285,10 +286,10 @@ export default function PrivacyPage() {
           <p>
             To exercise any of these rights, please contact us at{" "}
             <a
-              href="mailto:support@pathbuild.app"
+              href={CONTACT_MAILTO}
               className="text-accent hover:underline"
             >
-              support@pathbuild.app
+              {CONTACT_EMAIL}
             </a>
             . We will respond to your request within 30 days.
           </p>
@@ -302,10 +303,10 @@ export default function PrivacyPage() {
             you are a parent or guardian and believe your child has provided us
             with personal information, please contact us immediately at{" "}
             <a
-              href="mailto:support@pathbuild.app"
+              href={CONTACT_MAILTO}
               className="text-accent hover:underline"
             >
-              support@pathbuild.app
+              {CONTACT_EMAIL}
             </a>
             . If we become aware that we have collected personal information from
             a child under 13, we will take steps to delete such information
@@ -335,10 +336,10 @@ export default function PrivacyPage() {
             information. We do not sell personal information. To exercise your
             CCPA rights, contact us at{" "}
             <a
-              href="mailto:support@pathbuild.app"
+              href={CONTACT_MAILTO}
               className="text-accent hover:underline"
             >
-              support@pathbuild.app
+              {CONTACT_EMAIL}
             </a>
             .
           </p>
@@ -371,10 +372,10 @@ export default function PrivacyPage() {
             If you have any questions, concerns, or requests regarding this
             Privacy Policy or our data practices, please contact us at:{" "}
             <a
-              href="mailto:support@pathbuild.app"
+              href={CONTACT_MAILTO}
               className="text-accent hover:underline"
             >
-              support@pathbuild.app
+              {CONTACT_EMAIL}
             </a>
           </p>
         </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Subscription Terms — PathBuild",
@@ -63,9 +64,11 @@ export default function SubscriptionPage() {
             2. Free Trial
           </h2>
           <p>
-            PathBuild may offer a free trial period for new subscribers on the
-            Annual plan. During the free trial, you have full access to all
-            PathBuild Pro features:
+            The <strong>Monthly plan does not include a free trial.</strong>{" "}
+            PathBuild may offer a free trial period for <strong>eligible new
+            subscribers on the Annual plan only</strong>, as determined by
+            Apple. During a free trial, you have full access to all PathBuild Pro
+            features:
           </p>
           <ul className="list-disc pl-6 space-y-2">
             <li>
@@ -236,10 +239,10 @@ export default function SubscriptionPage() {
             If you have any questions about your subscription, billing, or these
             Subscription Terms, please contact us at:{" "}
             <a
-              href="mailto:support@pathbuild.app"
+              href={CONTACT_MAILTO}
               className="text-accent hover:underline"
             >
-              support@pathbuild.app
+              {CONTACT_EMAIL}
             </a>
           </p>
         </div>

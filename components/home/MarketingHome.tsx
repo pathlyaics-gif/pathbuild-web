@@ -9,6 +9,7 @@ import {
   Shield,
 } from "lucide-react";
 import { SectionReveal } from "./SectionReveal";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/site";
 
 const APP_STORE =
   "https://apps.apple.com/app/pathbuild/id6743108030";
@@ -87,7 +88,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Is there a free trial?",
-    a: "Yes. New subscribers on the Annual plan can start with a free trial. You get full access to every PathBuild Pro feature during the trial. If you cancel before the trial ends, you will not be charged. Free trial eligibility is determined by Apple and limited to one per Apple ID.",
+    a: "The Monthly plan ($19.99/month) does not include a free trial — download PathBuild on the App Store and subscribe when you are ready. Apple may offer a free trial to eligible new subscribers who choose the Annual plan; if available, you get full access to every Pro feature during the trial, and you will not be charged if you cancel before it ends. Eligibility and duration are determined by Apple and are limited to one per Apple ID.",
   },
   {
     q: "How do I cancel my subscription?",
@@ -193,7 +194,7 @@ export function MarketingHome() {
               className="inline-flex items-center gap-2 rounded-pill bg-ebony px-8 py-4 text-[0.95rem] font-semibold text-white shadow-pb-md transition-all duration-300 ease-smooth hover:-translate-y-0.5 hover:bg-coral hover:shadow-glow"
             >
               <ArrowUp className="h-[18px] w-[18px] rotate-180" strokeWidth={2} />
-              Download Free
+              Download on the App Store
             </a>
             <Link
               href="/#how-it-works"
@@ -213,7 +214,7 @@ export function MarketingHome() {
             </div>
             <div className="flex items-center gap-1.5 text-[0.82rem] text-ink-muted">
               <Check className="h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
-              Free trial included
+              Subscriptions via the App Store
             </div>
           </div>
         </div>
@@ -538,8 +539,9 @@ export function MarketingHome() {
         </SectionReveal>
         <SectionReveal delay={0.16}>
           <p className="mx-auto mb-14 max-w-[600px] text-center text-[1.05rem] leading-[1.7] text-ink-secondary">
-            Two plans, no hidden fees, cancel anytime. Start with a free trial
-            and only pay if PathBuild is helping you make real progress.
+            Download PathBuild on the App Store to subscribe. Two plans, no
+            hidden fees — cancel anytime in your Apple ID settings. Apple may
+            offer a free trial to eligible subscribers on the Annual plan only.
           </p>
         </SectionReveal>
         <div className="mx-auto grid max-w-[860px] grid-cols-1 gap-6 md:grid-cols-2">
@@ -577,7 +579,7 @@ export function MarketingHome() {
                 rel="noopener noreferrer"
                 className="block w-full rounded-pill border-[1.5px] border-cream-mid py-3.5 text-center text-[0.95rem] font-semibold text-ink transition-all hover:border-wood-light hover:bg-cream"
               >
-                Start Free Trial
+                Try it on the App Store
               </a>
             </div>
           </SectionReveal>
@@ -628,9 +630,11 @@ export function MarketingHome() {
         </div>
         <SectionReveal delay={0.12}>
           <p className="mx-auto mt-6 max-w-[860px] text-center text-[0.78rem] leading-[1.6] text-ink-muted">
-            Payments are processed by Apple. Subscriptions auto-renew unless
-            canceled at least 24 hours before the end of the current period.
-            Free trial is available for eligible users on the Annual plan.
+            Subscriptions are purchased and managed in the App Store. Payments
+            are processed by Apple. Subscriptions auto-renew unless canceled at
+            least 24 hours before the end of the current period. A free trial,
+            when available, applies to eligible new subscribers on the Annual
+            plan only — not to Monthly.
           </p>
         </SectionReveal>
       </section>
@@ -689,10 +693,10 @@ export function MarketingHome() {
             Find answers to common questions below, or reach out to our team
             directly at{" "}
             <a
-              href="mailto:support@pathbuild.app"
+              href={CONTACT_MAILTO}
               className="font-semibold text-coral hover:underline"
             >
-              support@pathbuild.app
+              {CONTACT_EMAIL}
             </a>
           </p>
         </SectionReveal>
@@ -759,7 +763,7 @@ export function MarketingHome() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-pill bg-ebony px-8 py-4 text-[0.95rem] font-semibold text-white shadow-pb-md transition-all duration-300 ease-smooth hover:-translate-y-0.5 hover:bg-coral hover:shadow-glow"
             >
-              Download PathBuild Free
+              Download on the App Store
             </a>
           </div>
         </SectionReveal>
