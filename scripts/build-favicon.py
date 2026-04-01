@@ -87,6 +87,17 @@ def is_light_orange_gradient(r: int, g: int, b: int) -> bool:
     return False
 
 
+def is_neutral_wash(r: int, g: int, b: int) -> bool:
+    """Peachy/cream wash inside squircle (not path): kill white band at top of icon."""
+    spread = max(r, g, b) - min(r, g, b)
+    L = luminance(r, g, b)
+    if spread < 22 and L > 188:
+        return True
+    if spread < 38 and L > 218:
+        return True
+    return False
+
+
 def is_white_path(r: int, g: int, b: int) -> bool:
     if r < 235 or g < 228:
         return False
@@ -116,16 +127,22 @@ def process_icon(src: Path) -> Image.Image:
                 continue
             if is_light_orange_gradient(r, g, b):
                 continue
+            # Path must be detected before neutral_wash (path pixels are low-saturation)
             if is_white_path(r, g, b):
                 op[x, y] = WHITE_PATH
+            elif is_neutral_wash(r, g, b):
+                continue
             elif r > 160 and r > g and g > b - 18:
                 op[x, y] = CORAL
             else:
                 L = luminance(r, g, b)
-                if L > 198:
+                spread = max(r, g, b) - min(r, g, b)
+                if L > 248 and spread < 12:
                     op[x, y] = WHITE_PATH
-                else:
+                elif L < 165:
                     op[x, y] = CORAL
+                else:
+                    continue
 
     return out
 
