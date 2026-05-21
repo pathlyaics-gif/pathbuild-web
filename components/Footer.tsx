@@ -3,10 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavLogo } from "./NavLogo";
-import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/site";
-
-const APP_STORE =
-  "https://apps.apple.com/app/pathbuild/id6743108030";
+import { APP_STORE_URL, APP_TAGLINE, CONTACT_MAILTO } from "@/lib/site";
 
 export function Footer() {
   const pathname = usePathname();
@@ -24,8 +21,7 @@ export function Footer() {
               <NavLogo variant="light" />
             </div>
             <p className="mt-3 max-w-[260px] text-[0.85rem] leading-[1.7] text-white/60">
-              Premium career execution for iOS. One mission a day. Real
-              progress.
+              {APP_TAGLINE}
             </p>
           </div>
           <div>
@@ -51,7 +47,7 @@ export function Footer() {
               How It Works
             </Link>
             <a
-              href={APP_STORE}
+              href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="mb-3 block text-[0.88rem] text-white/65 transition-colors hover:text-coral-light"

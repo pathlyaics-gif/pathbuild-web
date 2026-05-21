@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import { Check, HelpCircle } from "lucide-react";
+import {
+  APP_STORE_URL,
+  FEATURE_CARDS,
+  MONTHLY_FEATURES,
+  ANNUAL_FEATURES,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Pricing — PathBuild",
   description:
-    "PathBuild Pro on the App Store: Monthly ($19.99/mo) and Annual ($129.99/yr). Download to subscribe. Daily missions, readiness tracking, proof building, and more.",
+    "PathBuild Pro on the App Store: Monthly ($19.99/mo) and Annual ($129.99/yr). Application tracking, Gmail inbox watcher, role & company match, and more.",
 };
-
-const APP_STORE_URL = "https://apps.apple.com/app/pathbuild/id6743108030";
 
 const PLANS = [
   {
@@ -17,19 +21,7 @@ const PLANS = [
     equivalent: null,
     description:
       "Full access to every PathBuild Pro feature, billed monthly. Great if you want maximum flexibility with no long-term commitment.",
-    features: [
-      "Unlimited daily guided missions",
-      "Role-specific roadmap with stages & milestones",
-      "Readiness percentage & progress tracking",
-      "Streaks, velocity, and coverage metrics",
-      "Proof builder — resume bullets & LinkedIn copy",
-      "Job posting analyzer — paste any listing",
-      "Application tracker & pipeline management",
-      "Weekly AI coaching sessions",
-      "Weekly & monthly progress recaps",
-      "Interview prep question banks",
-      "Plan adjustments & roadmap updates",
-    ],
+    features: MONTHLY_FEATURES,
     cta: "Try it on the App Store",
     featured: false,
   },
@@ -39,14 +31,8 @@ const PLANS = [
     period: "/year",
     equivalent: "~$10.83/month",
     description:
-      "Everything in Monthly, billed once per year. Save over $100 compared to monthly billing — the smartest way to invest in your career.",
-    features: [
-      "Everything in Monthly",
-      "Save ~$110/year vs monthly billing",
-      "Priority access to new features",
-      "Export your career roadmap",
-      "Free trial included",
-    ],
+      "Everything in Monthly, billed once per year. Save over $100 compared to monthly billing — the smartest way to invest in your job search.",
+    features: ANNUAL_FEATURES,
     cta: "Start Free Trial",
     featured: true,
   },
@@ -75,11 +61,11 @@ const FAQ_PRICING = [
   },
   {
     q: "What happens if I cancel?",
-    a: "You keep access to all Pro features until the end of your current billing period. After that, your account stays active with your data intact, but Pro-only features (daily missions, coaching, proof builder, etc.) will no longer be available. You can re-subscribe at any time.",
+    a: "You keep access to all Pro features until the end of your current billing period. After that, your account stays active with your data intact, but Pro-only features (Gmail watcher, role match, company match, fit analyzer, etc.) will no longer be available. You can re-subscribe at any time.",
   },
   {
-    q: "How does PathBuild compare to hiring a career coach?",
-    a: "Traditional career coaches charge $150–$300 per session, and most people need multiple sessions over months. PathBuild Pro gives you daily guided missions, weekly AI coaching, and ongoing tools like the job analyzer and proof builder — all for less than $11/month on the Annual plan. That is less than a single coaching session for an entire year of guidance.",
+    q: "How does PathBuild compare to other job trackers?",
+    a: "Most job trackers are manual spreadsheets or basic kanban boards. PathBuild goes further — auto-detecting recruiter emails via Gmail, sending push notifications for interviews and offers, and surfacing AI-matched roles and companies. All for less than $11/month on the Annual plan.",
   },
 ];
 
@@ -179,45 +165,12 @@ export default function PricingPage() {
             What you get with PathBuild Pro
           </h2>
           <p className="text-[15px] text-navy-500 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
-            PathBuild Pro turns vague career goals into daily action. Here is
-            everything included in your subscription:
+            Track every application, catch every recruiter email, and discover
+            roles and companies that fit — all in one subscription.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            {[
-              {
-                title: "Daily Guided Missions",
-                desc: "One focused, step-by-step mission each day tailored to your target role, current stage, and pace. Complete in 30–60 minutes.",
-              },
-              {
-                title: "Role-Specific Roadmap",
-                desc: "Stages, requirement areas, skills, and milestones — everything your target role demands, organized into a clear path forward.",
-              },
-              {
-                title: "Readiness Tracking",
-                desc: "A real-time readiness percentage that shows how close you are to being hire-ready, plus velocity, coverage, and streak metrics.",
-              },
-              {
-                title: "Proof Builder",
-                desc: "Turn completed missions and milestones into polished resume bullet points and LinkedIn copy. Your proof is built from real work.",
-              },
-              {
-                title: "Job Posting Analyzer",
-                desc: "Paste any job posting for instant skill-gap analysis. See what you meet, what you are missing, and exactly what to work on.",
-              },
-              {
-                title: "Application Tracker",
-                desc: "Manage your job search pipeline — track companies, application statuses, and interviews all in one place.",
-              },
-              {
-                title: "Weekly AI Coaching",
-                desc: "Adaptive coaching every week based on your pace, progress, blockers, and goals. Like a career mentor in your pocket.",
-              },
-              {
-                title: "Interview Prep",
-                desc: "Role-specific interview question banks so you can practice and prepare with confidence before every interview.",
-              },
-            ].map((item) => (
+            {FEATURE_CARDS.map((item) => (
               <div
                 key={item.title}
                 className="rounded-2xl border border-warm-200/80 bg-card p-6"
@@ -226,7 +179,7 @@ export default function PricingPage() {
                   {item.title}
                 </h3>
                 <p className="text-[13px] leading-[1.65] text-navy-500">
-                  {item.desc}
+                  {item.body}
                 </p>
               </div>
             ))}

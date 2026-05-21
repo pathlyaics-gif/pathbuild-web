@@ -4,128 +4,25 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   ArrowUp,
+  Bell,
   Check,
-  Clock,
+  Mail,
   Shield,
 } from "lucide-react";
 import { SectionReveal } from "./SectionReveal";
-import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/site";
-
-const APP_STORE =
-  "https://apps.apple.com/app/pathbuild/id6743108030";
-
-const MONTHLY_FEATURES = [
-  "Unlimited daily guided missions",
-  "Role-specific roadmap with stages & milestones",
-  "Readiness percentage & progress tracking",
-  "Streaks, velocity, and coverage metrics",
-  "Proof builder — resume bullets & LinkedIn copy",
-  "Job posting analyzer",
-  "Application tracker & pipeline",
-  "Weekly AI coaching sessions",
-  "Interview prep question banks",
-];
-
-const ANNUAL_FEATURES = [
-  "Everything in Monthly",
-  "Save ~$110/year vs monthly billing",
-  "Priority access to new features",
-  "Export your career roadmap",
-  "Free trial included",
-];
-
-const FEATURE_CARDS = [
-  {
-    title: "Daily Guided Missions",
-    body: "One focused, step-by-step mission each day tailored to your target role, current stage, and pace. Complete in 30–60 minutes.",
-  },
-  {
-    title: "Role-Specific Roadmap",
-    body: "Stages, requirement areas, skills, and milestones — everything your target role demands, organized into a clear path forward.",
-  },
-  {
-    title: "Readiness Tracking",
-    body: "A real-time readiness percentage that shows how close you are to being hire-ready, plus velocity, coverage, and streak metrics.",
-  },
-  {
-    title: "Proof Builder",
-    body: "Turn completed missions and milestones into polished resume bullet points and LinkedIn copy. Your proof is built from real work.",
-  },
-  {
-    title: "Job Posting Analyzer",
-    body: "Paste any job posting for instant skill-gap analysis. See what you meet, what you're missing, and exactly what to work on.",
-  },
-  {
-    title: "Application Tracker",
-    body: "Manage your job search pipeline — track companies, application statuses, and interviews all in one place.",
-  },
-  {
-    title: "Weekly AI Coaching",
-    body: "Adaptive coaching every week based on your pace, progress, blockers, and goals. Like a career mentor in your pocket.",
-  },
-  {
-    title: "Interview Prep",
-    body: "Role-specific interview question banks so you can practice and prepare with confidence before every interview.",
-  },
-];
-
-const FAQ_ITEMS = [
-  {
-    q: "What is PathBuild?",
-    a: 'PathBuild is a premium career execution app for iOS — think "Duolingo for your career." It helps students, graduates, career-switchers, and job seekers choose a realistic target role, get a clear roadmap, and complete one focused daily mission that builds real proof toward getting hired.',
-  },
-  {
-    q: "How is PathBuild different from a career quiz?",
-    a: "Most career tools give you a list of job titles and stop there. PathBuild goes much further — it creates a role-specific roadmap, gives you one guided mission each day, tracks your readiness in real time, turns completed work into resume bullets and LinkedIn copy, and provides weekly AI coaching. It's an ongoing career execution system.",
-  },
-  {
-    q: "What does a daily mission look like?",
-    a: "Each daily mission is a focused, step-by-step task that takes 30–60 minutes. Missions include a brief overview, micro-steps to check off, and a completion review. They're designed to build real skills, proof, or progress toward your target role. On busy days, Quick Win missions offer a lighter option.",
-  },
-  {
-    q: "How does the AI career matching work?",
-    a: "During onboarding, you answer a quick questionnaire about your education, experience, interests, strengths, constraints, and pace. Our AI cross-references your unique profile against thousands of career paths, market data, and salary trends to find your best-fit matches — each with a suitability score and difficulty rating.",
-  },
-  {
-    q: "Is there a free trial?",
-    a: "The Monthly plan ($19.99/month) does not include a free trial — download PathBuild on the App Store and subscribe when you are ready. Apple may offer a free trial to eligible new subscribers who choose the Annual plan; if available, you get full access to every Pro feature during the trial, and you will not be charged if you cancel before it ends. Eligibility and duration are determined by Apple and are limited to one per Apple ID.",
-  },
-  {
-    q: "How do I cancel my subscription?",
-    a: "You can cancel anytime through your Apple ID settings: Settings → Apple ID → Subscriptions → PathBuild. Cancellation takes effect at the end of your current billing period. You keep full access until then. No penalties, no hassle.",
-  },
-  {
-    q: "Is my data safe?",
-    a: "Absolutely. We never sell your personal information. We do not track you across apps. We use encryption to protect your data both in transit and at rest. We do not send your name or email to AI services. You can delete your account and all data at any time from the app settings.",
-  },
-  {
-    q: "What platforms is PathBuild available on?",
-    a: "PathBuild is currently available on iOS (iPhone and iPad). We are actively working on expanding to additional platforms in the future.",
-  },
-];
-
-const STEPS = [
-  {
-    title: "Tell us about yourself",
-    body: "Answer a quick, tap-friendly questionnaire about your education, experience, interests, strengths, constraints, and pace. It takes less than 5 minutes — mostly tapping and selecting, not heavy typing.",
-  },
-  {
-    title: "AI matches you to realistic career paths",
-    body: "Our AI cross-references your profile against thousands of career paths, market data, salary trends, and success patterns — each match comes with a suitability score, difficulty rating, and salary range.",
-  },
-  {
-    title: "Pick your target role and get your roadmap",
-    body: "Choose the career path that excites you most. PathBuild creates a role-specific roadmap broken into stages, requirement areas, and actionable steps — showing exactly what your target role demands and where you stand.",
-  },
-  {
-    title: "Complete one daily mission",
-    body: "Every day, PathBuild gives you one focused, guided mission — a step-by-step task designed to build real progress toward your target role. Open the app, do your mission, close the app. 30–60 minutes. That is it.",
-  },
-  {
-    title: "Build proof, track readiness, get hired",
-    body: "As you complete missions, your readiness percentage grows. Completed work automatically becomes resume bullet points and LinkedIn copy. Analyze job postings, track applications, and get weekly AI coaching.",
-  },
-];
+import {
+  APP_HERO_SUB,
+  APP_HERO_TITLE,
+  APP_STORE_URL,
+  APP_TAGLINE,
+  CONTACT_EMAIL,
+  CONTACT_MAILTO,
+  FAQ_ITEMS,
+  FEATURE_CARDS,
+  HOW_IT_WORKS_STEPS,
+  MONTHLY_FEATURES,
+  ANNUAL_FEATURES,
+} from "@/lib/site";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -175,20 +72,16 @@ export function MarketingHome() {
             />
             Available on iOS
           </div>
-          <h1 className="mb-6 font-serif text-[clamp(3rem,6.5vw,4.5rem)] leading-[1.08] tracking-[-0.03em] text-ink">
-            From lost to{" "}
-            <em className="not-italic text-coral">hire&#8209;ready,</em>
-            <br />
-            one mission at a time
+          <h1 className="mb-6 font-serif text-[clamp(2.5rem,5.5vw,4rem)] leading-[1.1] tracking-[-0.03em] text-ink">
+            The smart job tracker that{" "}
+            <em className="not-italic text-coral">watches your inbox</em>
           </h1>
           <p className="mx-auto mb-10 max-w-[560px] text-lg leading-[1.7] text-ink-secondary">
-            PathBuild turns vague career goals into a clear roadmap with one
-            focused daily mission — so you always know what to do next and can
-            prove you&apos;re ready.
+            {APP_HERO_SUB}
           </p>
           <div className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href={APP_STORE}
+              href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-pill bg-ebony px-8 py-4 text-[0.95rem] font-semibold text-white shadow-pb-md transition-all duration-300 ease-smooth hover:-translate-y-0.5 hover:bg-coral hover:shadow-glow"
@@ -205,16 +98,16 @@ export function MarketingHome() {
           </div>
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-8">
             <div className="flex items-center gap-1.5 text-[0.82rem] text-ink-muted">
+              <Mail className="h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
+              Gmail-aware tracking
+            </div>
+            <div className="flex items-center gap-1.5 text-[0.82rem] text-ink-muted">
+              <Bell className="h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
+              Smart notifications
+            </div>
+            <div className="flex items-center gap-1.5 text-[0.82rem] text-ink-muted">
               <Shield className="h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
               Privacy-first
-            </div>
-            <div className="flex items-center gap-1.5 text-[0.82rem] text-ink-muted">
-              <Clock className="h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
-              30-60 min / day
-            </div>
-            <div className="flex items-center gap-1.5 text-[0.82rem] text-ink-muted">
-              <Check className="h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
-              Subscriptions via the App Store
             </div>
           </div>
         </div>
@@ -229,34 +122,31 @@ export function MarketingHome() {
           <SectionLabel>About PathBuild</SectionLabel>
         </SectionReveal>
         <SectionReveal delay={0.08}>
-          <SectionTitle em="measurable momentum">
-            Clarity, structure, and
-          </SectionTitle>
+          <SectionTitle em="every application">One place for</SectionTitle>
         </SectionReveal>
         <SectionReveal delay={0.16}>
           <p className="mx-auto mb-14 max-w-[600px] text-center text-[1.05rem] leading-[1.7] text-ink-secondary">
-            Most people don&apos;t fail because they aren&apos;t capable. They
-            fail because career change is ambiguous — too many options, no
-            shared plan, and no feedback on progress.
+            Job searching is chaos — applications scattered across email,
+            LinkedIn, and company portals. Recruiter replies get buried. Follow-ups
+            slip. PathBuild brings order to the mess.
           </p>
         </SectionReveal>
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
           <SectionReveal delay={0.08}>
             <div>
               <h3 className="mb-5 font-serif text-[1.6rem] tracking-[-0.01em] text-ink">
-                Our Mission
+                Why We Built PathBuild
               </h3>
               <p className="mb-4 leading-[1.8] text-ink-secondary">
-                Too many talented people feel stuck in their careers — not
-                because they lack ability, but because they lack a realistic
-                plan they can actually follow. They spend months googling
-                advice, overthinking options, and never making real progress.
+                Too many talented people lose opportunities not because they
+                aren&apos;t qualified — but because they lose track of where they
+                applied, miss recruiter emails, and forget to follow up.
               </p>
               <p className="leading-[1.8] text-ink-secondary">
-                PathBuild exists to fix that. Our app turns vague career goals
-                into a specific target role, shows you exactly what that role
-                requires, and gives you one focused daily mission that builds
-                real, measurable progress.
+                PathBuild eliminates that chaos. Connect Gmail, and every
+                recruiter email auto-logs to your pipeline. Get notified when
+                companies respond. Discover roles and employers that actually fit
+                you — all in one app.
               </p>
             </div>
           </SectionReveal>
@@ -266,20 +156,19 @@ export function MarketingHome() {
                 The Difference We Make
               </h3>
               <p className="mb-4 leading-[1.8] text-ink-secondary">
-                Without PathBuild, it&apos;s easy to stay busy but scattered —
-                scrolling job boards, rewriting the same resume, and never
-                knowing if you&apos;re on track.
+                Without PathBuild, it&apos;s easy to apply everywhere and track
+                nowhere — missed interview invites buried in Gmail, no idea which
+                companies you&apos;ve heard back from.
               </p>
               <p className="mb-6 leading-[1.8] text-ink-secondary">
-                With PathBuild, you always know which role you&apos;re building
-                toward, what to do today, what&apos;s still missing, what
-                you&apos;ve already proved, and how close you are to being
-                hire-ready.
+                With PathBuild, every application lives in one pipeline. Recruiter
+                emails auto-import. You get push notifications for interviews,
+                offers, and rejections. AI surfaces roles and companies that fit.
               </p>
               <div className="rounded-r-sm border-l-[3px] border-coral bg-cream py-5 pl-6 pr-5">
                 <p className="font-serif text-[1.05rem] italic leading-[1.6] text-ink">
-                  &quot;Open the app once a day, do one meaningful task, get
-                  closer to your target role.&quot;
+                  &quot;Stop losing applications in your inbox. Start tracking
+                  smarter.&quot;
                 </p>
               </div>
             </div>
@@ -297,15 +186,14 @@ export function MarketingHome() {
         </SectionReveal>
         <SectionReveal delay={0.08}>
           <h2 className="mx-auto mb-4 max-w-4xl text-center font-serif text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-ink">
-            From lost to <em className="not-italic text-coral">hire-ready</em>{" "}
+            From scattered to <em className="not-italic text-coral">organized</em>{" "}
             in 5 steps
           </h2>
         </SectionReveal>
         <SectionReveal delay={0.16}>
           <p className="mx-auto mb-14 max-w-[600px] text-center text-[1.05rem] leading-[1.7] text-ink-secondary">
-            Choose a role. Do one mission a day. Build proof. Get hired. The
-            process is simple, guided, and designed to fit into 30–60 minutes of
-            your day.
+            Connect Gmail. Auto-import applications. Get matched to roles and
+            companies. Never miss a recruiter reply again.
           </p>
         </SectionReveal>
         <div className="relative mx-auto max-w-[800px]">
@@ -313,7 +201,7 @@ export function MarketingHome() {
             className="absolute bottom-14 left-7 top-14 hidden w-0.5 bg-gradient-to-b from-coral-light to-cream-mid md:block"
             aria-hidden
           />
-          {STEPS.map((step, i) => (
+          {HOW_IT_WORKS_STEPS.map((step, i) => (
             <SectionReveal key={step.title} delay={i * 0.06}>
               <div className="relative mb-10 flex gap-8 last:mb-0">
                 <div className="relative z-[1] flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-coral via-coral-light to-coral font-serif text-xl text-white shadow-[0_4px_16px_rgba(232,115,74,0.25)]">
@@ -340,52 +228,50 @@ export function MarketingHome() {
         </SectionReveal>
         <SectionReveal delay={0.08}>
           <h2 className="mx-auto mb-4 max-w-4xl text-center font-serif text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-ink">
-            A simple daily habit that{" "}
-            <em className="not-italic text-coral">compounds</em>
+            Connect once, stay{" "}
+            <em className="not-italic text-coral">on top forever</em>
           </h2>
         </SectionReveal>
         <SectionReveal delay={0.16}>
           <p className="mx-auto mb-12 max-w-[600px] text-center text-[1.05rem] leading-[1.7] text-ink-secondary">
-            PathBuild is built around a simple daily loop that compounds over
-            time — small actions building real skills, real proof, and real
-            readiness.
+            PathBuild runs in the background — watching your inbox, updating your
+            pipeline, and surfacing new opportunities while you focus on
+            interviewing.
           </p>
         </SectionReveal>
         <SectionReveal delay={0.08}>
           <div className="mx-auto mb-12 max-w-[900px] rounded-xl border border-cream-mid bg-cream px-6 py-10 text-center sm:px-10">
             <div className="flex flex-wrap items-center justify-center gap-2 text-sm font-semibold text-ink">
-              <span>Choose role</span>
+              <span>Connect Gmail</span>
               <span className="text-lg text-coral">→</span>
-              <span>Do mission</span>
+              <span>Auto-log emails</span>
               <span className="text-lg text-coral">→</span>
-              <span>Log completion</span>
+              <span>Track pipeline</span>
               <span className="text-lg text-coral">→</span>
-              <span>Increase readiness</span>
+              <span>Get notified</span>
               <span className="text-lg text-coral">→</span>
-              <span>Unlock next stage</span>
+              <span>Discover matches</span>
               <span className="text-lg text-coral">→</span>
-              <span>Build proof</span>
-              <span className="text-lg text-coral">→</span>
-              <span className="font-bold text-coral">Get hired</span>
+              <span className="font-bold text-coral">Land the role</span>
             </div>
           </div>
         </SectionReveal>
         <div className="mx-auto grid max-w-[900px] grid-cols-1 gap-6 md:grid-cols-3">
           {[
             {
-              icon: "☀️",
-              title: "Morning",
-              body: 'Open the app. See today\'s mission on the Home screen. Tap "Begin today\'s task."',
+              icon: "📬",
+              title: "Recruiter email arrives",
+              body: "A company responds to your application. PathBuild detects it in Gmail and auto-updates your pipeline status.",
             },
             {
-              icon: "⚡",
-              title: "30–60 Minutes",
-              body: "Complete the guided mission — follow micro-steps, check them off, review your work.",
+              icon: "🔔",
+              title: "You get notified",
+              body: "Push notification: \"Interview invite from Acme Corp.\" Tap to view details, add notes, or set a reminder.",
             },
             {
               icon: "✓",
-              title: "Done",
-              body: "Your readiness updates. Your streak grows. Progress is logged. Close the app. That's it for today.",
+              title: "Pipeline stays current",
+              body: "Every application is up to date. Follow-ups are scheduled. New role and company matches appear daily.",
             },
           ].map((card, i) => (
             <SectionReveal key={card.title} delay={i * 0.08}>
@@ -413,33 +299,32 @@ export function MarketingHome() {
         <SectionReveal delay={0.08}>
           <h2 className="mx-auto mb-4 max-w-4xl text-center font-serif text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-ink">
             Built for people who are{" "}
-            <em className="not-italic text-coral">ready to move</em>
+            <em className="not-italic text-coral">actively searching</em>
           </h2>
         </SectionReveal>
         <SectionReveal delay={0.16}>
           <p className="mx-auto mb-14 max-w-[600px] text-center text-[1.05rem] leading-[1.7] text-ink-secondary">
-            Whether you&apos;re just starting out or pivoting mid-career,
-            PathBuild gives you the structure and guidance to make real
-            progress.
+            Whether you&apos;re applying to 5 companies or 50, PathBuild keeps
+            every application organized and every recruiter reply on your radar.
           </p>
         </SectionReveal>
         <div className="mx-auto grid max-w-[1000px] grid-cols-1 gap-6 sm:grid-cols-2">
           {[
             {
-              title: "Students & Recent Graduates",
-              body: "Who have no idea what career to pursue and need a clear starting point with real direction.",
+              title: "Active Job Seekers",
+              body: "Applying to multiple roles and need one place to track every application, interview, and follow-up.",
             },
             {
               title: "Career Switchers",
-              body: "Who want to transition into a new field but don't know what steps to take or whether they're qualified.",
+              body: "Exploring a new field and want AI-matched roles plus a tracker that catches every recruiter response.",
             },
             {
-              title: "Job Seekers",
-              body: "Who are applying randomly and need structure, direction, and tools to be more strategic.",
+              title: "Recent Graduates",
+              body: "Starting your first job search and need structure — not another overwhelming spreadsheet.",
             },
             {
-              title: "People Who Feel Stuck",
-              body: "Anyone who wants to improve their career in 30–60 minutes a day with real guidance, not another generic productivity app.",
+              title: "Passive Explorers",
+              body: "Not urgently searching but want to discover companies and roles that fit, and track opportunities as they arise.",
             },
           ].map((card, i) => (
             <SectionReveal key={card.title} delay={i * 0.06}>
@@ -469,8 +354,7 @@ export function MarketingHome() {
         </SectionReveal>
         <SectionReveal delay={0.16}>
           <p className="mx-auto mb-14 max-w-[600px] text-center text-[1.05rem] leading-[1.7] text-ink-secondary">
-            The values that shape every feature, mission, and interaction inside
-            PathBuild.
+            The values that shape every feature and interaction inside PathBuild.
           </p>
         </SectionReveal>
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -478,32 +362,32 @@ export function MarketingHome() {
             {
               icon: "♡",
               title: "Empathy First",
-              body: "Career decisions are deeply personal. We designed every interaction to feel supportive, encouraging, and judgment-free.",
+              body: "Job searching is stressful. Every interaction is designed to feel supportive, clear, and judgment-free.",
             },
             {
               icon: "◎",
-              title: "One Thing at a Time",
-              body: "Most people fail at career planning because they try to do everything at once. PathBuild gives you one mission per day. That is it.",
+              title: "Inbox, Not Spreadsheet",
+              body: "Your Gmail already has the answers. PathBuild reads recruiter emails so you never manually log status changes again.",
             },
             {
               icon: "✦",
               title: "AI With Purpose",
-              body: "We use AI not to replace human judgment, but to turn vague goals into realistic target roles and personalized roadmaps.",
+              body: "We use AI to match you to roles and companies that fit — not to replace your judgment, but to surface what you'd miss.",
             },
             {
               icon: "◇",
               title: "Privacy by Design",
-              body: "Your career data is personal. We never sell your information, don't track you across apps, and use encryption to protect everything.",
+              body: "Read-only Gmail access. We parse metadata, never store full email bodies. Encrypted at rest. Delete anytime.",
             },
             {
               icon: "☺",
               title: "Built for Real People",
-              body: "Students, graduates, career-switchers, job seekers, parents returning to work — PathBuild is for anyone who feels lost or stuck.",
+              body: "Students, graduates, career-switchers, and anyone juggling multiple applications — PathBuild is for you.",
             },
             {
               icon: "↗",
               title: "Always Improving",
-              body: "We ship improvements constantly. New mission types, better AI models, deeper insights, and features our users ask for.",
+              body: "We ship constantly — better email detection, smarter matching, deeper pipeline insights, and features you ask for.",
             },
           ].map((v, i) => (
             <SectionReveal key={v.title} delay={i * 0.05}>
@@ -574,7 +458,7 @@ export function MarketingHome() {
                 ))}
               </ul>
               <a
-                href={APP_STORE}
+                href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full rounded-pill border-[1.5px] border-cream-mid py-3.5 text-center text-[0.95rem] font-semibold text-ink transition-all hover:border-wood-light hover:bg-cream"
@@ -618,7 +502,7 @@ export function MarketingHome() {
                 ))}
               </ul>
               <a
-                href={APP_STORE}
+                href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full rounded-pill bg-ebony py-3.5 text-center text-[0.95rem] font-semibold text-white shadow-pb-md transition-all hover:-translate-y-px hover:bg-coral hover:shadow-glow"
@@ -655,8 +539,8 @@ export function MarketingHome() {
         </SectionReveal>
         <SectionReveal delay={0.16}>
           <p className="mx-auto mb-14 max-w-[600px] text-center text-[1.05rem] leading-[1.7] text-ink-secondary">
-            PathBuild Pro turns vague career goals into daily action. Here is
-            everything included in your subscription.
+            Track every application, catch every recruiter email, and discover
+            roles and companies that fit — all in one subscription.
           </p>
         </SectionReveal>
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -750,21 +634,22 @@ export function MarketingHome() {
         <SectionReveal>
           <div className="relative z-[1] mx-auto max-w-[650px] text-center">
             <h2 className="mb-4 font-serif text-[clamp(2rem,4vw,2.75rem)] tracking-[-0.02em] text-ink">
-              Ready to start your first mission?
+              Stop losing applications in your inbox
             </h2>
             <p className="mb-8 text-base leading-[1.7] text-wood-mid">
-              Download PathBuild, complete the 5-minute questionnaire, pick your
-              target role, and do your first daily mission today. Your career is
-              waiting.
+              Download PathBuild, connect Gmail, and let every recruiter email
+              auto-log to your pipeline. Discover roles and companies that fit.
+              Your next opportunity is waiting.
             </p>
             <a
-              href={APP_STORE}
+              href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-pill bg-ebony px-8 py-4 text-[0.95rem] font-semibold text-white shadow-pb-md transition-all duration-300 ease-smooth hover:-translate-y-0.5 hover:bg-coral hover:shadow-glow"
             >
               Download on the App Store
             </a>
+            <p className="mt-6 text-[0.8rem] text-wood-mid/80">{APP_TAGLINE}</p>
           </div>
         </SectionReveal>
       </section>

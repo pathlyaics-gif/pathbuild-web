@@ -5,54 +5,54 @@ import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Support — PathBuild",
   description:
-    "Frequently asked questions and support for PathBuild. Get help with daily missions, subscriptions, career tools, and more.",
+    "Frequently asked questions and support for PathBuild. Get help with application tracking, Gmail integration, role matching, subscriptions, and more.",
 };
 
 const FAQ = [
   {
     question: "What is PathBuild?",
     answer:
-      "PathBuild is a premium career execution app for iOS — think \"Duolingo for your career.\" It helps students, graduates, career-switchers, and job seekers choose a realistic target role, get a clear roadmap, and complete one focused daily mission that builds real proof toward getting hired. Instead of overwhelming you with options, PathBuild gives you one meaningful task each day and tracks your readiness until you are hire-ready.",
+      "PathBuild is a smart job application tracker for iOS. Connect Gmail and it auto-detects recruiter emails — interview invites, offers, rejections — and logs them to your pipeline. Plus AI-matched roles and companies that actually fit your profile.",
   },
   {
-    question: "How is PathBuild different from a career quiz or generic career app?",
+    question: "How is PathBuild different from a spreadsheet or generic job board?",
     answer:
-      "Most career tools give you a list of job titles and stop there. PathBuild goes much further. It creates a role-specific roadmap broken into stages and requirements, gives you one guided mission each day, tracks your readiness percentage in real time, turns your completed work into resume bullets and LinkedIn copy, lets you analyze real job postings, and provides weekly AI coaching. It is an ongoing career execution system — not a one-time assessment.",
+      "Spreadsheets don't watch your inbox. Job boards don't track your applications. PathBuild does both — auto-importing recruiter emails via Gmail, organizing everything in a visual pipeline, and surfacing AI-matched roles and companies you'd never find on your own.",
   },
   {
-    question: "What does a daily mission look like?",
+    question: "How does the Gmail integration work?",
     answer:
-      "Each daily mission is a focused, step-by-step task that takes 30–60 minutes (depending on your pace setting). Missions include a brief overview of what you will work on, micro-steps to check off, and a completion review. They are designed to build real skills, proof, or progress toward your target role. On busy days, Quick Win missions offer a lighter option to keep your streak alive.",
+      "You connect Gmail via read-only OAuth (gmail.readonly scope). PathBuild scans for emails from recruiters and hiring platforms, parses the sender and subject line to detect status changes (interview, offer, rejection), and auto-tags them to the matching application in your tracker. We never store full email bodies.",
   },
   {
-    question: "How does the AI career matching work?",
+    question: "Is my Gmail data safe?",
     answer:
-      "During onboarding, you answer a quick questionnaire about your education, experience, interests, strengths, constraints, target income, working style, and daily pace. Our AI cross-references your unique profile against thousands of career paths, market data, salary trends, and success patterns to find your best-fit matches — each with a suitability score, difficulty rating, and salary range.",
+      "Yes. We use read-only Gmail access — we can read but never send or modify emails. We parse sender and subject metadata only; full email bodies are never stored. All data is encrypted in transit and at rest. You can disconnect Gmail or delete your account at any time from the app settings.",
   },
   {
-    question: "What is the readiness percentage?",
+    question: "What notifications does PathBuild send?",
     answer:
-      "Your readiness percentage shows how close you are to being hire-ready for your target role. It updates in real time as you complete missions, cover requirement areas, and build proof. Along with readiness, you can track velocity (how fast you are progressing), coverage (which areas you have covered), and your streak (consecutive days of completing missions).",
+      "Push notifications for interview invites, offer letters, rejections, and follow-up reminders. You'll also get a weekly digest summarizing your pipeline activity and new role/company matches. You can customize notification preferences in the app settings.",
   },
   {
-    question: "What is the Proof Builder?",
+    question: "How does role and company matching work?",
     answer:
-      "As you complete missions and milestones, PathBuild tracks your actual accomplishments and translates them into polished resume bullet points and LinkedIn copy. Instead of making up generic descriptions, your proof is built from real work you have done — so your resume reflects genuine experience and progress.",
+      "During onboarding, you share your skills, experience, preferences, and constraints. Our AI cross-references your profile against thousands of open roles and companies — each match comes with a fit score, skill-gap breakdown, and salary range. New matches surface daily.",
   },
   {
-    question: "What is the Job Posting Analyzer?",
+    question: "What is the Job Posting Fit Analyzer?",
     answer:
-      "Paste any job posting into PathBuild and instantly see how well it matches your skills and roadmap. You get a breakdown of requirements you already meet, gaps you need to close, and specific steps to become a stronger candidate. It helps you apply smarter — not just more.",
+      "Paste any job posting into PathBuild and instantly see how well it matches your profile. Get a breakdown of requirements you meet, gaps to close, and whether it's worth applying. It helps you apply smarter — not just more.",
   },
   {
-    question: "What does Weekly AI Coaching do?",
+    question: "Can I track applications manually without Gmail?",
     answer:
-      "Every week, PathBuild provides personalized coaching based on your recent activity, progress, blockers, and goals. It adapts to your pace, gives you encouragement when you need it, course corrections when you are off track, and specific suggestions for what to focus on next. Think of it as a career mentor who knows your full journey.",
+      "Yes. You can add applications manually at any time — company name, role, status, notes, and follow-up dates. Gmail integration is optional but recommended for automatic status updates when companies respond.",
   },
   {
     question: "How much does PathBuild cost?",
     answer:
-      "PathBuild Pro offers two subscription plans: Monthly at $19.99/month and Annual at $129.99/year (about $10.83/month — saving you over $100 per year vs monthly). Download and subscribe in the App Store; the Monthly plan does not include a free trial. Apple may offer a free trial to eligible new subscribers on the Annual plan only. All payments are processed through Apple.",
+      "PathBuild Pro offers two subscription plans: Monthly at $19.99/month and Annual at $129.99/year (about $10.83/month — saving you over $100 per year vs monthly). Download and subscribe in the App Store; the Monthly plan does not include a free trial. Apple may offer a free trial to eligible new subscribers on the Annual plan only.",
   },
   {
     question: "Is there a free trial?",
@@ -65,19 +65,19 @@ const FAQ = [
       "You can manage and cancel your subscription at any time through your Apple ID Account Settings: Settings → Apple ID → Subscriptions → PathBuild. Cancellation takes effect at the end of your current billing period. You keep full access to Pro features until then.",
   },
   {
-    question: "Can I change my target role or retake the questionnaire?",
+    question: "Can I disconnect Gmail?",
     answer:
-      "Yes. You can retake the questionnaire, update your profile, or switch to a different target role at any time. Your roadmap, missions, and progress will update based on your new direction.",
+      "Yes. You can disconnect Gmail at any time from the app settings. PathBuild will stop scanning your inbox immediately. Previously imported application data remains in your pipeline unless you delete it.",
   },
   {
-    question: "What is the difference between Standard and Accelerated pace?",
+    question: "Can I update my profile or change my target roles?",
     answer:
-      "Standard pace is designed for people who can commit about 30 minutes per day to their daily mission. Accelerated pace is for people who can commit about 60 minutes and want to progress faster. You can change your pace setting at any time.",
+      "Yes. You can retake the questionnaire, update your profile, or adjust your role and company preferences at any time. Your matches will update based on your new direction.",
   },
   {
     question: "Is my data safe?",
     answer:
-      "Absolutely. We never sell your personal information. We do not track you across apps (no IDFA). We use encryption to protect your data both in transit and at rest. We do not send your name or email to AI services. And you can delete your account and all associated data at any time from the app settings. See our Privacy Policy for full details.",
+      "Absolutely. We never sell your personal information. We do not track you across apps (no IDFA). We use encryption to protect your data both in transit and at rest. We do not send your name or email to AI services. You can delete your account and all associated data at any time from the app settings. See our Privacy Policy for full details.",
   },
   {
     question: "What platforms is PathBuild available on?",
@@ -87,7 +87,7 @@ const FAQ = [
   {
     question: "Who is PathBuild for?",
     answer:
-      "PathBuild is for anyone who feels lost, stuck, behind, or unfocused about their career — students, recent graduates, career-switchers, job seekers, and people returning to the workforce. If you want to improve your career in 30–60 minutes a day with real guidance and structure, PathBuild is for you. It is not a social feed, not a generic to-do app, and not a huge messy career toolbox. It is focused, structured, and built for real progress.",
+      "PathBuild is for anyone actively job searching or exploring new opportunities — students, recent graduates, career-switchers, and professionals juggling multiple applications. If you need one organized place to track applications, catch recruiter emails, and discover roles that fit, PathBuild is for you.",
   },
 ];
 

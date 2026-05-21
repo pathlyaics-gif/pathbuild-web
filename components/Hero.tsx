@@ -5,13 +5,12 @@ import {
   Sparkles,
   Users,
   Star,
-  Target,
-  Flame,
-  CheckCircle2,
+  LayoutList,
+  Mail,
+  Bell,
   Briefcase,
 } from "lucide-react";
-
-const APP_STORE_URL = "https://apps.apple.com/app/pathbuild/id6743108030";
+import { APP_STORE_URL } from "@/lib/site";
 
 function AppStoreButton() {
   return (
@@ -35,10 +34,10 @@ function AppStoreButton() {
 }
 
 const HERO_HIGHLIGHTS = [
-  { icon: Target, text: "One daily mission toward your target role" },
-  { icon: Flame, text: "Build streaks & track your readiness" },
-  { icon: CheckCircle2, text: "Turn completed work into hire-ready proof" },
-  { icon: Briefcase, text: "Job fit analyzer & application tracker" },
+  { icon: LayoutList, text: "Track every application in one pipeline" },
+  { icon: Mail, text: "Gmail auto-detects recruiter emails" },
+  { icon: Bell, text: "Push alerts for interviews & offers" },
+  { icon: Briefcase, text: "AI-matched roles & companies" },
 ];
 
 export function Hero() {
@@ -59,7 +58,7 @@ export function Hero() {
           >
             <span className="inline-flex items-center gap-2 rounded-full bg-accent/[0.1] border border-accent/[0.15] px-4 py-2 text-xs font-bold text-accent-dark">
               <Sparkles size={13} className="text-accent" />
-              Duolingo for Your Career — Available on iOS
+              Smart Job Tracker — Available on iOS
             </span>
           </motion.div>
 
@@ -69,10 +68,10 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            One Mission a Day.
+            Track every job.
             <br />
             <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
-              One Career Built.
+              Catch every recruiter email.
             </span>
           </motion.h1>
 
@@ -82,11 +81,10 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
           >
-            PathBuild is a premium career execution app for students, graduates,
-            career-switchers, and job seekers. Pick a realistic target role, get
-            a clear roadmap, and complete one focused daily mission that builds
-            real proof toward getting hired. Open the app, do one meaningful
-            task, get closer to your dream job.
+            PathBuild is a smart job application tracker for iOS. Connect Gmail
+            and every recruiter email auto-logs to your pipeline. Get push
+            notifications for interviews and offers. Discover AI-matched roles
+            and companies that actually fit you.
           </motion.p>
 
           <motion.div

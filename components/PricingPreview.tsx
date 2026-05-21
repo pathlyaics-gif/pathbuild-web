@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import Link from "next/link";
-
-const APP_STORE_URL = "https://apps.apple.com/app/pathbuild/id6743108030";
+import {
+  APP_STORE_URL,
+  MONTHLY_FEATURES,
+  ANNUAL_FEATURES,
+} from "@/lib/site";
 
 export function PricingPreview() {
   return (
@@ -21,7 +24,7 @@ export function PricingPreview() {
             Pricing
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-[1.15]">
-            Invest in your career
+            Invest in your job search
           </h2>
           <p className="mt-5 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed">
             Get PathBuild on the App Store. Two simple plans, no hidden fees —
@@ -52,14 +55,7 @@ export function PricingPreview() {
                 want total flexibility.
               </p>
               <ul className="space-y-2.5 mb-8 flex-1">
-                {[
-                  "Daily guided missions",
-                  "Role-specific roadmap & stages",
-                  "Readiness & progress tracking",
-                  "Proof builder (resume & LinkedIn)",
-                  "Job posting analyzer",
-                  "Weekly AI coaching",
-                ].map((f) => (
+                {MONTHLY_FEATURES.slice(0, 6).map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
                     <Check
                       size={14}
@@ -108,13 +104,7 @@ export function PricingPreview() {
                 compared to monthly billing.
               </p>
               <ul className="space-y-2.5 mb-8 flex-1">
-                {[
-                  "Everything in Monthly",
-                  "Save ~$110/year vs monthly",
-                  "Priority access to new features",
-                  "Export your career roadmap",
-                  "Free trial included",
-                ].map((f) => (
+                {ANNUAL_FEATURES.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
                     <Check
                       size={14}

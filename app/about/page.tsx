@@ -7,51 +7,50 @@ import {
   Users,
   Rocket,
 } from "lucide-react";
+import { APP_STORE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About — PathBuild",
   description:
-    "Welcome to PathBuild. We help students, graduates, and career-switchers turn vague goals into a target role, a clear roadmap, and one focused daily action toward getting hired.",
+    "PathBuild is a smart job application tracker for iOS. Connect Gmail to auto-log recruiter emails, track your pipeline, and discover AI-matched roles and companies.",
 };
-
-const APP_STORE_URL = "https://apps.apple.com/app/pathbuild/id6743108030";
 
 const VALUES = [
   {
     icon: Heart,
     title: "Empathy First",
     description:
-      "Career decisions are deeply personal. We designed every interaction to feel supportive, encouraging, and judgment-free. PathBuild meets you where you are — whether you are 18 or 48, starting fresh or pivoting mid-career. No shame, no pressure.",
+      "Job searching is stressful. Every interaction is designed to feel supportive, clear, and judgment-free — whether you're applying to 5 companies or 50.",
   },
   {
     icon: Target,
-    title: "One Thing at a Time",
+    title: "Inbox, Not Spreadsheet",
     description:
-      "Most people fail at career planning because they try to do everything at once. PathBuild gives you one mission per day. That is it. Small actions compound. Consistency beats intensity. One step at a time is how careers get built.",
+      "Your Gmail already has the answers. PathBuild reads recruiter emails so you never manually log status changes again. One pipeline, always current.",
   },
   {
     icon: Lightbulb,
     title: "AI With Purpose",
     description:
-      "We use AI not to replace human judgment, but to turn vague goals into realistic target roles, build personalized roadmaps, and provide weekly coaching that adapts to your life. The AI works for you — not the other way around.",
+      "We use AI to match you to roles and companies that fit — not to replace your judgment, but to surface opportunities you'd never find on your own.",
   },
   {
     icon: Shield,
     title: "Privacy by Design",
     description:
-      "Your career data is personal. We never sell your information. We do not track you across apps. We use encryption to protect everything. And you can delete your account and all data at any time — no questions asked.",
+      "Read-only Gmail access. We parse sender and subject metadata only — never store full email bodies. Encrypted at rest. Delete your data anytime.",
   },
   {
     icon: Users,
     title: "Built for Real People",
     description:
-      "Students, graduates, career-switchers, job seekers, parents returning to work — PathBuild is for anyone who feels lost, stuck, or unfocused about their career. If you want structure and guidance without the overwhelm, this is for you.",
+      "Students, graduates, career-switchers, and active job seekers — PathBuild is for anyone juggling multiple applications who needs one organized place.",
   },
   {
     icon: Rocket,
     title: "Always Improving",
     description:
-      "We ship improvements constantly. New mission types, better AI models, deeper insights, and features our users ask for. Your feedback directly shapes what we build next.",
+      "We ship constantly — better email detection, smarter matching, deeper pipeline insights, and features our users ask for.",
   },
 ];
 
@@ -73,68 +72,64 @@ export default function AboutPage() {
             <p>
               <strong className="text-navy-800">Who we are.</strong> PathBuild
               is a small team building a premium{" "}
-              <strong className="text-navy-700">career execution</strong> product
-              on iOS. We work at the intersection of thoughtful design,
-              artificial intelligence, and real hiring outcomes — not generic
-              career quizzes or endless blog posts.
+              <strong className="text-navy-700">job application tracker</strong>{" "}
+              on iOS. We work at the intersection of thoughtful design, Gmail
+              integration, and AI-powered job matching — not generic job boards
+              or messy spreadsheets.
             </p>
             <p>
               <strong className="text-navy-800">What we do.</strong> We help
-              you pick a <strong className="text-navy-700">realistic target role</strong>, see{" "}
-              <strong className="text-navy-700">what that role actually requires</strong>, and understand{" "}
-              <strong className="text-navy-700">where you stand today</strong>.
-              Then we give you a structured roadmap and{" "}
-              <strong className="text-navy-700">one clear, guided mission per day</strong>{" "}
-              (about 30–60 minutes) so progress compounds without drowning you
-              in to-do lists. Along the way, we help you turn completed work into{" "}
-              <strong className="text-navy-700">hire-ready proof</strong> — resume
-              bullets, LinkedIn copy, job-fit checks, and application tracking.
+              you{" "}
+              <strong className="text-navy-700">
+                track every application in one pipeline
+              </strong>
+              ,{" "}
+              <strong className="text-navy-700">
+                auto-detect recruiter emails via Gmail
+              </strong>
+              , and{" "}
+              <strong className="text-navy-700">
+                discover roles and companies that actually fit
+              </strong>
+              . Connect Gmail once, and PathBuild watches your inbox — logging
+              interview invites, offers, and rejections automatically. Get push
+              notifications so nothing slips through the cracks.
             </p>
             <p>
               <strong className="text-navy-800">Why we matter.</strong> Most
-              people do not fail because they are not capable. They fail because
-              career change is <strong className="text-navy-700">ambiguous</strong>: too many options, no shared plan, and no
-              feedback on whether they are getting closer to a real job.
-              PathBuild exists to replace that fog with{" "}
-              <strong className="text-navy-700">clarity, structure, and measurable momentum</strong>.
+              people don&apos;t lose jobs because they aren&apos;t qualified.
+              They lose them because they{" "}
+              <strong className="text-navy-700">lose track</strong> — missed
+              interview invites buried in Gmail, forgotten follow-ups, no idea
+              which companies responded. PathBuild eliminates that chaos.
             </p>
             <p>
               <strong className="text-navy-800">The difference we make.</strong>{" "}
-              <strong className="text-navy-700">Without PathBuild,</strong> it is easy to stay busy but
-              scattered — scrolling job boards, rewriting the same resume, and
-              never knowing if you are on track.{" "}
-              <strong className="text-navy-700">With PathBuild,</strong> you always know{" "}
-              <em>which role you are building toward</em>,{" "}
-              <em>what to do today</em>, <em>what is still missing</em>,{" "}
-              <em>what you have already proved</em>, and{" "}
-              <em>how close you are to being hire-ready</em>. That is the shift
-              from hoping your career moves forward to{" "}
-              <strong className="text-navy-700">actually moving it forward, one day at a time</strong>.
+              <strong className="text-navy-700">Without PathBuild,</strong>{" "}
+              applications scatter across email, LinkedIn, and spreadsheets.{" "}
+              <strong className="text-navy-700">With PathBuild,</strong> every
+              application lives in one pipeline, recruiter emails auto-import,
+              and AI surfaces roles and companies you&apos;d never find alone.
             </p>
           </div>
         </div>
 
         <div className="rounded-2xl border border-warm-200/80 bg-card p-8 lg:p-12 mb-10">
           <h2 className="text-xl font-extrabold text-navy-900 mb-4">
-            Our Mission
+            Why We Exist
           </h2>
           <p className="text-[14px] leading-[1.75] text-navy-500 mb-4">
-            Too many talented people feel stuck in their careers. Not because
-            they lack ability — but because they lack clarity, structure, and a
-            realistic plan they can actually follow. They spend months googling
-            advice, overthinking options, and never making real progress.
+            Too many talented people lose opportunities not because they lack
+            ability — but because job searching is chaotic. Applications spread
+            across platforms. Recruiter replies get buried. Follow-ups slip.
           </p>
           <p className="text-[14px] leading-[1.75] text-navy-500 mb-4">
-            PathBuild exists to fix that. Our app turns vague career goals into a
-            specific target role, shows you exactly what that role requires, and
-            gives you one focused daily mission that builds real, measurable
-            progress — so you always have a next step you can finish in a single
-            session, not a wall of vague ambitions.
+            PathBuild exists to fix that. Connect Gmail, and every recruiter
+            email auto-logs to your pipeline. Get notified when companies
+            respond. Discover roles and employers that fit — all in one app.
           </p>
           <p className="text-[14px] leading-[1.75] text-navy-500">
-            Small, consistent actions compound: skills deepen, proof stacks up,
-            and your readiness for the role you want becomes visible — in the
-            app and on paper when you apply.
+            Stop losing applications in your inbox. Start tracking smarter.
           </p>
         </div>
 
@@ -144,42 +139,40 @@ export default function AboutPage() {
           </h2>
           <div className="bg-gradient-to-r from-accent/[0.08] to-secondary/[0.06] rounded-xl p-6 mb-6">
             <p className="text-[16px] font-bold text-navy-800 text-center italic">
-              &ldquo;Open the app once a day, do one meaningful task, get
-              closer to your target role.&rdquo;
+              &ldquo;Connect Gmail once. Every recruiter email auto-logs. Never
+              miss an interview or offer again.&rdquo;
             </p>
           </div>
           <div className="space-y-4 text-[14px] leading-[1.75] text-navy-500">
             <p>
               <strong className="text-navy-700">
-                Choose a realistic target role
+                Track every application
               </strong>{" "}
-              — our AI matches you to career paths based on your strengths,
-              values, education, experience, and constraints. Each match comes
-              with a suitability score so you can make an informed decision.
+              — one visual pipeline from Saved to Applied to Interview to Offer.
+              Add notes, set follow-ups, and see your entire job search at a
+              glance.
             </p>
             <p>
               <strong className="text-navy-700">
-                Follow a structured roadmap
+                Auto-detect recruiter emails
               </strong>{" "}
-              — your target role is broken into stages, requirement areas, and
-              actionable steps. See what is required, what you have covered, and
-              what is next. Stages unlock as you progress.
+              — connect Gmail with read-only access. PathBuild scans for
+              recruiter responses and auto-updates your pipeline — no manual
+              logging.
             </p>
             <p>
               <strong className="text-navy-700">
-                Complete one daily mission
+                Get smart notifications
               </strong>{" "}
-              — each day, you get a focused, guided mission (30–60 minutes) that
-              moves you forward. Build streaks, earn momentum, and track your
-              readiness percentage in real time.
+              — push alerts for interview invites, offer letters, rejections,
+              and follow-up reminders so nothing slips through.
             </p>
             <p>
               <strong className="text-navy-700">
-                Build proof and get hired
+                Discover roles and companies that fit
               </strong>{" "}
-              — your completed work automatically becomes resume bullet points
-              and LinkedIn copy. Analyze job postings, track applications, and
-              get weekly AI coaching until you land the role.
+              — AI matches your profile daily with fit scores, skill-gap
+              analysis, and salary ranges. Apply smarter, not just more.
             </p>
           </div>
         </div>
@@ -192,33 +185,33 @@ export default function AboutPage() {
             <li className="flex items-start gap-3">
               <span className="mt-1 shrink-0 w-1.5 h-1.5 rounded-full bg-accent" />
               <span>
-                <strong className="text-navy-700">Students and recent graduates</strong> who
-                have no idea what career to pursue and need a clear starting
-                point.
+                <strong className="text-navy-700">Active job seekers</strong>{" "}
+                applying to multiple roles who need one place to track every
+                application and recruiter response.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-1 shrink-0 w-1.5 h-1.5 rounded-full bg-accent" />
               <span>
-                <strong className="text-navy-700">Career switchers</strong> who want to
-                transition into a new field but do not know what steps to take
-                or whether they are qualified.
+                <strong className="text-navy-700">Career switchers</strong>{" "}
+                exploring a new field who want AI-matched roles plus inbox
+                tracking that catches every reply.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-1 shrink-0 w-1.5 h-1.5 rounded-full bg-accent" />
               <span>
-                <strong className="text-navy-700">Job seekers</strong> who are applying
-                randomly and need structure, direction, and tools to be more
-                strategic.
+                <strong className="text-navy-700">Recent graduates</strong>{" "}
+                starting their first job search and need structure — not another
+                overwhelming spreadsheet.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-1 shrink-0 w-1.5 h-1.5 rounded-full bg-accent" />
               <span>
-                <strong className="text-navy-700">People who feel stuck or behind</strong>{" "}
-                — anyone who wants to improve their career in 30–60 minutes a
-                day with real guidance, not another generic productivity app.
+                <strong className="text-navy-700">Passive explorers</strong>{" "}
+                who want to discover companies and roles that fit and track
+                opportunities as they arise.
               </span>
             </li>
           </ul>
@@ -254,12 +247,11 @@ export default function AboutPage() {
 
         <div className="text-center rounded-2xl bg-gradient-to-br from-sunrise-from to-sunrise-to p-10 lg:p-14">
           <h2 className="text-2xl md:text-3xl font-extrabold text-navy-900 mb-4">
-            Ready to start your first mission?
+            Ready to organize your job search?
           </h2>
           <p className="text-navy-500 max-w-lg mx-auto mb-8 text-[15px] leading-relaxed">
-            Download PathBuild, complete the 5-minute questionnaire, pick your
-            target role, and do your first daily mission today. Your career is
-            waiting.
+            Download PathBuild, connect Gmail, and let every recruiter email
+            auto-log to your pipeline. Your next opportunity is waiting.
           </p>
           <a
             href={APP_STORE_URL}
@@ -267,7 +259,7 @@ export default function AboutPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-full bg-navy-900 text-white px-6 py-3 text-sm font-bold hover:bg-navy-800 transition-colors shadow-warm-lg"
           >
-            Download PathBuild Free
+            Download PathBuild
           </a>
         </div>
       </div>

@@ -2,29 +2,28 @@
 
 import { motion } from "framer-motion";
 import { X, Check, ArrowRight } from "lucide-react";
-
-const APP_STORE_URL = "https://apps.apple.com/app/pathbuild/id6743108030";
+import { APP_STORE_URL } from "@/lib/site";
 
 const WITHOUT = [
-  "Feeling lost, stuck, or unfocused about your career direction",
-  "Googling career advice for months without making real progress",
-  "No clear target role — just vague ideas and wishful thinking",
-  "No idea what your dream job actually requires or where you stand",
-  "Writing generic resumes that do not reflect real accomplishments",
-  "No daily structure — you keep meaning to work on your career but never do",
-  "Paying $150–$300 per session for a career coach with limited follow-through",
-  "Applying to jobs randomly without knowing if you are even qualified",
+  "Applications scattered across email, LinkedIn, and spreadsheets",
+  "Missed interview invites buried in Gmail",
+  "No idea which companies you've heard back from",
+  "Manually logging every status change after each recruiter email",
+  "Applying randomly without knowing if a role actually fits",
+  "Forgotten follow-ups because nothing reminds you",
+  "Generic job boards that don't track your applications",
+  "Paying for separate tools that don't talk to each other",
 ];
 
 const WITH = [
-  "A specific target role matched to your strengths, values, and goals",
-  "One focused daily mission that takes 30–60 minutes — no overwhelm",
-  "A clear roadmap with stages, requirements, and milestones to follow",
-  "Readiness tracking that shows exactly how close you are to being hire-ready",
-  "Proof built from real work — resume bullets and LinkedIn copy you actually earned",
-  "Streaks and momentum that keep you accountable day after day",
-  "AI coaching that adapts weekly to your pace, blockers, and progress",
-  "A job posting analyzer that shows your fit before you apply",
+  "Every application in one visual pipeline — always up to date",
+  "Gmail auto-detects recruiter emails and updates your tracker",
+  "Push notifications for interviews, offers, and rejections",
+  "AI-matched roles with fit scores, skill gaps, and salary ranges",
+  "Company match — discover employers that fit before they post",
+  "Follow-up reminders so you never forget to check in",
+  "Job posting fit analyzer — apply smarter, not just more",
+  "One app for tracking, matching, and staying on top of your search",
 ];
 
 export function WhyPathBuild() {
@@ -45,13 +44,13 @@ export function WhyPathBuild() {
             The difference between
             <br />
             <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
-              stuck and hired
+              chaos and control
             </span>
           </h2>
           <p className="mt-5 text-[16px] text-navy-500 max-w-2xl mx-auto leading-relaxed">
-            Without a plan, career progress feels impossible. With PathBuild,
-            you know your target role, what to do today, what you have already
-            proved, and how close you are to getting hired.
+            Without a tracker, job searching is chaos. With PathBuild, every
+            application is organized, every recruiter email is caught, and every
+            opportunity is on your radar.
           </p>
         </motion.div>
 
@@ -83,7 +82,7 @@ export function WhyPathBuild() {
 
           <motion.div
             initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
@@ -120,9 +119,9 @@ export function WhyPathBuild() {
         >
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 rounded-2xl bg-accent/[0.08] border border-accent/[0.12] px-6 py-5">
             <p className="text-[14px] font-semibold text-navy-700 text-center sm:text-left">
-              Career coaching costs $150–$300 per session.
+              Other job trackers are manual spreadsheets.
               <span className="text-accent-dark ml-1">
-                PathBuild gives you daily guidance for less than $11/month.
+                PathBuild watches your inbox for less than $11/month.
               </span>
             </p>
             <a

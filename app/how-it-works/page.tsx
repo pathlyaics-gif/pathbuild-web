@@ -1,65 +1,64 @@
 import type { Metadata } from "next";
 import {
   UserCircle,
-  Brain,
-  Map,
-  ListChecks,
-  TrendingUp,
+  Mail,
+  LayoutList,
+  Sparkles,
+  Bell,
 } from "lucide-react";
+import { APP_STORE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "How It Works — PathBuild",
   description:
-    "Five steps from career uncertainty to hire-ready. See how PathBuild uses AI to match you to a target role, give you daily missions, and build proof toward getting hired.",
+    "Five steps to an organized job search. Connect Gmail, auto-import applications, get AI-matched roles and companies, and never miss a recruiter reply.",
 };
-
-const APP_STORE_URL = "https://apps.apple.com/app/pathbuild/id6743108030";
 
 const STEPS = [
   {
     icon: UserCircle,
     number: 1,
-    title: "Tell us about yourself",
+    title: "Tell us what you're looking for",
     description:
-      "Answer a quick, tap-friendly questionnaire about your education, work experience, interests, strengths, constraints, target income, working style, and daily pace. It takes less than 5 minutes — mostly tapping and selecting, not heavy typing.",
+      "Answer a quick questionnaire about your skills, experience, target roles, salary range, location, and preferences. Takes less than 5 minutes — mostly tapping and selecting.",
     detail:
-      "PathBuild collects what actually matters for career planning: what energizes you, what you are good at, your practical constraints (time, budget, location, family), and whether you prefer 30 or 60 minutes of daily career work. No right or wrong answers — just honest input about who you are and where you want to go.",
+      "PathBuild collects what matters for matching and tracking: your skills, experience level, target roles, salary expectations, location preferences, and work style. No right or wrong answers — just honest input about what you want.",
   },
   {
-    icon: Brain,
+    icon: Mail,
     number: 2,
-    title: "AI matches you to realistic career paths",
+    title: "Connect your Gmail",
     description:
-      "Our AI cross-references your profile against thousands of career paths, real-world market data, salary trends, and success patterns to find your best-fit matches — including options you may never have considered.",
+      "Link Gmail with read-only OAuth. PathBuild scans for recruiter emails and auto-imports applications, interview invites, offers, and rejections into your pipeline.",
     detail:
-      "This is not a generic keyword match. PathBuild analyzes your unique combination of traits, preferences, and constraints against real career outcomes. Each match comes with a suitability score, difficulty rating, salary range, and a detailed breakdown of why it fits your profile. Compare paths side by side.",
+      "We use read-only Gmail access (gmail.readonly scope) — we can read but never send or modify emails. PathBuild detects emails from recruiters and hiring platforms, parses sender and subject to identify status changes, and auto-tags them to the matching application. Full email bodies are never stored.",
   },
   {
-    icon: Map,
+    icon: LayoutList,
     number: 3,
-    title: "Pick your target role and get your roadmap",
+    title: "Your pipeline builds itself",
     description:
-      "Choose the career path that excites you most. PathBuild creates a role-specific roadmap broken into stages, requirement areas, and actionable steps — showing exactly what your target role demands and where you stand.",
+      "Every application lands in one organized tracker. Drag between stages — Saved, Applied, Interview, Offer, Rejected — add notes, set follow-ups, and see your entire search at a glance.",
     detail:
-      "Your roadmap shows every skill, credential, and experience your target role requires. See what you have already covered, what is in progress, and what is still ahead. Each stage unlocks as you progress — like levels in a game, but for your career. You always know what comes next.",
+      "No more spreadsheets. Your pipeline updates automatically as recruiter emails arrive. Add manual applications too. Set follow-up reminders so you never forget to check in. See upcoming interviews, pending responses, and recent activity in one dashboard.",
   },
   {
-    icon: ListChecks,
+    icon: Sparkles,
     number: 4,
-    title: "Complete one daily mission",
+    title: "Discover roles & companies that fit",
     description:
-      "Every day, PathBuild gives you one focused, guided mission — a step-by-step task designed to build real progress toward your target role. Open the app, do your mission, close the app. 30–60 minutes. That is it.",
+      "AI surfaces matched roles and companies daily based on your profile. Each match includes a fit score, skill-gap analysis, and salary range.",
     detail:
-      "Each mission includes a brief overview, micro-steps to check off, and a completion review. Missions are tailored to your current stage, pace, and readiness. Build streaks for motivation. Short on time? Quick Win missions keep your streak alive with a lighter touch. One session per day should feel like enough.",
+      "This is not a generic keyword search. PathBuild analyzes your unique profile against thousands of open roles and companies — including options you may never have considered. Compare matches side by side, save interesting ones, and track companies before they post.",
   },
   {
-    icon: TrendingUp,
+    icon: Bell,
     number: 5,
-    title: "Build proof, track readiness, get hired",
+    title: "Apply smarter, stay on top",
     description:
-      "As you complete missions, your readiness percentage grows. Completed work automatically becomes resume bullet points and LinkedIn copy. Analyze job postings, track applications, and get weekly AI coaching until you land the role.",
+      "Use the fit analyzer before you apply. Track every response in one place. Get push notifications so you never miss an interview invite or offer letter again.",
     detail:
-      "PathBuild is not a one-time quiz — it is your daily career companion. Weekly recaps show your progress, monthly reviews highlight growth, blocker analysis spots problems early, and adaptive AI coaching keeps you on track. You always know what role you are building toward, what to do today, what you have already proved, and how close you are.",
+      "Paste any job posting for instant fit analysis. When you apply, PathBuild tracks it. When the company responds, Gmail auto-updates your pipeline and you get a push notification. Follow-up reminders keep you proactive. Your entire job search, organized.",
   },
 ];
 
@@ -72,16 +71,15 @@ export default function HowItWorksPage() {
             How It Works
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-[1.15]">
-            From lost to
+            From scattered to
             <br />
             <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
-              hire-ready in 5 steps
+              organized in 5 steps
             </span>
           </h1>
           <p className="mt-6 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed">
-            Choose a role. Do one mission a day. Build proof. Get hired.
-            The process is simple, guided, and designed to fit into 30–60
-            minutes of your day.
+            Connect Gmail. Auto-import applications. Get matched to roles and
+            companies. Never miss a recruiter reply again.
           </p>
         </div>
 
@@ -126,48 +124,43 @@ export default function HowItWorksPage() {
           </h2>
           <div className="space-y-3 text-[14px] leading-[1.75] text-navy-500">
             <p>
-              PathBuild is built around a simple daily loop that compounds over
-              time:
+              PathBuild runs in the background — watching your inbox, updating
+              your pipeline, and surfacing new opportunities:
             </p>
             <div className="bg-gradient-to-r from-accent/[0.06] to-secondary/[0.04] rounded-xl p-5">
               <p className="text-[14px] font-bold text-navy-700 text-center">
-                Choose role → Do mission → Log completion → Increase readiness →
-                Unlock next stage → Build proof → Get hired
+                Connect Gmail → Auto-log emails → Track pipeline → Get notified →
+                Discover matches → Land the role
               </p>
             </div>
             <p>Here is what a typical day looks like with PathBuild:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong className="text-navy-700">Morning:</strong> Open the
-                app. See today&rsquo;s mission on the Home screen. Tap
-                &ldquo;Begin today&rsquo;s task.&rdquo;
+                <strong className="text-navy-700">Morning:</strong> Check your
+                pipeline. See any overnight recruiter emails that auto-imported.
+                Review new role and company matches.
               </li>
               <li>
-                <strong className="text-navy-700">30–60 minutes:</strong>{" "}
-                Complete the guided mission — follow micro-steps, check them
-                off, review your work.
+                <strong className="text-navy-700">During the day:</strong>{" "}
+                Apply to a matched role. PathBuild tracks it. Get a push
+                notification when the company responds.
               </li>
               <li>
-                <strong className="text-navy-700">Done:</strong> Your
-                readiness updates. Your streak grows. Progress is logged.
-                Close the app. That is it for today.
+                <strong className="text-navy-700">Evening:</strong> Follow-up
+                reminders surface. Update notes. Your pipeline is always current
+                — no manual logging required.
               </li>
             </ul>
-            <p>
-              Over weeks and months, this daily habit builds real skills, real
-              proof, and real readiness for your target role. Small actions
-              compound.
-            </p>
           </div>
         </div>
 
         <div className="text-center mt-16 rounded-2xl bg-gradient-to-br from-sunrise-from to-sunrise-to p-10 lg:p-14">
           <h2 className="text-2xl md:text-3xl font-extrabold text-navy-900 mb-4">
-            Ready to start your first mission?
+            Ready to organize your job search?
           </h2>
           <p className="text-navy-500 max-w-lg mx-auto mb-8 text-[15px] leading-relaxed">
-            Download PathBuild, complete the 5-minute questionnaire, pick your
-            target role, and do your first daily mission today.
+            Download PathBuild, connect Gmail, and let every recruiter email
+            auto-log to your pipeline.
           </p>
           <a
             href={APP_STORE_URL}
@@ -175,7 +168,7 @@ export default function HowItWorksPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-full bg-navy-900 text-white px-6 py-3 text-sm font-bold hover:bg-navy-800 transition-colors shadow-warm-lg"
           >
-            Download PathBuild Free
+            Download PathBuild
           </a>
         </div>
       </div>

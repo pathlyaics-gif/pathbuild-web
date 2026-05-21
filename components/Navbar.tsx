@@ -6,8 +6,7 @@ import { usePathname } from "next/navigation";
 import { NavLogo } from "./NavLogo";
 import { Menu, X } from "lucide-react";
 
-const APP_STORE =
-  "https://apps.apple.com/app/pathbuild/id6743108030";
+import { APP_STORE_URL } from "@/lib/site";
 
 const PRIMARY_LINKS = [
   { href: "/#about", label: "About" },
@@ -87,7 +86,7 @@ export function Navbar() {
           </li>
           <li>
             <a
-              href={APP_STORE}
+              href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-pill bg-ebony px-[22px] py-2.5 text-[0.85rem] font-semibold text-white shadow-pb-sm transition-all hover:-translate-y-px hover:bg-coral hover:shadow-[0_4px_16px_rgba(232,115,74,0.3)]"
@@ -170,7 +169,7 @@ export function Navbar() {
             ))}
           </div>
           <a
-            href={APP_STORE}
+            href={APP_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-3 block rounded-pill bg-ebony py-3 text-center text-[15px] font-semibold text-white transition-colors hover:bg-coral"

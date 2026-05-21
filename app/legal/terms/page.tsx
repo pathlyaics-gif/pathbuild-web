@@ -77,22 +77,29 @@ export default function TermsPage() {
             3. Description of the Service
           </h2>
           <p>
-            PathBuild is an AI-powered career execution application that
-            provides career exploration, planning, and execution tools,
-            including but not limited to:
+            PathBuild is an AI-powered job application tracker that helps users
+            organize their job search, including but not limited to:
           </p>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              AI-powered career matching based on self-assessment questionnaires
+              Application tracking and pipeline management (Saved, Applied,
+              Interview, Offer, Rejected)
             </li>
-            <li>Role-specific career roadmaps with stages, requirements, and milestones</li>
-            <li>Daily guided missions tailored to the user&apos;s target role and pace</li>
-            <li>Readiness tracking, streaks, velocity, and coverage metrics</li>
-            <li>Proof building — resume bullet points and LinkedIn copy from completed work</li>
-            <li>Job posting analysis tools</li>
-            <li>Application tracking and pipeline management</li>
-            <li>Weekly AI coaching sessions</li>
-            <li>Interview preparation tools</li>
+            <li>
+              Gmail inbox integration — read-only OAuth to auto-detect recruiter
+              emails and update application statuses
+            </li>
+            <li>
+              Push notifications for interviews, offers, rejections, and
+              follow-up reminders
+            </li>
+            <li>
+              AI-powered role matching based on user profile and preferences
+            </li>
+            <li>AI-powered company matching and discovery</li>
+            <li>Job posting fit analysis tools</li>
+            <li>Follow-up reminders and per-application notes</li>
+            <li>Weekly search digest and activity recaps</li>
           </ul>
           <p>
             The App is intended for informational and educational purposes only.
@@ -139,9 +146,9 @@ export default function TermsPage() {
             5. Career Guidance Disclaimer
           </h2>
           <p>
-            The career suggestions, roadmaps, daily missions, action plans,
-            coaching, job fit analyses, proof content, and other insights
-            provided by PathBuild are generated using artificial intelligence
+            The role matches, company matches, job fit analyses, email status
+            detections, and other insights provided by PathBuild are generated
+            using artificial intelligence
             and algorithms based on your self-reported data. These are intended
             as guidance and informational tools only and should not be
             considered:

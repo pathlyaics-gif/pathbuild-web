@@ -5,42 +5,42 @@ import { motion } from "framer-motion";
 const TESTIMONIALS = [
   {
     quote:
-      "I spent months overthinking my career change, and PathBuild gave me a clear target role in 5 minutes. The daily missions made it real — I actually started doing things instead of just thinking about them.",
+      "I almost missed an interview invite buried in Gmail. PathBuild caught it automatically and pushed a notification. That alone saved my job search.",
     initial: "S",
     name: "Sarah K.",
     role: "Career Changer",
   },
   {
     quote:
-      "As a recent grad, I had no idea what to do. PathBuild matched me to a role I had not even considered, broke it into stages, and gave me one task a day. I went from confused to confident within two weeks.",
+      "I was tracking 30+ applications in a spreadsheet. PathBuild replaced it entirely — Gmail auto-imports everything and I finally know where I stand with every company.",
     initial: "M",
     name: "Marcus T.",
     role: "Recent Graduate",
   },
   {
     quote:
-      "The readiness tracking is what sold me. I can actually see my progress going up. And the proof builder turned my completed steps into resume bullets — my resume has never looked this strong.",
+      "The role match feature surfaced a position I never would have found on LinkedIn. Fit score was 92% and I got the interview within a week.",
     initial: "P",
     name: "Priya N.",
     role: "Mid-Career Professional",
   },
   {
     quote:
-      "As a single mom going back to work, I needed something realistic. PathBuild understood my constraints and gave me missions I could actually do in 30 minutes. The streaks keep me motivated every single day.",
+      "As a single mom job searching, I can't afford to miss emails. PathBuild watches my inbox and tells me the moment a company responds. Game changer.",
     initial: "J",
     name: "Jessica L.",
     role: "Returning Professional",
   },
   {
     quote:
-      "I tried career coaches at $200 a session. PathBuild's weekly AI coaching gives me better, more consistent guidance for a fraction of the cost. The job posting analyzer helped me stop applying to roles I was not ready for.",
+      "I tried Huntr and Teal but PathBuild's Gmail integration is on another level. Recruiter emails just appear in my pipeline — no manual entry at all.",
     initial: "D",
     name: "David R.",
     role: "Tech Industry Switcher",
   },
   {
     quote:
-      "The daily mission format is genius. Instead of a giant overwhelming to-do list, I just open the app, do my one thing, and close it. I have been on a 47-day streak and my readiness score keeps climbing.",
+      "Company match showed me 5 startups I'd never heard of that fit my profile perfectly. I tracked them all and landed an offer from one within a month.",
     initial: "A",
     name: "Aisha M.",
     role: "Graduate Student",
@@ -62,11 +62,11 @@ export function Testimonials() {
             Testimonials
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-[1.15]">
-            Real people, real progress
+            Real people, real results
           </h2>
           <p className="mt-5 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed">
-            Hear from people who stopped feeling stuck and started building
-            toward their target roles — one mission at a time.
+            Hear from people who stopped losing applications in their inbox and
+            started tracking smarter.
           </p>
         </motion.div>
 

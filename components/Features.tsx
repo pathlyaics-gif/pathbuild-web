@@ -2,65 +2,64 @@
 
 import { motion } from "framer-motion";
 import {
+  LayoutList,
+  Mail,
+  Bell,
+  Sparkles,
+  Building2,
   Target,
-  Map,
-  ListChecks,
-  Flame,
-  Briefcase,
-  FileText,
-  MessageCircle,
-  BarChart3,
+  Shield,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 const FEATURES: { icon: LucideIcon; title: string; description: string }[] = [
   {
+    icon: LayoutList,
+    title: "Smart Application Tracker",
+    description:
+      "Manage every application in one pipeline — Saved, Applied, Interview, Offer, Rejected. Add notes, set follow-up reminders, and see your entire job search at a glance.",
+  },
+  {
+    icon: Mail,
+    title: "Gmail Inbox Watcher",
+    description:
+      "Connect Gmail with read-only access. PathBuild detects recruiter emails and auto-tags them to the right application — no manual logging required.",
+  },
+  {
+    icon: Bell,
+    title: "Smart Notifications",
+    description:
+      "Get push alerts when companies respond — interview invites, offer letters, rejections, and follow-up nudges so nothing slips through the cracks.",
+  },
+  {
     icon: Target,
-    title: "Daily Mission System",
+    title: "Role Match",
     description:
-      "Every day, PathBuild gives you one focused mission tailored to your target role and current progress. Complete it in 30–60 minutes. No guesswork, no overwhelm — just one meaningful task that moves you forward. Build streaks, earn momentum, and watch your readiness grow.",
+      "AI matches your profile against thousands of open roles with a fit score, skill-gap breakdown, and salary range. New matches surface daily.",
   },
   {
-    icon: Map,
-    title: "Role-Specific Roadmap",
+    icon: Building2,
+    title: "Company Match",
     description:
-      "Your career path is broken into clear stages, requirement areas, and actionable steps. See exactly what your target role demands, what you have already covered, and what is still ahead. Each stage unlocks as you progress — like levels in a game, but for your career.",
+      "Discover companies that fit your values, comp band, location, stage, and culture — and track them before they even post a job.",
   },
   {
-    icon: BarChart3,
-    title: "Readiness & Progress Tracking",
+    icon: Sparkles,
+    title: "Job Posting Fit Analyzer",
     description:
-      "Track your readiness percentage, velocity, coverage, and streaks in real time. Weekly and monthly recaps show your growth, highlight strengths and blockers, and keep you accountable. You always know how close you are to being hire-ready.",
+      "Paste any job posting for instant fit analysis. See what you meet, what you're missing, and whether it's worth applying.",
   },
   {
-    icon: FileText,
-    title: "Proof Builder (Resume & LinkedIn)",
+    icon: LayoutList,
+    title: "Pipeline Dashboard",
     description:
-      "Every completed mission and milestone becomes hire-ready proof. PathBuild turns your actual progress into polished resume bullet points and LinkedIn copy. No more making things up — your proof is built from real work you have done.",
+      "See your entire job search at a glance — active applications, upcoming interviews, pending follow-ups, and recent company responses.",
   },
   {
-    icon: Briefcase,
-    title: "Job Posting Analyzer",
+    icon: Shield,
+    title: "Privacy by Design",
     description:
-      "Paste any job posting and instantly see how well it matches your skills and roadmap. Get a breakdown of requirements you meet, gaps to close, and specific steps to become a stronger candidate. Apply smarter, not just more.",
-  },
-  {
-    icon: ListChecks,
-    title: "Application Tracker & Pipeline",
-    description:
-      "Track every application in one place — from target companies to interviews. See your pipeline at a glance, manage statuses, and keep your job search organized alongside your career-building progress.",
-  },
-  {
-    icon: MessageCircle,
-    title: "Weekly AI Coaching",
-    description:
-      "A personalized AI coach checks in weekly, adapts to your pace and blockers, and gives you targeted advice. Think of it as a career mentor who knows your full journey and always has something useful to say.",
-  },
-  {
-    icon: Flame,
-    title: "Interview Prep & Quick Wins",
-    description:
-      "Generate role-specific interview question banks to practice with. Plus, on days when time is short, Quick Win missions give you a lighter way to keep your streak alive and maintain momentum without the full session.",
+      "Read-only Gmail access. We parse sender and subject — never store full email bodies. Encrypted at rest. Delete your data anytime.",
   },
 ];
 
@@ -81,13 +80,12 @@ export function Features() {
           <h2 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-[1.15]">
             Everything you need to
             <br />
-            get hired
+            stay on top of your search
           </h2>
           <p className="mt-5 text-[16px] text-navy-500 max-w-2xl mx-auto leading-relaxed">
-            PathBuild is not another career quiz or generic to-do app. It is a
-            complete career execution system — daily missions, readiness
-            tracking, proof building, and real tools that take you from
-            &ldquo;I don&rsquo;t know what to do&rdquo; to hired.
+            PathBuild is not another spreadsheet or generic job board. It is a
+            smart tracker that watches your inbox, organizes your pipeline, and
+            surfaces roles and companies that fit.
           </p>
         </motion.div>
 

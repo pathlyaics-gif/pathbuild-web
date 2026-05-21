@@ -130,8 +130,9 @@ export default function SubscriptionPage() {
             </li>
             <li>
               After your subscription expires, you retain access to your account
-              and data, but Pro-only features (daily guided missions, coaching,
-              proof builder, job analyzer, etc.) will no longer be available.
+              and data, but Pro-only features (Gmail inbox watcher, role match,
+              company match, fit analyzer, smart notifications, etc.) will no
+              longer be available.
             </li>
           </ul>
 
@@ -172,52 +173,46 @@ export default function SubscriptionPage() {
           </p>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <strong>Unlimited daily guided missions</strong> tailored to your
-              target role, current stage, and pace
+              <strong>Unlimited application tracking</strong> — pipeline
+              management from Saved to Applied to Interview to Offer
             </li>
             <li>
-              <strong>Role-specific career roadmap</strong> with stages,
-              requirement areas, milestones, and stage unlocks
+              <strong>Gmail inbox watcher</strong> — read-only OAuth auto-detects
+              recruiter emails and updates your pipeline
             </li>
             <li>
-              <strong>Readiness tracking</strong> — real-time readiness
-              percentage, velocity, coverage, and streak metrics
+              <strong>Smart notifications</strong> — push alerts for
+              interviews, offers, rejections, and follow-up reminders
             </li>
             <li>
-              <strong>Proof Builder</strong> — turn completed missions into
-              polished resume bullet points and LinkedIn copy
+              <strong>AI role match</strong> — daily matched roles with fit
+              scores, skill-gap analysis, and salary ranges
             </li>
             <li>
-              <strong>Job Posting Analyzer</strong> — paste any job posting for
-              instant skill-gap analysis
+              <strong>Company match</strong> — discover employers that fit your
+              values, comp band, location, and culture
             </li>
             <li>
-              <strong>Application Tracker</strong> — manage your job search
-              pipeline and application statuses
+              <strong>Job posting fit analyzer</strong> — paste any listing for
+              instant fit analysis
             </li>
             <li>
-              <strong>Weekly AI Coaching</strong> — adaptive coaching based on
-              your pace, progress, and blockers
+              <strong>Follow-up reminders & notes</strong> — per-application
+              notes and scheduled follow-ups
             </li>
             <li>
-              <strong>Interview Prep</strong> — role-specific question banks
+              <strong>Pipeline dashboard</strong> — see your entire job search
+              at a glance
             </li>
             <li>
-              <strong>Weekly & Monthly Recaps</strong> — detailed progress
-              summaries with insights
-            </li>
-            <li>
-              <strong>Quick Win missions</strong> — lighter tasks to maintain
-              momentum on busy days
-            </li>
-            <li>
-              <strong>Plan adjustments</strong> — modify your roadmap anytime
+              <strong>Weekly search digest</strong> — activity recaps and new
+              match summaries
             </li>
             <li>
               <strong>Priority access to new features</strong> (Annual plan)
             </li>
             <li>
-              <strong>Roadmap export</strong> (Annual plan)
+              <strong>Pipeline export</strong> (Annual plan)
             </li>
           </ul>
 

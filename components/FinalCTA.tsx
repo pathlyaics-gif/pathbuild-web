@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Clock, Sparkles } from "lucide-react";
-
-const APP_STORE_URL = "https://apps.apple.com/app/pathbuild/id6743108030";
+import { Shield, Mail, Bell } from "lucide-react";
+import { APP_STORE_URL } from "@/lib/site";
 
 const TRUST_POINTS = [
-  { icon: Sparkles, text: "Subscribe via the App Store" },
+  { icon: Mail, text: "Gmail-aware tracking" },
   { icon: Shield, text: "Cancel anytime" },
-  { icon: Clock, text: "One mission a day — 30 min" },
+  { icon: Bell, text: "Smart notifications" },
 ];
 
 export function FinalCTA() {
@@ -27,18 +26,16 @@ export function FinalCTA() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-tight">
-            Your target role is waiting.
+            Stop losing applications
             <br />
             <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
-              Start your first mission today.
+              in your inbox.
             </span>
           </h2>
           <p className="mt-5 text-[16px] text-navy-500 max-w-2xl mx-auto leading-relaxed">
-            Every day without a plan is another day of feeling stuck. PathBuild
-            turns your career goals into a clear target role, gives you one
-            focused daily mission, and tracks your readiness until you are
-            hire-ready. Join thousands of people who stopped overthinking and
-            started building.
+            Every missed recruiter email is a missed opportunity. PathBuild
+            watches your inbox, tracks your pipeline, and surfaces roles and
+            companies that fit — so you can focus on interviewing, not organizing.
           </p>
         </motion.div>
 

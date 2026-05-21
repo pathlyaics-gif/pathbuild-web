@@ -53,9 +53,10 @@ export default function PrivacyPage() {
               share during the onboarding questionnaire and while using the App.
             </li>
             <li>
-              <strong>Career activity data:</strong> Steps completed, milestones
-              achieved, streaks, roadmap selections, job postings analyzed, and
-              other interactions with career planning features.
+              <strong>Job search activity data:</strong> Applications tracked,
+              pipeline statuses, notes, follow-up dates, job postings analyzed,
+              role and company matches saved, and other interactions with
+              tracking and matching features.
             </li>
             <li>
               <strong>Optional free-text input:</strong> Any additional
@@ -119,16 +120,23 @@ export default function PrivacyPage() {
           <ul className="list-disc pl-6 space-y-2">
             <li>Create and manage your account.</li>
             <li>
-              Provide personalized career analysis, path recommendations,
-              roadmaps, action plans, and coaching.
+              Provide application tracking, pipeline management, and job search
+              organization tools.
             </li>
             <li>
-              Power features such as the Job Fit Analyzer, Resume Builder,
-              and Weekly AI Coaching.
+              Process Gmail metadata to auto-detect recruiter emails and update
+              application statuses (when Gmail is connected).
             </li>
             <li>
-              Track your progress, maintain streaks, and generate insights and
-              recaps.
+              Send push notifications for interviews, offers, rejections, and
+              follow-up reminders.
+            </li>
+            <li>
+              Provide AI-powered role matching, company matching, and job
+              posting fit analysis.
+            </li>
+            <li>
+              Generate weekly search digests and activity recaps.
             </li>
             <li>
               Improve and optimize the App&apos;s features, content, AI models,
@@ -184,11 +192,10 @@ export default function PrivacyPage() {
             4. AI and Data Processing
           </h2>
           <p>
-            PathBuild uses artificial intelligence to generate career insights,
-            path recommendations, roadmaps, coaching content, job fit analyses,
-            and resume content. Your onboarding responses, profile data, and
-            activity data may be processed by AI services to deliver these
-            features.
+            PathBuild uses artificial intelligence to generate role matches,
+            company matches, job fit analyses, and email status detections. Your
+            onboarding responses, profile data, and activity data may be
+            processed by AI services to deliver these features.
           </p>
           <p>We take the following precautions:</p>
           <ul className="list-disc pl-6 space-y-2">
@@ -212,7 +219,80 @@ export default function PrivacyPage() {
           </ul>
 
           <h2 className="text-xl font-semibold text-navy-900 pt-4">
-            5. Data Retention
+            5. Gmail Data
+          </h2>
+          <p>
+            If you choose to connect Gmail, PathBuild accesses your Gmail
+            account via read-only OAuth (gmail.readonly scope). This section
+            explains exactly what we access, how we use it, and what we do not
+            do.
+          </p>
+          <p>
+            <strong>What we access:</strong>
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>
+              Email metadata from messages that appear to be from recruiters or
+              hiring platforms — specifically sender address, subject line, and
+              timestamp.
+            </li>
+            <li>
+              We scan for status keywords in subject lines (e.g., interview,
+              offer, rejection, application received) to update your application
+              pipeline.
+            </li>
+          </ul>
+          <p>
+            <strong>What we do NOT access or store:</strong>
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Full email body content — we never store complete email messages.</li>
+            <li>Emails unrelated to job applications or recruiting.</li>
+            <li>Your ability to send, delete, or modify emails — access is read-only.</li>
+            <li>Contacts, calendar, or any other Google account data.</li>
+          </ul>
+          <p>
+            <strong>How we use Gmail data:</strong>
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>
+              To auto-detect recruiter responses and update the status of
+              matching applications in your pipeline.
+            </li>
+            <li>
+              To trigger push notifications when a company responds (interview
+              invite, offer, rejection).
+            </li>
+            <li>
+              We do not use your Gmail data to train AI models or share it with
+              third parties for any purpose other than providing the App&apos;s
+              services.
+            </li>
+          </ul>
+          <p>
+            <strong>Revoking access:</strong> You can disconnect Gmail at any
+            time from the App settings. PathBuild will immediately stop scanning
+            your inbox. Previously imported application data remains in your
+            pipeline unless you delete it. You can also revoke PathBuild&apos;s
+            access directly through your Google Account permissions at{" "}
+            <a
+              href="https://myaccount.google.com/permissions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:underline"
+            >
+              myaccount.google.com/permissions
+            </a>
+            .
+          </p>
+          <p className="text-[13px] text-navy-400 italic">
+            Note: Gmail integration requires Google&apos;s Restricted Scopes
+            verification. PathBuild uses Gmail data solely to provide
+            application tracking features as described above.
+          </p>
+
+          <h2 className="text-xl font-semibold text-navy-900 pt-4">
+            6. Data Retention
           </h2>
           <p>
             We retain your personal information for as long as your account is
@@ -229,7 +309,7 @@ export default function PrivacyPage() {
           </p>
 
           <h2 className="text-xl font-semibold text-navy-900 pt-4">
-            6. Data Security
+            7. Data Security
           </h2>
           <p>
             We implement appropriate technical and organizational measures to
@@ -249,7 +329,7 @@ export default function PrivacyPage() {
           </p>
 
           <h2 className="text-xl font-semibold text-navy-900 pt-4">
-            7. Your Rights and Choices
+            8. Your Rights and Choices
           </h2>
           <p>
             Depending on your jurisdiction, you may have the following rights
@@ -295,7 +375,7 @@ export default function PrivacyPage() {
           </p>
 
           <h2 className="text-xl font-semibold text-navy-900 pt-4">
-            8. Children&apos;s Privacy
+            9. Children&apos;s Privacy
           </h2>
           <p>
             PathBuild is not intended for children under the age of 13. We do
@@ -314,7 +394,7 @@ export default function PrivacyPage() {
           </p>
 
           <h2 className="text-xl font-semibold text-navy-900 pt-4">
-            9. International Data Transfers
+            10. International Data Transfers
           </h2>
           <p>
             Your information may be processed and stored in countries other than
@@ -326,7 +406,7 @@ export default function PrivacyPage() {
           </p>
 
           <h2 className="text-xl font-semibold text-navy-900 pt-4">
-            10. California Privacy Rights (CCPA)
+            11. California Privacy Rights (CCPA)
           </h2>
           <p>
             If you are a California resident, you have additional rights under
@@ -345,7 +425,7 @@ export default function PrivacyPage() {
           </p>
 
           <h2 className="text-xl font-semibold text-navy-900 pt-4">
-            11. Apple App Tracking Transparency
+            12. Apple App Tracking Transparency
           </h2>
           <p>
             PathBuild does not track you across other companies&apos; apps or
@@ -355,7 +435,7 @@ export default function PrivacyPage() {
           </p>
 
           <h2 className="text-xl font-semibold text-navy-900 pt-4">
-            12. Changes to This Privacy Policy
+            13. Changes to This Privacy Policy
           </h2>
           <p>
             We may update this Privacy Policy from time to time. When we make
@@ -366,7 +446,7 @@ export default function PrivacyPage() {
           </p>
 
           <h2 className="text-xl font-semibold text-navy-900 pt-4">
-            13. Contact Us
+            14. Contact Us
           </h2>
           <p>
             If you have any questions, concerns, or requests regarding this
