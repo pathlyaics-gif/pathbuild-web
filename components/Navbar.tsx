@@ -91,7 +91,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="rounded-pill bg-ebony px-[22px] py-2.5 text-[0.85rem] font-semibold text-white shadow-pb-sm transition-all hover:-translate-y-px hover:bg-coral hover:shadow-[0_4px_16px_rgba(232,115,74,0.3)]"
             >
-              Download App
+              Download Free
             </a>
           </li>
         </ul>
@@ -175,7 +175,7 @@ export function Navbar() {
             className="mt-3 block rounded-pill bg-ebony py-3 text-center text-[15px] font-semibold text-white transition-colors hover:bg-coral"
             onClick={() => setMobileOpen(false)}
           >
-            Download App
+            Download Free
           </a>
         </div>
       )}

@@ -5,7 +5,7 @@ import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Support — PathBuild",
   description:
-    "Frequently asked questions and support for PathBuild. Get help with application tracking, Gmail integration, role matching, subscriptions, and more.",
+    "Frequently asked questions and support for PathBuild. Get help with application tracking, Gmail integration, role matching, and more.",
 };
 
 const FAQ = [
@@ -52,17 +52,12 @@ const FAQ = [
   {
     question: "How much does PathBuild cost?",
     answer:
-      "PathBuild Pro offers two subscription plans: Monthly at $19.99/month and Annual at $129.99/year (about $10.83/month — saving you over $100 per year vs monthly). Download and subscribe in the App Store; the Monthly plan does not include a free trial. Apple may offer a free trial to eligible new subscribers on the Annual plan only.",
+      "PathBuild is completely free right now during early access. Download from the App Store and get full access to every feature — application tracking, Gmail inbox watcher, role match, company match, and more. No credit card or subscription required.",
   },
   {
-    question: "Is there a free trial?",
+    question: "Will PathBuild always be free?",
     answer:
-      "The Monthly plan has no free trial. Apple may offer a free trial to eligible new subscribers who choose the Annual plan. When a trial is available, you get full access to every Pro feature during the trial; if you cancel before it ends, you will not be charged. Eligibility and duration are determined by Apple and limited to one per Apple ID.",
-  },
-  {
-    question: "How do I cancel my subscription?",
-    answer:
-      "You can manage and cancel your subscription at any time through your Apple ID Account Settings: Settings → Apple ID → Subscriptions → PathBuild. Cancellation takes effect at the end of your current billing period. You keep full access to Pro features until then.",
+      "We're focused on building the best job tracker first. Paid plans may be introduced in the future, but we'll always give plenty of notice before anything changes. Early users who join now get full access at no cost.",
   },
   {
     question: "Can I disconnect Gmail?",

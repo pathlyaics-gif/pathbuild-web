@@ -95,7 +95,7 @@ export function FinalCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          Free to download. Plans start at $10.83/month billed annually ($129.99/yr).
+          Free to download. Full access at no cost during early access.
         </motion.p>
       </div>
     </section>

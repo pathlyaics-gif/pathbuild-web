@@ -121,7 +121,7 @@ export function WhyPathBuild() {
             <p className="text-[14px] font-semibold text-navy-700 text-center sm:text-left">
               Other job trackers are manual spreadsheets.
               <span className="text-accent-dark ml-1">
-                PathBuild watches your inbox for less than $11/month.
+                PathBuild watches your inbox — free during early access.
               </span>
             </p>
             <a

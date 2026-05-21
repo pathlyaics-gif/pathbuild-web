@@ -13,7 +13,7 @@ export const APP_HERO_TITLE =
 export const APP_HERO_SUB =
   "Connect Gmail and PathBuild auto-logs every recruiter email, interview, offer, and rejection. Plus AI-matched roles and companies that actually fit you.";
 
-export const MONTHLY_FEATURES = [
+export const FREE_FEATURES = [
   "Unlimited application tracking & pipeline management",
   "Gmail inbox watcher — auto-detect recruiter emails",
   "Push notifications for interviews, offers & rejections",
@@ -24,13 +24,11 @@ export const MONTHLY_FEATURES = [
   "Weekly search digest & activity recaps",
 ];
 
-export const ANNUAL_FEATURES = [
-  "Everything in Monthly",
-  "Save ~$110/year vs monthly billing",
-  "Priority access to new features",
-  "Export your application pipeline",
-  "Free trial included",
-];
+export const PRICING_HEADLINE = "Free for now";
+export const PRICING_SUB =
+  "PathBuild is completely free during early access. Download on the App Store — full access to every feature, no credit card required.";
+export const PRICING_FOOTNOTE =
+  "Paid plans may be introduced in the future. We'll give plenty of notice before anything changes.";
 
 export const FEATURE_CARDS = [
   {
@@ -112,12 +110,12 @@ export const FAQ_ITEMS = [
     a: "During onboarding, you share your skills, experience, preferences, and constraints. Our AI cross-references your profile against thousands of open roles and companies — each match comes with a fit score, skill-gap breakdown, and salary range. New matches surface daily.",
   },
   {
-    q: "Is there a free trial?",
-    a: "The Monthly plan ($19.99/month) does not include a free trial. Apple may offer a free trial to eligible new subscribers who choose the Annual plan; if available, you get full access to every Pro feature during the trial, and you will not be charged if you cancel before it ends. Eligibility and duration are determined by Apple and are limited to one per Apple ID.",
+    q: "How much does PathBuild cost?",
+    a: "PathBuild is completely free right now. Download from the App Store and get full access to application tracking, Gmail inbox watcher, role match, company match, and everything else — no payment required.",
   },
   {
-    q: "How do I cancel my subscription?",
-    a: "You can cancel anytime through your Apple ID settings: Settings → Apple ID → Subscriptions → PathBuild. Cancellation takes effect at the end of your current billing period. You keep full access until then. No penalties, no hassle.",
+    q: "Will PathBuild always be free?",
+    a: "We're focused on building the best job tracker first. Paid plans may be introduced in the future, but we'll always give plenty of notice before anything changes. Early users who join now get full access at no cost.",
   },
   {
     q: "What platforms is PathBuild available on?",

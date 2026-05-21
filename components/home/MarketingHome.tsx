@@ -19,9 +19,10 @@ import {
   CONTACT_MAILTO,
   FAQ_ITEMS,
   FEATURE_CARDS,
+  FREE_FEATURES,
   HOW_IT_WORKS_STEPS,
-  MONTHLY_FEATURES,
-  ANNUAL_FEATURES,
+  PRICING_FOOTNOTE,
+  PRICING_SUB,
 } from "@/lib/site";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -106,8 +107,8 @@ export function MarketingHome() {
               Smart notifications
             </div>
             <div className="flex items-center gap-1.5 text-[0.82rem] text-ink-muted">
-              <Shield className="h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
-              Privacy-first
+              <Check className="h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
+              Free during early access
             </div>
           </div>
         </div>
@@ -417,108 +418,55 @@ export function MarketingHome() {
         </SectionReveal>
         <SectionReveal delay={0.08}>
           <h2 className="mx-auto mb-4 max-w-4xl text-center font-serif text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-ink">
-            Simple, <em className="not-italic text-coral">transparent</em>{" "}
-            pricing
+            Free <em className="not-italic text-coral">for now</em>
           </h2>
         </SectionReveal>
         <SectionReveal delay={0.16}>
           <p className="mx-auto mb-14 max-w-[600px] text-center text-[1.05rem] leading-[1.7] text-ink-secondary">
-            Download PathBuild on the App Store to subscribe. Two plans, no
-            hidden fees — cancel anytime in your Apple ID settings. Apple may
-            offer a free trial to eligible subscribers on the Annual plan only.
+            {PRICING_SUB}
           </p>
         </SectionReveal>
-        <div className="mx-auto grid max-w-[860px] grid-cols-1 gap-6 md:grid-cols-2">
-          <SectionReveal>
-            <div className="relative flex h-full flex-col rounded-xl border border-[rgba(44,34,24,0.06)] bg-white p-10 transition-all hover:-translate-y-1 hover:shadow-pb-lg">
-              <div className="mb-2 text-[0.9rem] font-bold tracking-[0.02em] text-ink-secondary">
-                Monthly
-              </div>
-              <div className="mb-1 font-serif text-5xl tracking-[-0.03em] text-ink">
-                $19.99{" "}
-                <span className="font-sans text-base font-normal text-ink-muted">
-                  /month
-                </span>
-              </div>
-              <p className="mb-8 border-b border-[rgba(44,34,24,0.06)] pb-8 text-[0.9rem] leading-[1.6] text-ink-secondary">
-                Full access to every PathBuild Pro feature, billed monthly.
-                Great if you want maximum flexibility.
-              </p>
-              <ul className="mb-8 flex-1 space-y-3">
-                {MONTHLY_FEATURES.map((f) => (
-                  <li
-                    key={f}
-                    className="flex gap-2.5 text-[0.88rem] leading-[1.5] text-ink-secondary"
-                  >
-                    <span className="mt-0.5 shrink-0 font-bold text-coral">
-                      ✓
-                    </span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={APP_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full rounded-pill border-[1.5px] border-cream-mid py-3.5 text-center text-[0.95rem] font-semibold text-ink transition-all hover:border-wood-light hover:bg-cream"
-              >
-                Try it on the App Store
-              </a>
+        <SectionReveal>
+          <div className="relative mx-auto max-w-[480px] flex flex-col rounded-xl border-2 border-coral-light bg-gradient-to-br from-[#FFF5EF] to-[#FFF0E8] p-10 shadow-[0_8px_32px_rgba(232,115,74,0.12)] transition-all hover:-translate-y-1 hover:shadow-pb-lg">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-pill bg-gradient-to-br from-coral via-coral-light to-coral px-4 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.08em] text-white shadow-[0_4px_12px_rgba(232,115,74,0.3)]">
+              Early Access
             </div>
-          </SectionReveal>
-          <SectionReveal delay={0.08}>
-            <div className="relative flex h-full flex-col rounded-xl border-2 border-coral-light bg-gradient-to-br from-[#FFF5EF] to-[#FFF0E8] p-10 shadow-[0_8px_32px_rgba(232,115,74,0.12)] transition-all hover:-translate-y-1 hover:shadow-pb-lg">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-pill bg-gradient-to-br from-coral via-coral-light to-coral px-4 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.08em] text-white shadow-[0_4px_12px_rgba(232,115,74,0.3)]">
-                Best Value — Save 46%
-              </div>
-              <div className="mb-2 mt-2 text-[0.9rem] font-bold tracking-[0.02em] text-ink-secondary">
-                Annual
-              </div>
-              <div className="mb-1 font-serif text-5xl tracking-[-0.03em] text-ink">
-                $129.99{" "}
-                <span className="font-sans text-base font-normal text-ink-muted">
-                  /year
-                </span>
-              </div>
-              <p className="text-[0.85rem] text-ink-muted">
-                That&apos;s just ~$10.83/month
-              </p>
-              <p className="mb-8 mt-4 border-b border-[rgba(44,34,24,0.06)] pb-8 text-[0.9rem] leading-[1.6] text-ink-secondary">
-                Everything in Monthly, billed once per year. Save over $100
-                compared to monthly billing.
-              </p>
-              <ul className="mb-8 flex-1 space-y-3">
-                {ANNUAL_FEATURES.map((f) => (
-                  <li
-                    key={f}
-                    className="flex gap-2.5 text-[0.88rem] leading-[1.5] text-ink-secondary"
-                  >
-                    <span className="mt-0.5 shrink-0 font-bold text-coral">
-                      ✓
-                    </span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={APP_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full rounded-pill bg-ebony py-3.5 text-center text-[0.95rem] font-semibold text-white shadow-pb-md transition-all hover:-translate-y-px hover:bg-coral hover:shadow-glow"
-              >
-                Start Free Trial
-              </a>
+            <div className="mb-2 mt-2 text-[0.9rem] font-bold tracking-[0.02em] text-ink-secondary">
+              Full access
             </div>
-          </SectionReveal>
-        </div>
+            <div className="mb-1 font-serif text-5xl tracking-[-0.03em] text-ink">
+              $0
+            </div>
+            <p className="mb-8 mt-4 border-b border-[rgba(44,34,24,0.06)] pb-8 text-[0.9rem] leading-[1.6] text-ink-secondary">
+              Every feature included — application tracker, Gmail watcher, role
+              match, company match, and more. No subscription required.
+            </p>
+            <ul className="mb-8 flex-1 space-y-3">
+              {FREE_FEATURES.map((f) => (
+                <li
+                  key={f}
+                  className="flex gap-2.5 text-[0.88rem] leading-[1.5] text-ink-secondary"
+                >
+                  <span className="mt-0.5 shrink-0 font-bold text-coral">
+                    ✓
+                  </span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full rounded-pill bg-ebony py-3.5 text-center text-[0.95rem] font-semibold text-white shadow-pb-md transition-all hover:-translate-y-px hover:bg-coral hover:shadow-glow"
+            >
+              Download Free on the App Store
+            </a>
+          </div>
+        </SectionReveal>
         <SectionReveal delay={0.12}>
-          <p className="mx-auto mt-6 max-w-[860px] text-center text-[0.78rem] leading-[1.6] text-ink-muted">
-            Subscriptions are purchased and managed in the App Store. Payments
-            are processed by Apple. Subscriptions auto-renew unless canceled at
-            least 24 hours before the end of the current period. A free trial,
-            when available, applies to eligible new subscribers on the Annual
-            plan only — not to Monthly.
+          <p className="mx-auto mt-6 max-w-[480px] text-center text-[0.78rem] leading-[1.6] text-ink-muted">
+            {PRICING_FOOTNOTE}
           </p>
         </SectionReveal>
       </section>
@@ -534,13 +482,13 @@ export function MarketingHome() {
         <SectionReveal delay={0.08}>
           <h2 className="mx-auto mb-4 max-w-4xl text-center font-serif text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-ink">
             What you get with{" "}
-            <em className="not-italic text-coral">PathBuild Pro</em>
+            <em className="not-italic text-coral">PathBuild</em>
           </h2>
         </SectionReveal>
         <SectionReveal delay={0.16}>
           <p className="mx-auto mb-14 max-w-[600px] text-center text-[1.05rem] leading-[1.7] text-ink-secondary">
             Track every application, catch every recruiter email, and discover
-            roles and companies that fit — all in one subscription.
+            roles and companies that fit — all free during early access.
           </p>
         </SectionReveal>
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">

@@ -5,8 +5,9 @@ import { Check, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import {
   APP_STORE_URL,
-  MONTHLY_FEATURES,
-  ANNUAL_FEATURES,
+  FREE_FEATURES,
+  PRICING_FOOTNOTE,
+  PRICING_SUB,
 } from "@/lib/site";
 
 export function PricingPreview() {
@@ -24,110 +25,57 @@ export function PricingPreview() {
             Pricing
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold tracking-tight text-navy-900 leading-[1.15]">
-            Invest in your job search
+            Free for now
           </h2>
           <p className="mt-5 text-[16px] text-navy-500 max-w-xl mx-auto leading-relaxed">
-            Get PathBuild on the App Store. Two simple plans, no hidden fees —
-            cancel anytime through your Apple ID settings. Free trial, when
-            offered by Apple, may apply to eligible Annual subscribers only.
+            {PRICING_SUB}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="rounded-2xl border border-warm-200/80 bg-card p-8 lg:p-9 h-full flex flex-col">
-              <h3 className="text-lg font-extrabold text-navy-900 mb-1">
-                Monthly
-              </h3>
-              <div className="flex items-baseline gap-1 mb-3">
-                <span className="text-3xl font-extrabold text-navy-900">
-                  $19.99
-                </span>
-                <span className="text-sm text-navy-400">/month</span>
-              </div>
-              <p className="text-[13px] leading-relaxed mb-6 text-navy-500">
-                Full access to every feature, billed monthly. Perfect if you
-                want total flexibility.
-              </p>
-              <ul className="space-y-2.5 mb-8 flex-1">
-                {MONTHLY_FEATURES.slice(0, 6).map((f) => (
-                  <li key={f} className="flex items-start gap-2.5">
-                    <Check
-                      size={14}
-                      className="mt-0.5 shrink-0 text-accent"
-                      strokeWidth={2.5}
-                    />
-                    <span className="text-[13px] text-navy-500">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={APP_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center rounded-full py-3 text-[13px] font-bold border border-warm-200 text-navy-900 hover:bg-warm-100 transition-all"
-              >
-                Try it on the App Store
-              </a>
+        <motion.div
+          className="max-w-md mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="rounded-2xl bg-gradient-to-br from-sunrise-from to-sunrise-to border border-accent/20 p-8 lg:p-9 h-full flex flex-col shadow-warm-lg relative">
+            <span className="inline-block self-start text-[10px] font-bold text-accent-dark uppercase tracking-[0.12em] bg-accent/15 px-3 py-1.5 rounded-full mb-5">
+              Early Access
+            </span>
+            <h3 className="text-lg font-extrabold text-navy-900 mb-1">
+              Full access
+            </h3>
+            <div className="flex items-baseline gap-1 mb-3">
+              <span className="text-3xl font-extrabold text-navy-900">$0</span>
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.08 }}
-          >
-            <div className="rounded-2xl bg-gradient-to-br from-sunrise-from to-sunrise-to border border-accent/20 p-8 lg:p-9 h-full flex flex-col shadow-warm-lg relative">
-              <span className="inline-block self-start text-[10px] font-bold text-accent-dark uppercase tracking-[0.12em] bg-accent/15 px-3 py-1.5 rounded-full mb-5">
-                Best Value — Save 46%
-              </span>
-              <h3 className="text-lg font-extrabold text-navy-900 mb-1">
-                Annual
-              </h3>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-3xl font-extrabold text-navy-900">
-                  $129.99
-                </span>
-                <span className="text-sm text-navy-400">/year</span>
-              </div>
-              <p className="text-[12px] text-navy-400 font-semibold mb-3">
-                That&rsquo;s just ~$10.83/month
-              </p>
-              <p className="text-[13px] leading-relaxed mb-6 text-navy-500">
-                Everything in Monthly, billed annually. Save over $100/year
-                compared to monthly billing.
-              </p>
-              <ul className="space-y-2.5 mb-8 flex-1">
-                {ANNUAL_FEATURES.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5">
-                    <Check
-                      size={14}
-                      className="mt-0.5 shrink-0 text-accent-dark"
-                      strokeWidth={2.5}
-                    />
-                    <span className="text-[13px] text-navy-700 font-medium">
-                      {f}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={APP_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center rounded-full py-3 text-[13px] font-bold bg-navy-900 text-white hover:bg-navy-800 shadow-warm transition-all"
-              >
-                Start Free Trial
-              </a>
-            </div>
-          </motion.div>
-        </div>
+            <p className="text-[13px] leading-relaxed mb-6 text-navy-500">
+              Every feature included — no subscription required.
+            </p>
+            <ul className="space-y-2.5 mb-8 flex-1">
+              {FREE_FEATURES.slice(0, 6).map((f) => (
+                <li key={f} className="flex items-start gap-2.5">
+                  <Check
+                    size={14}
+                    className="mt-0.5 shrink-0 text-accent-dark"
+                    strokeWidth={2.5}
+                  />
+                  <span className="text-[13px] text-navy-700 font-medium">
+                    {f}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center rounded-full py-3 text-[13px] font-bold bg-navy-900 text-white hover:bg-navy-800 shadow-warm transition-all"
+            >
+              Download Free on the App Store
+            </a>
+          </div>
+        </motion.div>
 
         <motion.div
           className="mt-10 text-center"
@@ -143,12 +91,7 @@ export function PricingPreview() {
             See full pricing details & FAQ
             <ArrowRight size={15} />
           </Link>
-          <p className="mt-4 text-[11px] text-navy-400">
-            Subscriptions are purchased in the App Store. Payments processed by
-            Apple. Auto-renewal can be turned off in Settings. Monthly has no
-            free trial; trial offers, if any, are for eligible Annual plans per
-            Apple.
-          </p>
+          <p className="mt-4 text-[11px] text-navy-400">{PRICING_FOOTNOTE}</p>
         </motion.div>
       </div>
     </section>

@@ -181,41 +181,27 @@ export default function TermsPage() {
           </p>
 
           <h2 className="text-xl font-semibold text-navy-900 pt-4">
-            7. Subscriptions and Payments
+            7. Pricing and Subscriptions
           </h2>
           <p>
-            PathBuild offers subscription-based premium features
-            (&ldquo;PathBuild Pro&rdquo;):
+            PathBuild is currently free during early access. All features are
+            available at no charge. We may introduce paid subscription plans
+            in the future; if we do, the following would apply:
           </p>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <strong>Subscription Plans:</strong> Monthly ($19.99/month) and
-              Annual ($129.99/year, approximately $10.83/month). Pricing is in
-              USD and may vary by region. Applicable taxes may apply.
+              <strong>Payment:</strong> If offered, payment would be charged to
+              your Apple ID account at confirmation of purchase.
             </li>
             <li>
-              <strong>Payment:</strong> Payment is charged to your Apple ID
-              account at confirmation of purchase.
-            </li>
-            <li>
-              <strong>Auto-Renewal:</strong> Subscriptions automatically renew
-              unless auto-renew is turned off at least 24 hours before the end
-              of the current period. Your account will be charged for renewal
-              within 24 hours prior to the end of the current period.
-            </li>
-            <li>
-              <strong>Free Trial:</strong> The Monthly plan does not include a
-              free trial. PathBuild may offer a free trial for eligible new
-              subscribers on the Annual plan only, as determined by Apple. If
-              you do not cancel before the trial ends, your subscription will
-              automatically convert to a paid subscription. Free trial
-              eligibility is determined by Apple and is limited to one per Apple
-              ID.
+              <strong>Auto-Renewal:</strong> Subscriptions would automatically
+              renew unless auto-renew is turned off at least 24 hours before the
+              end of the current period.
             </li>
             <li>
               <strong>Managing Subscriptions:</strong> You can manage and cancel
-              your subscription at any time through your Apple ID Account
-              Settings (Settings → Apple ID → Subscriptions → PathBuild).
+              subscriptions through your Apple ID Account Settings (Settings →
+              Apple ID → Subscriptions → PathBuild).
             </li>
             <li>
               <strong>Refunds:</strong> Refunds are handled by Apple in
@@ -231,6 +217,16 @@ export default function TermsPage() {
               .
             </li>
           </ul>
+          <p>
+            See our{" "}
+            <a
+              href="/legal/subscription"
+              className="text-accent hover:underline"
+            >
+              Subscription Terms
+            </a>{" "}
+            for full details on how paid plans would work if introduced.
+          </p>
 
           <h2 className="text-xl font-semibold text-navy-900 pt-4">
             8. User Content
