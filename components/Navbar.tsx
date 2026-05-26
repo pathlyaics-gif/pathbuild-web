@@ -9,8 +9,9 @@ import { Menu, X } from "lucide-react";
 import { APP_STORE_URL } from "@/lib/site";
 
 const PRIMARY_LINKS = [
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/#how-it-works", label: "How It Works" },
+  { href: "/#features", label: "Features" },
   { href: "/#pricing", label: "Pricing" },
   { href: "/#faq", label: "Support" },
 ];

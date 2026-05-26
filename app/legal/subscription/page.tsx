@@ -51,8 +51,8 @@ export default function SubscriptionPage() {
           </h2>
           <p>
             As of the effective date above, PathBuild is free to download and
-            use. All features — including application tracking, Gmail inbox
-            watcher, role match, company match, and notifications — are
+            use. All features — including the career-discovery quiz, AI career
+            matching, company matching, and job posting fit analysis — are
             available at no charge during early access.
           </p>
           <p>
@@ -193,46 +193,28 @@ export default function SubscriptionPage() {
           </p>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <strong>Unlimited application tracking</strong> — pipeline
-              management from Saved to Applied to Interview to Offer
+              <strong>AI career-discovery quiz</strong> — built around how you
+              actually think
             </li>
             <li>
-              <strong>Gmail inbox watcher</strong> — read-only OAuth auto-detects
-              recruiter emails and updates your pipeline
+              <strong>AI career match</strong> — ranked career paths with fit
+              scores and skill-gap insights
             </li>
             <li>
-              <strong>Smart notifications</strong> — push alerts for
-              interviews, offers, rejections, and follow-up reminders
-            </li>
-            <li>
-              <strong>AI role match</strong> — daily matched roles with fit
-              scores, skill-gap analysis, and salary ranges
-            </li>
-            <li>
-              <strong>Company match</strong> — discover employers that fit your
-              values, comp band, location, and culture
+              <strong>Company match</strong> — discover companies hiring for
+              your matched careers, ranked by fit
             </li>
             <li>
               <strong>Job posting fit analyzer</strong> — paste any listing for
               instant fit analysis
             </li>
             <li>
-              <strong>Follow-up reminders & notes</strong> — per-application
-              notes and scheduled follow-ups
+              <strong>Daily suggestions</strong> — fresh career and company
+              picks tailored to your evolving profile
             </li>
             <li>
-              <strong>Pipeline dashboard</strong> — see your entire job search
-              at a glance
-            </li>
-            <li>
-              <strong>Weekly search digest</strong> — activity recaps and new
-              match summaries
-            </li>
-            <li>
-              <strong>Priority access to new features</strong> (Annual plan)
-            </li>
-            <li>
-              <strong>Pipeline export</strong> (Annual plan)
+              <strong>Priority access to new features</strong> (when paid plans
+              are introduced)
             </li>
           </ul>
 

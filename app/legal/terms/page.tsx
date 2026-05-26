@@ -77,29 +77,21 @@ export default function TermsPage() {
             3. Description of the Service
           </h2>
           <p>
-            PathBuild is an AI-powered job application tracker that helps users
-            organize their job search, including but not limited to:
+            PathBuild is an AI-powered career discovery app that helps users
+            identify careers that fit them and discover companies hiring for
+            those roles, including but not limited to:
           </p>
           <ul className="list-disc pl-6 space-y-2">
+            <li>An AI-powered career-discovery quiz</li>
             <li>
-              Application tracking and pipeline management (Saved, Applied,
-              Interview, Offer, Rejected)
-            </li>
-            <li>
-              Gmail inbox integration — read-only OAuth to auto-detect recruiter
-              emails and update application statuses
-            </li>
-            <li>
-              Push notifications for interviews, offers, rejections, and
-              follow-up reminders
-            </li>
-            <li>
-              AI-powered role matching based on user profile and preferences
+              AI-powered career matching based on quiz responses and user
+              profile
             </li>
             <li>AI-powered company matching and discovery</li>
             <li>Job posting fit analysis tools</li>
-            <li>Follow-up reminders and per-application notes</li>
-            <li>Weekly search digest and activity recaps</li>
+            <li>
+              Daily curated career and company suggestions
+            </li>
           </ul>
           <p>
             The App is intended for informational and educational purposes only.

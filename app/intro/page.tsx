@@ -104,7 +104,7 @@ export default function IntroPage() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
             >
-              Your job search, organized
+              Discover the career that fits
             </motion.p>
 
             <motion.div
@@ -182,9 +182,9 @@ export default function IntroPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             >
-              Stay on top of
+              Discover the career
               <br />
-              every application.
+              that fits you.
             </motion.h1>
 
             <motion.div

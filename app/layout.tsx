@@ -20,23 +20,23 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "PathBuild — Smart Job Tracker for iOS",
+  title: "PathBuild — AI Career Discovery for iOS",
   description: APP_HERO_SUB,
   metadataBase: new URL("https://pathbuild.app"),
   authors: [{ name: "PathBuild" }],
   keywords: [
-    "job tracker",
-    "application tracker",
-    "gmail job tracker",
-    "recruiter email tracker",
-    "find jobs that fit",
+    "career discovery",
+    "career quiz",
+    "AI career match",
+    "find your career",
+    "what career fits me",
+    "career change app",
     "company match",
-    "job search organizer",
     "PathBuild",
     "iOS",
   ],
   openGraph: {
-    title: "PathBuild — Smart Job Tracker for iOS",
+    title: "PathBuild — AI Career Discovery for iOS",
     description: APP_HERO_TITLE,
     url: "https://pathbuild.app",
     siteName: "PathBuild",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PathBuild — Smart Job Tracker for iOS",
+    title: "PathBuild — AI Career Discovery for iOS",
     description: APP_HERO_TITLE,
     images: ["/logo-full.png"],
   },

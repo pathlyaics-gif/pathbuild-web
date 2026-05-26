@@ -60,7 +60,7 @@ export function Footer() {
               Company
             </h5>
             <Link
-              href="/#about"
+              href="/about"
               className="mb-3 block text-[0.88rem] text-white/65 transition-colors hover:text-coral-light"
             >
               About
