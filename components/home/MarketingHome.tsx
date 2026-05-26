@@ -10,6 +10,7 @@ import {
   Shield,
 } from "lucide-react";
 import { SectionReveal } from "./SectionReveal";
+import { ScrollDrivenFeatures } from "./ScrollDrivenFeatures";
 import {
   APP_HERO_SUB,
   APP_HERO_TITLE,
@@ -18,7 +19,6 @@ import {
   CONTACT_EMAIL,
   CONTACT_MAILTO,
   FAQ_ITEMS,
-  FEATURE_CARDS,
   FREE_FEATURES,
   HOW_IT_WORKS_STEPS,
   PRICING_FOOTNOTE,
@@ -471,41 +471,8 @@ export function MarketingHome() {
         </SectionReveal>
       </section>
 
-      {/* Features */}
-      <section
-        id="features"
-        className="border-t border-[rgba(44,34,24,0.04)] bg-white px-5 py-[70px] sm:px-8 sm:py-[100px]"
-      >
-        <SectionReveal>
-          <SectionLabel>Everything Included</SectionLabel>
-        </SectionReveal>
-        <SectionReveal delay={0.08}>
-          <h2 className="mx-auto mb-4 max-w-4xl text-center font-serif text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-ink">
-            What you get with{" "}
-            <em className="not-italic text-coral">PathBuild</em>
-          </h2>
-        </SectionReveal>
-        <SectionReveal delay={0.16}>
-          <p className="mx-auto mb-14 max-w-[600px] text-center text-[1.05rem] leading-[1.7] text-ink-secondary">
-            Track every application, catch every recruiter email, and discover
-            roles and companies that fit — all free during early access.
-          </p>
-        </SectionReveal>
-        <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {FEATURE_CARDS.map((fc, i) => (
-            <SectionReveal key={fc.title} delay={(i % 4) * 0.05}>
-              <div className="h-full rounded-xl border border-[rgba(44,34,24,0.04)] bg-cream p-7 transition-all hover:-translate-y-1 hover:border-[rgba(44,34,24,0.08)] hover:bg-white hover:shadow-pb-md">
-                <h4 className="mb-2 text-[0.92rem] font-bold text-ink">
-                  {fc.title}
-                </h4>
-                <p className="text-[0.84rem] leading-[1.6] text-ink-secondary">
-                  {fc.body}
-                </p>
-              </div>
-            </SectionReveal>
-          ))}
-        </div>
-      </section>
+      {/* Features — scroll-driven showcase */}
+      <ScrollDrivenFeatures />
 
       {/* FAQ */}
       <section
