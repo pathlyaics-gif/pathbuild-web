@@ -201,10 +201,10 @@ function ScreenMiniUI({ index, accent }: { index: number; accent: string }) {
       return (
         <div className="w-full space-y-2">
           {[
-            { name: "Linear", tag: "Productivity", match: "96%" },
-            { name: "Vercel", tag: "DevTools", match: "92%" },
-            { name: "Notion", tag: "Productivity", match: "89%" },
-          ].map(({ name, tag, match }) => (
+            { name: "Linear", logo: "/logos/linear.svg", tag: "Productivity", match: "96%" },
+            { name: "Vercel", logo: "/logos/vercel.svg", tag: "DevTools", match: "92%" },
+            { name: "Notion", logo: "/logos/notion.svg", tag: "Productivity", match: "89%" },
+          ].map(({ name, logo, tag, match }) => (
             <div
               key={name}
               className="flex items-center justify-between rounded-xl px-3 py-2.5"
@@ -212,10 +212,14 @@ function ScreenMiniUI({ index, accent }: { index: number; accent: string }) {
             >
               <div className="flex items-center gap-2">
                 <div
-                  className="flex h-7 w-7 items-center justify-center rounded-lg text-[10px] font-bold"
-                  style={{ backgroundColor: `${accent}22`, color: accent }}
+                  className="relative flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white"
                 >
-                  {name[0]}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={logo}
+                    alt={name}
+                    className="h-5 w-5 object-contain"
+                  />
                 </div>
                 <div>
                   <p className="text-[10px] font-semibold text-white/80">{name}</p>

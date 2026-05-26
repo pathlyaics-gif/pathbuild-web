@@ -144,10 +144,10 @@ function StepGraphic({ index, accent }: { index: number; accent: string }) {
             Hiring for Product Designer
           </div>
           {[
-            { name: "Linear", tag: "Productivity · Series B", match: "96" },
-            { name: "Vercel", tag: "DevTools · Series D", match: "92" },
-            { name: "Notion", tag: "Productivity · Late stage", match: "89" },
-            { name: "Stripe", tag: "Fintech · Late stage", match: "86" },
+            { name: "Linear", logo: "/logos/linear.svg", tag: "Productivity · Series B", match: "96" },
+            { name: "Vercel", logo: "/logos/vercel.svg", tag: "DevTools · Series D", match: "92" },
+            { name: "Notion", logo: "/logos/notion.svg", tag: "Productivity · Late stage", match: "89" },
+            { name: "Stripe", logo: "/logos/stripe.svg", tag: "Fintech · Late stage", match: "86" },
           ].map((c, i) => (
             <motion.div
               key={c.name}
@@ -157,10 +157,14 @@ function StepGraphic({ index, accent }: { index: number; accent: string }) {
               className="flex items-center gap-3 rounded-2xl border border-[rgba(44,34,24,0.06)] bg-white px-4 py-3 shadow-pb-sm"
             >
               <div
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-[0.95rem] font-bold"
-                style={{ backgroundColor: `${accent}18`, color: accent }}
+                className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white shadow-[0_0_0_1px_rgba(44,34,24,0.08)]"
               >
-                {c.name[0]}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={c.logo}
+                  alt={c.name}
+                  className="h-8 w-8 object-contain"
+                />
               </div>
               <div className="min-w-0 flex-1">
                 <p className="truncate text-[0.95rem] font-semibold text-ink">
