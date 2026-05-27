@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowUp, Check, Compass, Sparkles } from "lucide-react";
 import { SectionReveal } from "./SectionReveal";
-import { ScrollDrivenFeatures } from "./ScrollDrivenFeatures";
 import { ScrollDrivenJourney } from "./ScrollDrivenJourney";
 import {
   APP_HERO_SUB,
@@ -111,11 +110,6 @@ export function MarketingHome() {
           </SectionReveal>
         </div>
         <ScrollDrivenJourney />
-      </section>
-
-      {/* Scroll-driven section #2 — Features */}
-      <section id="features" aria-label="PathBuild features" className="relative">
-        <ScrollDrivenFeatures />
       </section>
 
       {/* Pricing */}
