@@ -94,18 +94,6 @@ const VISUALS: StepVisual[] = [
     badge2Label: "Companies",
     badge2Value: "11 added",
   },
-  {
-    icon: Shield,
-    bgColor: "#060606",
-    orb1: "rgba(255,255,255,0.22)",
-    orb2: "rgba(210,210,210,0.1)",
-    accent: "#FFFFFF",
-    category: "Privacy",
-    badge1Label: "Sold to",
-    badge1Value: "Nobody",
-    badge2Label: "Stored",
-    badge2Value: "Encrypted",
-  },
 ];
 
 const STEPS = FEATURE_CARDS.map((card, i) => ({ ...card, ...VISUALS[i] }));
