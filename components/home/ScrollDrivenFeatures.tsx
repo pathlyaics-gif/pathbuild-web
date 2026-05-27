@@ -15,7 +15,6 @@ import {
   Building2,
   Zap,
   Calendar,
-  Shield,
   type LucideIcon,
 } from "lucide-react";
 import { FEATURE_CARDS } from "@/lib/site";
@@ -308,36 +307,6 @@ function ScreenMiniUI({ index, accent }: { index: number; accent: string }) {
               Design Engineer · SF
             </p>
           </div>
-        </div>
-      );
-
-    case 5:
-      return (
-        <div className="w-full space-y-2.5">
-          {[
-            "Never sold to recruiters",
-            "Never shared with employers",
-            "Encrypted at rest",
-            "Delete everything anytime",
-          ].map((item) => (
-            <div key={item} className="flex items-center gap-2.5">
-              <div
-                className="flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full"
-                style={{ backgroundColor: `${accent}22` }}
-              >
-                <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
-                  <path
-                    d="M1.5 4.5l2 2 4-4"
-                    stroke={accent}
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <span className="text-[10px] text-white/65">{item}</span>
-            </div>
-          ))}
         </div>
       );
 
