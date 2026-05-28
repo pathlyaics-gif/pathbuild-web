@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type NavLogoProps = {
@@ -6,13 +7,21 @@ type NavLogoProps = {
 };
 
 export function NavLogo({ variant = "dark", className = "" }: NavLogoProps) {
-  const textClass = variant === "light" ? "text-white/80" : "text-ink";
+  const textClass = variant === "light" ? "text-white/90" : "text-ink";
 
   return (
     <Link
       href="/"
-      className={`flex items-center no-underline shrink-0 ${className}`}
+      className={`flex items-center gap-2.5 no-underline shrink-0 ${className}`}
     >
+      <Image
+        src="/star-summit-icon.png"
+        alt="PathBuild"
+        width={655}
+        height={650}
+        className="h-9 w-9 shrink-0 rounded-[9px] object-cover"
+        priority
+      />
       <span className={`font-serif text-[22px] tracking-[-0.02em] ${textClass}`}>
         PathBuild
       </span>

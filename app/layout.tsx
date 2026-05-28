@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo-full.png",
-        width: 534,
-        height: 566,
-        alt: "PathBuild — winding path and arrow icon",
+        url: "/star-summit-icon.png",
+        width: 655,
+        height: 650,
+        alt: "PathBuild — Star Summit icon",
       },
     ],
   },
@@ -55,12 +55,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PathBuild — AI Career Discovery for iOS",
     description: APP_HERO_TITLE,
-    images: ["/logo-full.png"],
+    images: ["/star-summit-icon.png"],
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16.png", type: "image/png", sizes: "16x16" },
     ],
     apple: "/apple-touch-icon.png",
   },
