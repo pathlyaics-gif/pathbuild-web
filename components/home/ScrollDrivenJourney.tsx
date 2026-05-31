@@ -26,6 +26,12 @@ const VISUALS: StepVisual[] = [
 
 const STEPS = HOW_IT_WORKS_STEPS.map((s, i) => ({ ...s, ...VISUALS[i] }));
 
+// #region agent log
+if (typeof window !== "undefined") {
+  fetch('http://127.0.0.1:7486/ingest/fb289329-0b63-43aa-a220-1d3931b4e10f',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'a8b9a8'},body:JSON.stringify({sessionId:'a8b9a8',runId:'pre-fix',hypothesisId:'H1',location:'ScrollDrivenJourney.tsx:27',message:'STEPS/VISUALS construction',data:{stepsLen:STEPS.length,visualsLen:VISUALS.length,missingIcon:STEPS.map((s,i)=>({i,hasIcon:!!(s as {icon?:unknown}).icon,accent:(s as {accent?:string}).accent})).filter(x=>!x.hasIcon)},timestamp:Date.now()})}).catch(()=>{});
+}
+// #endregion
+
 // Each step renders its own light-themed graphic on the right
 function StepGraphic({ index, accent }: { index: number; accent: string }) {
   switch (index) {
@@ -209,11 +215,20 @@ export function ScrollDrivenJourney() {
   );
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    setActiveStep(Math.min(STEPS.length - 1, Math.floor(latest * STEPS.length)));
+    const newActive = Math.min(STEPS.length - 1, Math.floor(latest * STEPS.length));
+    // #region agent log
+    fetch('http://127.0.0.1:7486/ingest/fb289329-0b63-43aa-a220-1d3931b4e10f',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'a8b9a8'},body:JSON.stringify({sessionId:'a8b9a8',runId:'pre-fix',hypothesisId:'H1,H3',location:'ScrollDrivenJourney.tsx:212',message:'scroll change -> activeStep',data:{latest,newActive,hasIcon:!!STEPS[newActive]?.icon,accent:STEPS[newActive]?.accent},timestamp:Date.now()})}).catch(()=>{});
+    // #endregion
+    setActiveStep(newActive);
   });
 
   const step = STEPS[activeStep];
   const Icon = step.icon;
+  // #region agent log
+  if (typeof window !== "undefined") {
+    fetch('http://127.0.0.1:7486/ingest/fb289329-0b63-43aa-a220-1d3931b4e10f',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'a8b9a8'},body:JSON.stringify({sessionId:'a8b9a8',runId:'pre-fix',hypothesisId:'H2',location:'ScrollDrivenJourney.tsx:216',message:'render body',data:{activeStep,iconType:typeof Icon,iconDefined:!!Icon,accent:step?.accent},timestamp:Date.now()})}).catch(()=>{});
+  }
+  // #endregion
 
   return (
     <div
