@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Heart, Sparkles, Shield, Compass } from "lucide-react";
-import { APP_STORE_URL } from "@/lib/site";
+import { APP_STORE_URL, ANNUAL_TRIAL_DAYS, ANNUAL_PRICE, MONTHLY_PRICE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About — PathBuild",
@@ -25,13 +25,13 @@ const VALUES = [
     icon: Compass,
     title: "Discovery, Not Quizzes",
     description:
-      "Most career quizzes give vague archetypes. PathBuild gives you ranked careers and real companies hiring for them.",
+      "Most career quizzes give vague archetypes. PathBuild gives you ranked careers, real companies hiring, and the tools to land them.",
   },
   {
     icon: Shield,
     title: "Private by Design",
     description:
-      "Your answers stay yours. Encrypted at rest. Never sold, never shared, deletable anytime.",
+      "Your answers stay yours. Encrypted at rest. Never sold, never shared with recruiters, deletable anytime.",
   },
 ];
 
@@ -68,7 +68,8 @@ export default function AboutPage() {
           <p className="text-[0.95rem] leading-[1.75] text-ink-secondary">
             PathBuild does both. Answer a short, thoughtful quiz. AI surfaces
             the careers that match how you actually think. Then we close the
-            loop by showing real companies hiring for each one.
+            loop — showing real companies hiring, salary intel, AI-tailored
+            resume notes, and interview prep so you can actually land the role.
           </p>
         </div>
 
@@ -95,13 +96,31 @@ export default function AboutPage() {
           ))}
         </div>
 
+        {/* Pricing summary */}
+        <div className="mb-10 rounded-2xl border border-[rgba(44,34,24,0.06)] bg-white p-8 shadow-pb-sm lg:p-10">
+          <h2 className="mb-4 font-serif text-[1.4rem] tracking-[-0.01em] text-ink">
+            Free to start. Pro when you need it.
+          </h2>
+          <p className="mb-4 text-[0.95rem] leading-[1.75] text-ink-secondary">
+            The core experience — career quiz, AI matching, company discovery,
+            and application tracking — is completely free. No credit card.
+          </p>
+          <p className="text-[0.95rem] leading-[1.75] text-ink-secondary">
+            PathBuild Pro unlocks salary intel, AI resume tailoring, interview
+            prep, job-fit analysis, and side-by-side comparisons. Pro is{" "}
+            <strong className="text-ink">{MONTHLY_PRICE}/month</strong> or{" "}
+            <strong className="text-ink">{ANNUAL_PRICE}/year</strong> — the
+            annual plan includes a{" "}
+            <strong className="text-ink">{ANNUAL_TRIAL_DAYS}-day free trial</strong>.
+          </p>
+        </div>
+
         <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-[#FDEADF] via-[#FCD5C4] to-[#F9C2AC] p-10 text-center lg:p-14">
           <h2 className="mb-3 font-serif text-[clamp(1.5rem,3vw,2.25rem)] tracking-[-0.02em] text-ink">
             Discover what fits.
           </h2>
           <p className="mx-auto mb-7 max-w-md text-[0.95rem] leading-[1.65] text-wood-mid">
-            Five-minute quiz, ranked career matches, real companies hiring. Free
-            during early access.
+            Five-minute quiz, ranked career matches, real companies hiring. Free to start.
           </p>
           <a
             href={APP_STORE_URL}

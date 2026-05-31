@@ -9,12 +9,15 @@ import {
   APP_HERO_SUB,
   APP_STORE_URL,
   APP_TAGLINE,
+  ANNUAL_PRICE,
+  ANNUAL_TRIAL_DAYS,
   CONTACT_EMAIL,
   CONTACT_MAILTO,
   FAQ_ITEMS,
   FREE_FEATURES,
+  MONTHLY_PRICE,
   PRICING_FOOTNOTE,
-  PRICING_SUB,
+  PRO_FEATURES,
 } from "@/lib/site";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -49,7 +52,7 @@ export function MarketingHome() {
               className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-coral"
               aria-hidden
             />
-            Free during early access · iOS
+            Free to start · iOS
           </div>
           <h1 className="mb-6 font-serif text-[clamp(2.5rem,5.5vw,4rem)] leading-[1.1] tracking-[-0.03em] text-ink">
             Discover the career that{" "}
@@ -104,8 +107,8 @@ export function MarketingHome() {
           </SectionReveal>
           <SectionReveal delay={0.08}>
             <h2 className="mx-auto max-w-3xl text-center font-serif text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-ink">
-              Three steps from <em className="not-italic text-coral">curious</em>{" "}
-              to <em className="not-italic text-coral">clear</em>
+              From <em className="not-italic text-coral">curious</em>{" "}
+              to <em className="not-italic text-coral">hired</em>
             </h2>
           </SectionReveal>
         </div>
@@ -122,52 +125,96 @@ export function MarketingHome() {
         </SectionReveal>
         <SectionReveal delay={0.08}>
           <h2 className="mx-auto mb-4 max-w-4xl text-center font-serif text-[clamp(2rem,4vw,3rem)] leading-[1.15] tracking-[-0.02em] text-ink">
-            Free <em className="not-italic text-coral">for now</em>
+            Start free.{" "}
+            <em className="not-italic text-coral">Go Pro</em> when you&apos;re ready.
           </h2>
         </SectionReveal>
         <SectionReveal delay={0.16}>
           <p className="mx-auto mb-12 max-w-[560px] text-center text-[1.05rem] leading-[1.7] text-ink-secondary">
-            {PRICING_SUB}
+            The core experience is free forever. Pro unlocks the tools that
+            actually get you hired.
           </p>
         </SectionReveal>
+
         <SectionReveal>
-          <div className="relative mx-auto flex max-w-[460px] flex-col rounded-xl border-2 border-coral-light bg-gradient-to-br from-[#FFF5EF] to-[#FFF0E8] p-9 shadow-[0_8px_32px_rgba(232,115,74,0.12)] transition-all hover:-translate-y-1 hover:shadow-pb-lg">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-pill bg-gradient-to-br from-coral via-coral-light to-coral px-4 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.08em] text-white shadow-[0_4px_12px_rgba(232,115,74,0.3)]">
-              Early Access
+          <div className="mx-auto grid max-w-3xl grid-cols-1 gap-5 md:grid-cols-2">
+            {/* Free card */}
+            <div className="flex flex-col rounded-2xl border border-[rgba(44,34,24,0.08)] bg-white p-8 shadow-pb-sm">
+              <div className="mb-1 text-[0.75rem] font-bold uppercase tracking-[0.12em] text-ink-secondary">
+                Free
+              </div>
+              <div className="mb-1 font-serif text-4xl tracking-[-0.03em] text-ink">
+                $0
+              </div>
+              <p className="mb-6 text-[0.85rem] text-ink-secondary">
+                Forever free · no credit card
+              </p>
+              <ul className="mb-8 flex-1 space-y-3">
+                {FREE_FEATURES.map((f) => (
+                  <li
+                    key={f}
+                    className="flex items-start gap-2.5 text-[0.87rem] leading-[1.5] text-ink-secondary"
+                  >
+                    <span className="mt-0.5 shrink-0 font-bold text-coral">✓</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full rounded-pill border border-[rgba(44,34,24,0.12)] bg-white py-3 text-center text-[0.9rem] font-semibold text-ink transition-all hover:-translate-y-px hover:border-coral hover:text-coral"
+              >
+                Download Free
+              </a>
             </div>
-            <div className="mb-2 mt-2 text-[0.85rem] font-bold tracking-[0.02em] text-ink-secondary">
-              Full access
+
+            {/* Pro card */}
+            <div className="relative flex flex-col rounded-2xl border-2 border-coral bg-gradient-to-br from-[#FFF5EF] to-[#FFF0E8] p-8 shadow-[0_8px_32px_rgba(232,115,74,0.15)]">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-pill bg-gradient-to-br from-coral via-coral-light to-coral px-4 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-white shadow-[0_4px_12px_rgba(232,115,74,0.3)]">
+                {ANNUAL_TRIAL_DAYS}-Day Free Trial
+              </div>
+              <div className="mb-1 text-[0.75rem] font-bold uppercase tracking-[0.12em] text-coral">
+                PathBuild Pro
+              </div>
+              <div className="mb-1">
+                <span className="font-serif text-4xl tracking-[-0.03em] text-ink">
+                  {ANNUAL_PRICE}
+                </span>
+                <span className="ml-1.5 text-[0.85rem] text-ink-secondary">/year</span>
+              </div>
+              <p className="mb-1 text-[0.85rem] text-ink-secondary">
+                {ANNUAL_TRIAL_DAYS}-day free trial · cancel anytime
+              </p>
+              <p className="mb-6 text-[0.8rem] text-ink-muted">
+                or {MONTHLY_PRICE}/month · no trial
+              </p>
+              <ul className="mb-8 flex-1 space-y-3">
+                {PRO_FEATURES.map((f) => (
+                  <li
+                    key={f}
+                    className="flex items-start gap-2.5 text-[0.87rem] leading-[1.5] text-ink-secondary"
+                  >
+                    <span className="mt-0.5 shrink-0 font-bold text-coral">✓</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full rounded-pill bg-ebony py-3.5 text-center text-[0.95rem] font-semibold text-white shadow-pb-md transition-all hover:-translate-y-px hover:bg-coral hover:shadow-glow"
+              >
+                Start {ANNUAL_TRIAL_DAYS}-Day Free Trial
+              </a>
             </div>
-            <div className="mb-1 font-serif text-5xl tracking-[-0.03em] text-ink">
-              $0
-            </div>
-            <p className="mb-7 mt-3 border-b border-[rgba(44,34,24,0.06)] pb-7 text-[0.9rem] leading-[1.6] text-ink-secondary">
-              Every feature included — the career quiz, AI matching, company
-              suggestions, and more. No subscription, no credit card.
-            </p>
-            <ul className="mb-7 flex-1 space-y-3">
-              {FREE_FEATURES.map((f) => (
-                <li
-                  key={f}
-                  className="flex gap-2.5 text-[0.88rem] leading-[1.5] text-ink-secondary"
-                >
-                  <span className="mt-0.5 shrink-0 font-bold text-coral">✓</span>
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <a
-              href={APP_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full rounded-pill bg-ebony py-3.5 text-center text-[0.95rem] font-semibold text-white shadow-pb-md transition-all hover:-translate-y-px hover:bg-coral hover:shadow-glow"
-            >
-              Download Free on the App Store
-            </a>
           </div>
         </SectionReveal>
+
         <SectionReveal delay={0.12}>
-          <p className="mx-auto mt-6 max-w-[460px] text-center text-[0.78rem] leading-[1.6] text-ink-muted">
+          <p className="mx-auto mt-6 max-w-[560px] text-center text-[0.78rem] leading-[1.6] text-ink-muted">
             {PRICING_FOOTNOTE}
           </p>
         </SectionReveal>
@@ -251,7 +298,7 @@ export function MarketingHome() {
             </h2>
             <p className="mb-8 text-base leading-[1.7] text-wood-mid">
               Five minutes of smart questions, AI-matched careers, and the
-              companies hiring for them. Free during early access.
+              companies hiring for them. Free to start.
             </p>
             <a
               href={APP_STORE_URL}

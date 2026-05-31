@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Mail } from "lucide-react";
-import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/site";
+import {
+  CONTACT_EMAIL,
+  CONTACT_MAILTO,
+  MONTHLY_PRICE,
+  ANNUAL_PRICE,
+  ANNUAL_TRIAL_DAYS,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Support — PathBuild",
@@ -36,8 +42,12 @@ const FAQ = [
   },
   {
     question: "How much does PathBuild cost?",
+    answer: `The core experience — career quiz, AI matching, company discovery, unlimited saves, and application tracking — is completely free. PathBuild Pro unlocks salary intel, AI resume tailoring, interview prep, job-fit analysis, and side-by-side comparisons. Pro is ${MONTHLY_PRICE}/month or ${ANNUAL_PRICE}/year. The annual plan includes a ${ANNUAL_TRIAL_DAYS}-day free trial.`,
+  },
+  {
+    question: "How do I cancel a Pro subscription?",
     answer:
-      "PathBuild is completely free during early access. Every feature is included — no payment, no credit card.",
+      "Go to Settings → Apple ID → Subscriptions → PathBuild on your iPhone. Cancellation takes effect at the end of your current billing period. You keep Pro access until it expires.",
   },
   {
     question: "Is my data private?",
