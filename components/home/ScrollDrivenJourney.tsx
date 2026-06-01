@@ -9,7 +9,14 @@ import {
   useSpring,
   useMotionValueEvent,
 } from "framer-motion";
-import { Sparkles, Compass, Building2, type LucideIcon } from "lucide-react";
+import {
+  Sparkles,
+  Compass,
+  Building2,
+  Bookmark,
+  Trophy,
+  type LucideIcon,
+} from "lucide-react";
 import { HOW_IT_WORKS_STEPS } from "@/lib/site";
 
 type StepVisual = {
@@ -22,15 +29,16 @@ const VISUALS: StepVisual[] = [
   { icon: Sparkles, category: "Step 01 — Quiz", accent: "#E8734A" },
   { icon: Compass, category: "Step 02 — Match", accent: "#A064FF" },
   { icon: Building2, category: "Step 03 — Discover", accent: "#3CC878" },
+  { icon: Bookmark, category: "Step 04 — Track", accent: "#2F8FE0" },
+  { icon: Trophy, category: "Step 05 — Pro", accent: "#E8734A" },
 ];
 
-const STEPS = HOW_IT_WORKS_STEPS.map((s, i) => ({ ...s, ...VISUALS[i] }));
-
-// #region agent log
-if (typeof window !== "undefined") {
-  fetch('http://127.0.0.1:7486/ingest/fb289329-0b63-43aa-a220-1d3931b4e10f',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'a8b9a8'},body:JSON.stringify({sessionId:'a8b9a8',runId:'pre-fix',hypothesisId:'H1',location:'ScrollDrivenJourney.tsx:27',message:'STEPS/VISUALS construction',data:{stepsLen:STEPS.length,visualsLen:VISUALS.length,missingIcon:STEPS.map((s,i)=>({i,hasIcon:!!(s as {icon?:unknown}).icon,accent:(s as {accent?:string}).accent})).filter(x=>!x.hasIcon)},timestamp:Date.now()})}).catch(()=>{});
-}
-// #endregion
+// Fall back to the last visual so a copy change in HOW_IT_WORKS_STEPS can
+// never leave a step without an icon/accent (which would crash on render).
+const STEPS = HOW_IT_WORKS_STEPS.map((s, i) => ({
+  ...s,
+  ...(VISUALS[i] ?? VISUALS[VISUALS.length - 1]),
+}));
 
 // Each step renders its own light-themed graphic on the right
 function StepGraphic({ index, accent }: { index: number; accent: string }) {
@@ -189,6 +197,99 @@ function StepGraphic({ index, accent }: { index: number; accent: string }) {
         </div>
       );
 
+    case 3:
+      return (
+        <div className="w-full max-w-[360px] space-y-3">
+          <div className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-ink-muted">
+            Your applications
+          </div>
+          {[
+            { name: "Linear", stage: "Interview", step: 3, total: 4 },
+            { name: "Vercel", stage: "Applied", step: 1, total: 4 },
+            { name: "Notion", stage: "Offer", step: 4, total: 4 },
+          ].map((a, i) => (
+            <motion.div
+              key={a.name}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: i * 0.08 }}
+              className="rounded-2xl border border-[rgba(44,34,24,0.06)] bg-white px-4 py-3 shadow-pb-sm"
+            >
+              <div className="mb-2 flex items-center justify-between">
+                <p className="text-[0.95rem] font-semibold text-ink">{a.name}</p>
+                <span
+                  className="rounded-full px-2.5 py-1 text-[0.7rem] font-bold"
+                  style={{ backgroundColor: `${accent}18`, color: accent }}
+                >
+                  {a.stage}
+                </span>
+              </div>
+              <div className="flex gap-1.5">
+                {Array.from({ length: a.total }).map((_, s) => (
+                  <motion.div
+                    key={s}
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.4, delay: 0.2 + s * 0.06 }}
+                    className="h-1.5 flex-1 origin-left rounded-full"
+                    style={{
+                      backgroundColor:
+                        s < a.step ? accent : "rgba(44,34,24,0.1)",
+                    }}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      );
+
+    case 4:
+      return (
+        <div className="w-full max-w-[340px] space-y-3">
+          <div className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-ink-muted">
+            PathBuild Pro
+          </div>
+          <div className="rounded-2xl border border-[rgba(44,34,24,0.06)] bg-white p-5 shadow-pb-sm">
+            <div className="mb-1 flex items-baseline gap-1.5">
+              <span className="font-serif text-[1.6rem] tracking-[-0.02em] text-ink">
+                $24.99
+              </span>
+              <span className="text-[0.78rem] text-ink-muted">/year</span>
+            </div>
+            <p className="mb-4 text-[0.74rem] font-semibold" style={{ color: accent }}>
+              7-day free trial
+            </p>
+            <div className="space-y-2.5">
+              {[
+                "Salary intel for every role",
+                "AI resume tailoring",
+                "Interview prep questions",
+                "Side-by-side comparisons",
+              ].map((f, i) => (
+                <motion.div
+                  key={f}
+                  initial={{ opacity: 0, x: 16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.15 + i * 0.08 }}
+                  className="flex items-center gap-2.5"
+                >
+                  <div
+                    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
+                    style={{ backgroundColor: `${accent}1A` }}
+                  >
+                    <span className="text-[0.7rem] font-bold" style={{ color: accent }}>
+                      ✓
+                    </span>
+                  </div>
+                  <span className="text-[0.88rem] text-ink">{f}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+
     default:
       return null;
   }
@@ -215,26 +316,17 @@ export function ScrollDrivenJourney() {
   );
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    const newActive = Math.min(STEPS.length - 1, Math.floor(latest * STEPS.length));
-    // #region agent log
-    fetch('http://127.0.0.1:7486/ingest/fb289329-0b63-43aa-a220-1d3931b4e10f',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'a8b9a8'},body:JSON.stringify({sessionId:'a8b9a8',runId:'pre-fix',hypothesisId:'H1,H3',location:'ScrollDrivenJourney.tsx:212',message:'scroll change -> activeStep',data:{latest,newActive,hasIcon:!!STEPS[newActive]?.icon,accent:STEPS[newActive]?.accent},timestamp:Date.now()})}).catch(()=>{});
-    // #endregion
-    setActiveStep(newActive);
+    setActiveStep(Math.min(STEPS.length - 1, Math.floor(latest * STEPS.length)));
   });
 
   const step = STEPS[activeStep];
   const Icon = step.icon;
-  // #region agent log
-  if (typeof window !== "undefined") {
-    fetch('http://127.0.0.1:7486/ingest/fb289329-0b63-43aa-a220-1d3931b4e10f',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'a8b9a8'},body:JSON.stringify({sessionId:'a8b9a8',runId:'pre-fix',hypothesisId:'H2',location:'ScrollDrivenJourney.tsx:216',message:'render body',data:{activeStep,iconType:typeof Icon,iconDefined:!!Icon,accent:step?.accent},timestamp:Date.now()})}).catch(()=>{});
-  }
-  // #endregion
 
   return (
     <div
       ref={containerRef}
       className="relative"
-      style={{ height: "300vh" }}
+      style={{ height: "500vh" }}
       aria-label="How it works — scroll to advance"
     >
       <motion.div
