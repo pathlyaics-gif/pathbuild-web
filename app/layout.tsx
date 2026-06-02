@@ -77,6 +77,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSerif.variable} ${instrumentSans.variable}`}>
       <body className={`${instrumentSans.className} font-sans antialiased`}>
+        <div className="grain-overlay" aria-hidden />
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

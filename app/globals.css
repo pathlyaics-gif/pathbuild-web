@@ -18,3 +18,73 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+@layer utilities {
+  /* Subtle film grain — fixed over the whole page for a premium, tactile feel. */
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.045;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Animated coral gradient text for headline accents. */
+  .text-gradient-coral {
+    background: linear-gradient(
+      100deg,
+      #d45a30 0%,
+      #e8734a 35%,
+      #f09070 50%,
+      #e8734a 65%,
+      #d45a30 100%
+    );
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+
+  @keyframes shimmer {
+    to {
+      background-position: 220% center;
+    }
+  }
+
+  /* Frosted-glass surface. */
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(16px) saturate(1.4);
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  /* Slow vertical float for accent elements. */
+  .float-slow {
+    animation: floatSlow 7s ease-in-out infinite;
+  }
+
+  @keyframes floatSlow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-gradient-coral,
+  .float-slow {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

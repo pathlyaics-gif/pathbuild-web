@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUp, Check, Compass, Sparkles } from "lucide-react";
 import { SectionReveal } from "./SectionReveal";
 import { ScrollDrivenJourney } from "./ScrollDrivenJourney";
+import { AuroraBackground } from "./AuroraBackground";
 import {
   APP_HERO_SUB,
   APP_STORE_URL,
@@ -38,16 +39,15 @@ export function MarketingHome() {
         id="hero"
         className="relative flex min-h-screen items-center justify-center overflow-hidden px-8 pb-20 pt-[120px]"
       >
+        {/* Live, scroll-reactive aurora background */}
+        <AuroraBackground opacity={0.9} />
+        {/* Soft fade so the aurora melts into the page below */}
         <div
-          className="pointer-events-none absolute -right-[15%] -top-[30%] h-[700px] w-[700px] rounded-full bg-[radial-gradient(circle,rgba(232,115,74,0.06)_0%,transparent_70%)]"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute -left-[10%] -bottom-[20%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(232,115,74,0.04)_0%,transparent_70%)]"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-cream"
           aria-hidden
         />
         <div className="relative z-[1] mx-auto max-w-[780px] text-center">
-          <div className="mb-8 inline-flex items-center gap-2 rounded-pill border border-cream-mid bg-white px-[18px] py-2 text-xs font-semibold uppercase tracking-[0.1em] text-coral shadow-pb-sm">
+          <div className="glass mb-8 inline-flex items-center gap-2 rounded-pill px-[18px] py-2 text-xs font-semibold uppercase tracking-[0.1em] text-coral shadow-pb-sm">
             <span
               className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-coral"
               aria-hidden
@@ -56,7 +56,7 @@ export function MarketingHome() {
           </div>
           <h1 className="mb-6 font-serif text-[clamp(2.5rem,5.5vw,4rem)] leading-[1.1] tracking-[-0.03em] text-ink">
             Discover the career that{" "}
-            <em className="not-italic text-coral">actually fits you</em>
+            <em className="not-italic text-gradient-coral">actually fits you</em>
           </h1>
           <p className="mx-auto mb-10 max-w-[560px] text-lg leading-[1.7] text-ink-secondary">
             {APP_HERO_SUB}
@@ -93,6 +93,19 @@ export function MarketingHome() {
             </div>
           </div>
         </div>
+        {/* Floating scroll cue */}
+        <Link
+          href="/#how-it-works"
+          aria-label="Scroll to see how it works"
+          className="float-slow group absolute bottom-8 left-1/2 z-[1] flex -translate-x-1/2 flex-col items-center gap-2 text-ink-muted transition-colors hover:text-coral"
+        >
+          <span className="text-[0.7rem] font-semibold uppercase tracking-[0.18em]">
+            Scroll
+          </span>
+          <span className="flex h-9 w-[22px] items-start justify-center rounded-pill border-[1.5px] border-current p-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-current" />
+          </span>
+        </Link>
       </section>
 
       {/* Scroll-driven section #1 — How It Works */}
@@ -171,7 +184,11 @@ export function MarketingHome() {
             </div>
 
             {/* Pro card */}
-            <div className="relative flex flex-col rounded-2xl border-2 border-coral bg-gradient-to-br from-[#FFF5EF] to-[#FFF0E8] p-8 shadow-[0_8px_32px_rgba(232,115,74,0.15)]">
+            <div className="group relative flex flex-col overflow-hidden rounded-2xl border-2 border-coral bg-gradient-to-br from-[#FFF5EF] to-[#FFF0E8] p-8 shadow-[0_8px_32px_rgba(232,115,74,0.18)] transition-all duration-500 ease-smooth hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(232,115,74,0.28)]">
+              <div
+                className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(232,115,74,0.22)_0%,transparent_70%)] transition-opacity duration-500 group-hover:opacity-80"
+                aria-hidden
+              />
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-pill bg-gradient-to-br from-coral via-coral-light to-coral px-4 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-white shadow-[0_4px_12px_rgba(232,115,74,0.3)]">
                 {ANNUAL_TRIAL_DAYS}-Day Free Trial
               </div>
