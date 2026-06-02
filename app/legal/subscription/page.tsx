@@ -5,11 +5,12 @@ import {
   ANNUAL_PRICE,
   ANNUAL_TRIAL_DAYS,
   MONTHLY_PRICE,
+  MONTHLY_TRIAL_DAYS,
 } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Subscription Terms — PathBuild",
-  description: `PathBuild Pro subscription terms. Monthly plan at ${MONTHLY_PRICE}/month (no trial). Annual plan at ${ANNUAL_PRICE}/year with a ${ANNUAL_TRIAL_DAYS}-day free trial. Cancel anytime.`,
+  description: `PathBuild Pro subscription terms. Monthly plan at ${MONTHLY_PRICE}/month and Annual plan at ${ANNUAL_PRICE}/year — both include a ${ANNUAL_TRIAL_DAYS}-day free trial. Cancel anytime.`,
 };
 
 export default function SubscriptionPage() {
@@ -47,7 +48,9 @@ export default function SubscriptionPage() {
           <ul className="list-disc pl-6 space-y-2">
             <li>
               <strong>Monthly Plan:</strong> {MONTHLY_PRICE} per month, billed
-              monthly. No free trial — you are charged immediately on subscribe.
+              monthly. Includes a{" "}
+              <strong>{MONTHLY_TRIAL_DAYS}-day free trial</strong> for eligible
+              new subscribers — you are not charged until the trial ends.
             </li>
             <li>
               <strong>Annual Plan:</strong> {ANNUAL_PRICE} per year, billed
@@ -65,24 +68,20 @@ export default function SubscriptionPage() {
           </p>
 
           <h2 className="text-xl font-semibold text-navy-900 pt-4">
-            2. Free Trial — Annual Plan Only
+            2. Free Trial
           </h2>
           <p>
-            The <strong>Annual plan</strong> includes a{" "}
-            <strong>{ANNUAL_TRIAL_DAYS}-day free trial</strong> for eligible
-            new subscribers. During this trial period, you have full access to
-            all PathBuild Pro features at no charge.
-          </p>
-          <p>
-            The <strong>Monthly plan does not include a free trial.</strong>{" "}
-            Subscribing to the Monthly plan charges your Apple ID account
-            immediately.
+            Both the <strong>Monthly</strong> and <strong>Annual</strong> plans
+            include a <strong>{ANNUAL_TRIAL_DAYS}-day free trial</strong> for
+            eligible new subscribers. During this trial period, you have full
+            access to all PathBuild Pro features at no charge.
           </p>
           <ul className="list-disc pl-6 space-y-2">
             <li>
               If you do not cancel before the trial ends, your subscription
-              automatically converts to a paid Annual subscription and you will
-              be charged {ANNUAL_PRICE}.
+              automatically converts to a paid subscription and you will be
+              charged {MONTHLY_PRICE} for the Monthly plan or {ANNUAL_PRICE} for
+              the Annual plan, depending on the plan you selected.
             </li>
             <li>
               Free trial eligibility is determined by Apple and is limited to

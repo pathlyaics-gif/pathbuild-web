@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Pricing — PathBuild",
   description:
-    "PathBuild is free to start. Upgrade to Pro for salary intel, AI tailoring, interview prep, and side-by-side comparisons. $14.99/mo or $24.99/yr with a 7-day free trial.",
+    "PathBuild is free to start. Upgrade to Pro for salary intel, AI tailoring, interview prep, and side-by-side comparisons. $14.99/mo or $24.99/yr, each with a 3-day free trial.",
 };
 
 const FREE_ROWS = [
@@ -45,8 +45,8 @@ const PRICING_FAQ = [
     a: "Salary intel, AI-tailored resume notes per company, interview prep questions, job-fit analysis of any posting, and side-by-side company comparisons — every tool to go from discovery to offer.",
   },
   {
-    q: "Does the annual plan really have a free trial?",
-    a: `Yes. The annual plan includes a ${ANNUAL_TRIAL_DAYS}-day free trial. No charge until the trial ends. You can cancel before Day ${ANNUAL_TRIAL_DAYS} and pay nothing. The monthly plan has no trial.`,
+    q: "Do the plans really have a free trial?",
+    a: `Yes. Both the monthly and annual plans include a ${ANNUAL_TRIAL_DAYS}-day free trial. No charge until the trial ends. You can cancel before Day ${ANNUAL_TRIAL_DAYS} and pay nothing.`,
   },
   {
     q: "How do I cancel?",
@@ -137,7 +137,7 @@ export default function PricingPage() {
               {ANNUAL_TRIAL_DAYS}-day free trial · billed annually · cancel anytime
             </p>
             <p className="mb-6 text-[0.8rem] text-ink-muted">
-              or {MONTHLY_PRICE}/month · no trial · billed monthly
+              or {MONTHLY_PRICE}/month · {ANNUAL_TRIAL_DAYS}-day free trial · billed monthly
             </p>
 
             <ul className="mb-8 flex-1 space-y-3">

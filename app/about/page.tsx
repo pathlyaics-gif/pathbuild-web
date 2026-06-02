@@ -109,8 +109,8 @@ export default function AboutPage() {
             PathBuild Pro unlocks salary intel, AI resume tailoring, interview
             prep, job-fit analysis, and side-by-side comparisons. Pro is{" "}
             <strong className="text-ink">{MONTHLY_PRICE}/month</strong> or{" "}
-            <strong className="text-ink">{ANNUAL_PRICE}/year</strong> — the
-            annual plan includes a{" "}
+            <strong className="text-ink">{ANNUAL_PRICE}/year</strong> — both
+            plans include a{" "}
             <strong className="text-ink">{ANNUAL_TRIAL_DAYS}-day free trial</strong>.
           </p>
         </div>

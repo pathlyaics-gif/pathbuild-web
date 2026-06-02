@@ -258,7 +258,7 @@ function StepGraphic({ index, accent }: { index: number; accent: string }) {
               <span className="text-[0.78rem] text-ink-muted">/year</span>
             </div>
             <p className="mb-4 text-[0.74rem] font-semibold" style={{ color: accent }}>
-              7-day free trial
+              3-day free trial
             </p>
             <div className="space-y-2.5">
               {[

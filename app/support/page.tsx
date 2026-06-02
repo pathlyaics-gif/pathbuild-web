@@ -42,7 +42,7 @@ const FAQ = [
   },
   {
     question: "How much does PathBuild cost?",
-    answer: `The core experience — career quiz, AI matching, company discovery, unlimited saves, and application tracking — is completely free. PathBuild Pro unlocks salary intel, AI resume tailoring, interview prep, job-fit analysis, and side-by-side comparisons. Pro is ${MONTHLY_PRICE}/month or ${ANNUAL_PRICE}/year. The annual plan includes a ${ANNUAL_TRIAL_DAYS}-day free trial.`,
+    answer: `The core experience — career quiz, AI matching, company discovery, unlimited saves, and application tracking — is completely free. PathBuild Pro unlocks salary intel, AI resume tailoring, interview prep, job-fit analysis, and side-by-side comparisons. Pro is ${MONTHLY_PRICE}/month or ${ANNUAL_PRICE}/year. Both plans include a ${ANNUAL_TRIAL_DAYS}-day free trial.`,
   },
   {
     question: "How do I cancel a Pro subscription?",

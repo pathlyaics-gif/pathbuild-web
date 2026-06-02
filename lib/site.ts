@@ -20,13 +20,16 @@ export const APP_HERO_SUB =
 
 export const MONTHLY_PRICE = "$14.99";
 export const ANNUAL_PRICE = "$24.99";
-export const ANNUAL_TRIAL_DAYS = 7;
+// Both plans now include the same free trial length.
+export const TRIAL_DAYS = 3;
+export const MONTHLY_TRIAL_DAYS = TRIAL_DAYS;
+export const ANNUAL_TRIAL_DAYS = TRIAL_DAYS;
 
 export const PRICING_HEADLINE = "Start free. Go Pro when you're ready.";
 export const PRICING_SUB =
   "Browse, save companies, and run the career quiz for free. Upgrade to PathBuild Pro for salary intel, AI tailoring, interview prep, and side-by-side comparisons.";
 export const PRICING_FOOTNOTE =
-  "Annual plan includes a 7-day free trial. Monthly has no trial. Payment charged to Apple ID. Cancel anytime in Settings.";
+  "Both plans include a 3-day free trial. Payment charged to Apple ID. Cancel anytime in Settings.";
 
 // ─── Free vs Pro ─────────────────────────────────────────────────────────────
 
@@ -125,7 +128,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "How much does PathBuild Pro cost?",
-    a: `PathBuild Pro is $${MONTHLY_PRICE.replace("$","")}/month or $${ANNUAL_PRICE.replace("$","")}/year. The annual plan includes a ${ANNUAL_TRIAL_DAYS}-day free trial — no charge until the trial ends. The monthly plan has no trial.`,
+    a: `PathBuild Pro is $${MONTHLY_PRICE.replace("$","")}/month or $${ANNUAL_PRICE.replace("$","")}/year. Both plans include a ${TRIAL_DAYS}-day free trial — no charge until the trial ends.`,
   },
   {
     q: "How do I cancel?",

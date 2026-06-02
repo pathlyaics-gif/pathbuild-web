@@ -188,7 +188,7 @@ export function MarketingHome() {
                 {ANNUAL_TRIAL_DAYS}-day free trial · cancel anytime
               </p>
               <p className="mb-6 text-[0.8rem] text-ink-muted">
-                or {MONTHLY_PRICE}/month · no trial
+                or {MONTHLY_PRICE}/month · {ANNUAL_TRIAL_DAYS}-day free trial
               </p>
               <ul className="mb-8 flex-1 space-y-3">
                 {PRO_FEATURES.map((f) => (
