@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Pricing — PathBuild",
   description:
-    "PathBuild is free to start. Upgrade to Pro for salary intel, AI tailoring, interview prep, and side-by-side comparisons. $14.99/mo or $24.99/yr, each with a 3-day free trial.",
+    "PathBuild is free to start. Upgrade to Pro for salary intel, AI tailoring, interview prep, and side-by-side comparisons. $14.99/mo or $34.99/yr, each with a 3-day free trial.",
 };
 
 const FREE_ROWS = [

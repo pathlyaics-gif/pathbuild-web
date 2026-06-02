@@ -253,7 +253,7 @@ function StepGraphic({ index, accent }: { index: number; accent: string }) {
           <div className="rounded-2xl border border-[rgba(44,34,24,0.06)] bg-white p-5 shadow-pb-sm">
             <div className="mb-1 flex items-baseline gap-1.5">
               <span className="font-serif text-[1.6rem] tracking-[-0.02em] text-ink">
-                $24.99
+                $34.99
               </span>
               <span className="text-[0.78rem] text-ink-muted">/year</span>
             </div>

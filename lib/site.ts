@@ -19,7 +19,7 @@ export const APP_HERO_SUB =
 // ─── Pricing ──────────────────────────────────────────────────────────────────
 
 export const MONTHLY_PRICE = "$14.99";
-export const ANNUAL_PRICE = "$24.99";
+export const ANNUAL_PRICE = "$34.99";
 // Both plans now include the same free trial length.
 export const TRIAL_DAYS = 3;
 export const MONTHLY_TRIAL_DAYS = TRIAL_DAYS;
