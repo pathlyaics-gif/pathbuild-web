@@ -1,0 +1,29 @@
+---
+description: Save tokens and avoid risky changes
+alwaysApply: true
+---
+
+Before editing:
+- confirm project folder, git remote, and branch
+- inspect only relevant files
+- make small diffs
+- avoid reading unrelated folders
+- do not rewrite whole files unless necessary
+- do not use GitHub unless it helps the task
+
+For this project:
+- this is PathBuild Web
+- allowed GitHub repo: pathlyiacs-gif/pathbuild-web
+- do not touch ONIS
+- do not touch pathbuild-ios unless explicitly asked
+
+Never touch:
+- API keys
+- .env files
+- auth
+- payments
+- database schema
+- git remotes
+- production data
+
+Never commit, push, create PRs, or create issues unless explicitly approved.
