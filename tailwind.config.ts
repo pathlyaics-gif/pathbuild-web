@@ -8,6 +8,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Landing (dark) palette — matches the iOS app.
+        night: {
+          DEFAULT: "#0B0B0C",
+          panel: "#121214",
+          raise: "#1A1A1D",
+        },
+        ember: {
+          DEFAULT: "#C1502A",
+          bright: "#E68A52",
+        },
+        bone: {
+          DEFAULT: "#F2EFEA",
+          dim: "#B7B2AA",
+          mute: "#8A857D",
+        },
         cream: {
           DEFAULT: "#FBF7F0",
           dark: "#F5EDE0",
