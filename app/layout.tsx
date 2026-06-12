@@ -3,7 +3,6 @@ import { DM_Serif_Display, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { APP_HERO_SUB, APP_HERO_TITLE } from "@/lib/site";
 
 const dmSerif = DM_Serif_Display({
   subsets: ["latin"],
@@ -19,46 +18,47 @@ const instrumentSans = Instrument_Sans({
   display: "swap",
 });
 
+const META_TITLE = "PathBuild — Stop guessing. See what fits.";
+const META_DESCRIPTION =
+  "PathBuild scores every job against your skills, pay, and goals — a 0–100 fit score before you apply. Swipe right and PathBuild drafts the application; you review, you send. For iPhone.";
+
 export const metadata: Metadata = {
-  title: "PathBuild — AI Career Discovery for iOS",
-  description: APP_HERO_SUB,
+  title: META_TITLE,
+  description: META_DESCRIPTION,
   metadataBase: new URL("https://pathbuild.app"),
   authors: [{ name: "PathBuild" }],
   keywords: [
-    "career discovery",
-    "career quiz",
-    "AI career match",
-    "find your career",
-    "what career fits me",
-    "career change app",
-    "company match",
-    "salary intel",
-    "interview prep",
-    "job fit analysis",
+    "career fit score",
+    "job fit",
+    "swipe to apply",
+    "job search app",
+    "career match",
+    "application tracker",
+    "what job fits me",
     "PathBuild",
     "iOS",
   ],
   openGraph: {
-    title: "PathBuild — AI Career Discovery for iOS",
-    description: APP_HERO_TITLE,
+    title: META_TITLE,
+    description: META_DESCRIPTION,
     url: "https://pathbuild.app",
     siteName: "PathBuild",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/star-summit-icon.png",
-        width: 655,
-        height: 650,
-        alt: "PathBuild — Star Summit icon",
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "PathBuild wordmark beside a 98% fit score ring on a dark background",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PathBuild — AI Career Discovery for iOS",
-    description: APP_HERO_TITLE,
-    images: ["/star-summit-icon.png"],
+    title: META_TITLE,
+    description: META_DESCRIPTION,
+    images: ["/og.png"],
   },
   icons: {
     icon: [
