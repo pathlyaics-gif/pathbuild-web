@@ -10,10 +10,9 @@ import { APP_STORE_URL } from "@/lib/site";
 
 const PRIMARY_LINKS = [
   { href: "/about", label: "About" },
-  { href: "/#how-it-works", label: "How It Works" },
-  { href: "/#features", label: "Features" },
-  { href: "/#pricing", label: "Pricing" },
-  { href: "/#faq", label: "Support" },
+  { href: "/how-it-works", label: "How It Works" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/support", label: "Support" },
 ];
 
 const LEGAL_LINKS = [
@@ -38,7 +37,12 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (pathname?.startsWith("/intro") || pathname?.startsWith("/onboarding")) {
+  // The landing page ("/") ships its own minimal dark nav.
+  if (
+    pathname === "/" ||
+    pathname?.startsWith("/intro") ||
+    pathname?.startsWith("/onboarding")
+  ) {
     return null;
   }
 

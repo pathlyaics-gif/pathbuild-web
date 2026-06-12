@@ -8,7 +8,12 @@ import { APP_STORE_URL, APP_TAGLINE, CONTACT_MAILTO } from "@/lib/site";
 export function Footer() {
   const pathname = usePathname();
 
-  if (pathname?.startsWith("/intro") || pathname?.startsWith("/onboarding")) {
+  // The landing page ("/") ships its own minimal dark footer.
+  if (
+    pathname === "/" ||
+    pathname?.startsWith("/intro") ||
+    pathname?.startsWith("/onboarding")
+  ) {
     return null;
   }
 
@@ -29,19 +34,13 @@ export function Footer() {
               Product
             </h5>
             <Link
-              href="/#features"
-              className="mb-3 block text-[0.88rem] text-white/65 transition-colors hover:text-coral-light"
-            >
-              Features
-            </Link>
-            <Link
-              href="/#pricing"
+              href="/pricing"
               className="mb-3 block text-[0.88rem] text-white/65 transition-colors hover:text-coral-light"
             >
               Pricing
             </Link>
             <Link
-              href="/#how-it-works"
+              href="/how-it-works"
               className="mb-3 block text-[0.88rem] text-white/65 transition-colors hover:text-coral-light"
             >
               How It Works
@@ -77,10 +76,10 @@ export function Footer() {
               Support
             </h5>
             <Link
-              href="/#faq"
+              href="/support"
               className="mb-3 block text-[0.88rem] text-white/65 transition-colors hover:text-coral-light"
             >
-              FAQ
+              FAQ & Help
             </Link>
             <a
               href={CONTACT_MAILTO}
