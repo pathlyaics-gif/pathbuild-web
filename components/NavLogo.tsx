@@ -14,9 +14,11 @@ export function NavLogo({ variant = "dark", className = "" }: NavLogoProps) {
       href="/"
       className={`flex items-center gap-2.5 no-underline shrink-0 ${className}`}
     >
+      {/* Decorative: the wordmark text beside it names the link. */}
       <Image
         src="/star-summit-icon.png"
-        alt="PathBuild"
+        alt=""
+        aria-hidden
         width={655}
         height={650}
         className="h-9 w-9 shrink-0 rounded-[9px] object-cover"
