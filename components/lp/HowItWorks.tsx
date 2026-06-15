@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "./Reveal";
 
 const ICON = "h-7 w-7 text-[#C1502A]";
@@ -40,6 +41,7 @@ const STEPS = [
 ];
 
 export function HowItWorks() {
+  const reduce = useReducedMotion();
   return (
     <section className="px-6 py-28 sm:py-36" aria-labelledby="how-heading">
       <div className="mx-auto max-w-[1100px]">
@@ -64,7 +66,11 @@ export function HowItWorks() {
         >
           {STEPS.map((step, i) => (
             <Reveal key={step.label} delay={0.1 * (i + 1)}>
-              <div className="h-full border-t border-[rgba(193,80,42,0.2)] bg-[#121214] p-8">
+              <motion.div
+                whileHover={reduce ? undefined : { y: -6 }}
+                transition={{ type: "spring", stiffness: 300, damping: 24 }}
+                className="h-full border-t border-[rgba(193,80,42,0.2)] bg-[#121214] p-8 transition-colors duration-300 hover:border-[rgba(193,80,42,0.55)]"
+              >
                 {step.icon}
                 <h3
                   className="mt-5 text-[1.4rem] font-normal text-white"
@@ -75,7 +81,7 @@ export function HowItWorks() {
                 <p className="mt-3 text-[0.95rem] font-light leading-relaxed text-[#E5E5E5]">
                   {step.body}
                 </p>
-              </div>
+              </motion.div>
             </Reveal>
           ))}
         </div>

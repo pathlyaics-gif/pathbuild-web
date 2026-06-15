@@ -16,13 +16,15 @@ const framePath = (i: number) =>
 /**
  * Scroll-scrubbed hero. A 300vh track pins a full-viewport <canvas>; scroll
  * progress maps to a frame index, and we redraw only when the index changes.
- * No <video> element, no scroll listener — a single rAF loop reads
- * getBoundingClientRect. Reduced-motion users get one static frame and no loop.
+ * The same rAF loop fades the overlay copy away as you scroll in — no <video>,
+ * no scroll listener, no useScroll. Reduced-motion users get one static frame
+ * and no loop.
  */
 export function ScrollHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const copyRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
 
   useEffect(() => {
@@ -63,8 +65,7 @@ export function ScrollHero() {
 
     sizeCanvas();
 
-    // Reduced motion: load a single representative frame (the completed ring)
-    // and hold it still — no preloading, no animation loop.
+    // Reduced motion: one representative frame (the completed ring), held still.
     if (reduce) {
       const still = new Image();
       still.src = framePath(FRAME_COUNT - 1);
@@ -102,6 +103,8 @@ export function ScrollHero() {
       const rect = container.getBoundingClientRect();
       const range = container.offsetHeight - window.innerHeight;
       const progress = Math.min(1, Math.max(0, -rect.top / (range || 1)));
+
+      // Scrub the canvas frame.
       const target = Math.round(progress * (FRAME_COUNT - 1));
       if (target !== current) {
         const img = images[target];
@@ -110,6 +113,15 @@ export function ScrollHero() {
           draw(img);
         }
       }
+
+      // Fade + lift the overlay copy away over the first third of the scroll.
+      const cr = copyRef.current;
+      if (cr) {
+        const fade = Math.max(0, Math.min(1, 1 - progress / 0.32));
+        cr.style.opacity = `${fade}`;
+        cr.style.transform = `translateY(${((1 - fade) * -48).toFixed(1)}px)`;
+      }
+
       raf = requestAnimationFrame(render);
     };
 
@@ -145,7 +157,10 @@ export function ScrollHero() {
                 "linear-gradient(to top, rgba(11,11,12,0.88), rgba(11,11,12,0.35) 50%, transparent)",
             }}
           />
-          <div className="relative mx-auto w-full max-w-[1100px] px-6 pb-16 sm:pb-20">
+          <div
+            ref={copyRef}
+            className="relative mx-auto w-full max-w-[1100px] px-6 pb-16 will-change-[opacity,transform] sm:pb-20"
+          >
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}

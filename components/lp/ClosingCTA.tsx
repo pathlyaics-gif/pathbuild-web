@@ -10,14 +10,16 @@ export function ClosingCTA() {
 
   return (
     <section className="relative overflow-hidden px-6 pb-24 pt-28 sm:pt-36" aria-labelledby="cta-heading">
-      {/* Soft terracotta radial glow behind the CTA. */}
-      <div
+      {/* Soft terracotta radial glow behind the CTA — slow breathing pulse. */}
+      <motion.div
         className="pointer-events-none absolute inset-0"
         aria-hidden
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(193,80,42,0.10), transparent 70%)",
+            "radial-gradient(ellipse at center, rgba(193,80,42,0.12), transparent 70%)",
         }}
+        animate={reduce ? undefined : { opacity: [0.55, 1, 0.55] }}
+        transition={reduce ? undefined : { duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="relative mx-auto max-w-[760px] text-center">
