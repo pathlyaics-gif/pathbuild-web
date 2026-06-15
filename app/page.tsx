@@ -1,7 +1,6 @@
 import { ScrollHero } from "@/components/lp/ScrollHero";
 import { HowItWorks } from "@/components/lp/HowItWorks";
 import { WhyItFits } from "@/components/lp/WhyItFits";
-import { RepliesTracked } from "@/components/lp/RepliesTracked";
 import { ClosingCTA } from "@/components/lp/ClosingCTA";
 
 export default function HomePage() {
@@ -19,7 +18,6 @@ export default function HomePage() {
       <ScrollHero />
       <HowItWorks />
       <WhyItFits />
-      <RepliesTracked />
       <ClosingCTA />
 
       <script
