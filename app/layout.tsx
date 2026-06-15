@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Instrument_Sans } from "next/font/google";
+import { DM_Serif_Display, Instrument_Sans, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -18,7 +18,24 @@ const instrumentSans = Instrument_Sans({
   display: "swap",
 });
 
-const META_TITLE = "PathBuild — Stop guessing. See what fits.";
+// Landing-page type system (scoped via CSS vars; the rest of the site keeps
+// its existing DM Serif / Instrument Sans fonts).
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const META_TITLE = "PathBuild — See what fits.";
 const META_DESCRIPTION =
   "PathBuild scores every job against your skills, pay, and goals — a 0–100 fit score before you apply. Swipe right and PathBuild drafts the application; you review, you send. For iPhone.";
 
@@ -75,7 +92,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${dmSerif.variable} ${instrumentSans.variable}`}>
+    <html
+      lang="en"
+      className={`${dmSerif.variable} ${instrumentSans.variable} ${playfair.variable} ${inter.variable}`}
+    >
       <body className={`${instrumentSans.className} font-sans antialiased`}>
         <div className="grain-overlay" aria-hidden />
         <Navbar />
