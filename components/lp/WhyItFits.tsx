@@ -1,6 +1,7 @@
 "use client";
 
 import { Reveal } from "./Reveal";
+import { AnimatedFitRing } from "./AnimatedFitRing";
 
 type Factor = { dir: "up" | "down"; factor: string; line: string };
 
@@ -34,7 +35,7 @@ const FACTORS: Factor[] = [
 export function WhyItFits() {
   return (
     <section className="px-6 py-28 sm:py-36" aria-labelledby="why-heading">
-      <div className="mx-auto max-w-[820px]">
+      <div className="mx-auto max-w-[1100px]">
         <Reveal>
           <p className="mb-4 text-[0.65rem] font-medium uppercase tracking-[0.25em] text-[#C1502A]">
             Why It Fits
@@ -57,34 +58,48 @@ export function WhyItFits() {
           </p>
         </Reveal>
 
-        <div className="mt-12">
-          {FACTORS.map((f, i) => (
-            <Reveal as="div" key={f.factor} delay={0.08 * (i + 1)}>
-              <div className="flex items-start gap-5 border-b border-white/[0.07] py-5">
-                <span
-                  aria-hidden
-                  className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[0.95rem] ${
-                    f.dir === "up"
-                      ? "bg-[rgba(193,80,42,0.16)] text-[#E68A52]"
-                      : "bg-white/[0.06] text-[#888888]"
-                  }`}
-                >
-                  {f.dir === "up" ? "↑" : "↓"}
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[0.65rem] font-medium uppercase tracking-[0.25em] text-[#C1502A]">
-                    {f.factor}
-                    <span className="sr-only">
-                      {f.dir === "up" ? " — raises the score" : " — lowers the score"}
-                    </span>
-                  </p>
-                  <p className="mt-1.5 text-[1rem] font-light leading-relaxed text-[#E5E5E5]">
-                    {f.line}
-                  </p>
+        <div className="mt-16 grid items-center gap-12 md:grid-cols-[0.85fr_1fr] md:gap-16">
+          {/* Animated score ring — illustrative example */}
+          <Reveal>
+            <div className="flex flex-col items-center rounded-2xl border border-[rgba(193,80,42,0.2)] bg-[#121214] px-8 py-12">
+              <AnimatedFitRing value={92} label="Job fit" />
+              <p className="mt-8 text-[1rem] text-white">Senior Product Designer</p>
+              <p className="mt-1 text-[0.6rem] uppercase tracking-[0.25em] text-[#888888]">
+                Example breakdown
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Factor rows */}
+          <div>
+            {FACTORS.map((f, i) => (
+              <Reveal as="div" key={f.factor} delay={0.08 * (i + 1)}>
+                <div className="flex items-start gap-5 border-b border-white/[0.07] py-5">
+                  <span
+                    aria-hidden
+                    className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[0.95rem] ${
+                      f.dir === "up"
+                        ? "bg-[rgba(193,80,42,0.16)] text-[#E68A52]"
+                        : "bg-white/[0.06] text-[#888888]"
+                    }`}
+                  >
+                    {f.dir === "up" ? "↑" : "↓"}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[0.65rem] font-medium uppercase tracking-[0.25em] text-[#C1502A]">
+                      {f.factor}
+                      <span className="sr-only">
+                        {f.dir === "up" ? " — raises the score" : " — lowers the score"}
+                      </span>
+                    </p>
+                    <p className="mt-1.5 text-[1rem] font-light leading-relaxed text-[#E5E5E5]">
+                      {f.line}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
