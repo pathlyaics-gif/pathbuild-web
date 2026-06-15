@@ -2,18 +2,40 @@
 
 import { Reveal } from "./Reveal";
 
+const ICON = "h-7 w-7 text-[#C1502A]";
+
 const STEPS = [
   {
-    title: "See your fit",
-    body: "Every job gets a 0–100 fit score that explains why it matches your skills, pay, and goals — not just whether it's open.",
+    label: "See your fit",
+    body: "A 0–100 score shows how well each job matches you — and why.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={ICON} aria-hidden>
+        <circle cx="12" cy="12" r="9" opacity="0.25" />
+        <path d="M12 3a9 9 0 0 1 8 13" strokeLinecap="round" />
+        <path d="M9 12.5l2 2 4-5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
   },
   {
-    title: "Swipe to apply",
-    body: "Swipe right on the roles worth your time, left to skip. You decide what moves forward — PathBuild just lines up the ones that fit.",
+    label: "Swipe to apply",
+    body: "Swipe right to apply, left to skip. You decide what moves forward.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={ICON} aria-hidden>
+        <path d="M14 7l4 5-4 5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M18 12H8" strokeLinecap="round" />
+        <path d="M10 17l-4-5 4-5" strokeLinecap="round" strokeLinejoin="round" opacity="0.4" />
+      </svg>
+    ),
   },
   {
-    title: "We draft, you send",
-    body: "PathBuild drafts a tailored application from your profile. You review it, edit it, and send it. Nothing is ever sent automatically.",
+    label: "We draft, you send",
+    body: "We write a tailored application; you review and send it. Nothing goes out on its own.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={ICON} aria-hidden>
+        <path d="M21 3L3 10.5l6.6 2.4L12 21l9-18z" strokeLinejoin="round" />
+        <path d="M9.6 12.9L21 3" strokeLinecap="round" />
+      </svg>
+    ),
   },
 ];
 
@@ -36,18 +58,19 @@ export function HowItWorks() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div
+          className="mt-16 grid gap-5"
+          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}
+        >
           {STEPS.map((step, i) => (
-            <Reveal key={step.title} delay={0.1 * (i + 1)}>
-              <div className="h-full rounded-2xl border border-[rgba(193,80,42,0.2)] bg-[#121214] p-8">
-                <span className="text-[0.65rem] font-medium uppercase tracking-[0.25em] text-[#C1502A]">
-                  0{i + 1}
-                </span>
+            <Reveal key={step.label} delay={0.1 * (i + 1)}>
+              <div className="h-full border-t border-[rgba(193,80,42,0.2)] bg-[#121214] p-8">
+                {step.icon}
                 <h3
                   className="mt-5 text-[1.4rem] font-normal text-white"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
-                  {step.title}
+                  {step.label}
                 </h3>
                 <p className="mt-3 text-[0.95rem] font-light leading-relaxed text-[#E5E5E5]">
                   {step.body}

@@ -2,18 +2,33 @@
 
 import { Reveal } from "./Reveal";
 
-type Factor = { dir: "up" | "down"; text: string };
+type Factor = { dir: "up" | "down"; factor: string; line: string };
 
 /**
- * Honest, number-free factor rows. The list deliberately ends on a real
- * negative so the score reads as candid, not a sales pitch.
+ * Calm, advisor-voice factor rows — no fabricated numbers. The list ends on a
+ * real negative so the score reads as candid, not a sales pitch.
  */
 const FACTORS: Factor[] = [
-  { dir: "up", text: "Your skills cover most of what the role is asking for." },
-  { dir: "up", text: "The pay range lands above the target you set." },
-  { dir: "up", text: "It's within the locations and work style you chose." },
-  { dir: "up", text: "The team's stage matches the kind of work you said you want." },
-  { dir: "down", text: "They want more years of experience than you have — so the score reflects that, honestly." },
+  {
+    dir: "up",
+    factor: "Target role",
+    line: "It lines up with the direction you set during onboarding.",
+  },
+  {
+    dir: "up",
+    factor: "Salary range",
+    line: "The posted pay sits at or above what you told us you're aiming for.",
+  },
+  {
+    dir: "up",
+    factor: "Location",
+    line: "It's in a place and work style you said you'd consider.",
+  },
+  {
+    dir: "down",
+    factor: "Experience",
+    line: "It asks for a few more years than you have right now — so the score holds back, and tells you.",
+  },
 ];
 
 export function WhyItFits() {
@@ -22,32 +37,33 @@ export function WhyItFits() {
       <div className="mx-auto max-w-[820px]">
         <Reveal>
           <p className="mb-4 text-[0.65rem] font-medium uppercase tracking-[0.25em] text-[#C1502A]">
-            Why it fits
+            Why It Fits
           </p>
         </Reveal>
         <Reveal delay={0.1}>
           <h2
             id="why-heading"
-            className="max-w-[18ch] font-light leading-[1.08] tracking-[-0.02em] text-white"
+            className="font-light leading-[1.08] tracking-[-0.02em] text-white"
             style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
-            Every score, explained.
+            Every match, explained.
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
           <p className="mt-5 max-w-[520px] text-[1.05rem] font-light leading-relaxed text-[#E5E5E5]">
             A fit score moves up and down for real reasons. PathBuild always
-            tells you which — what's working in your favor, and what isn't.
+            shows its work — what's lifting the score, and what's pulling it
+            down.
           </p>
         </Reveal>
 
-        <ul className="mt-14 space-y-3">
+        <div className="mt-12">
           {FACTORS.map((f, i) => (
-            <Reveal as="li" key={f.text} delay={0.08 * (i + 1)}>
-              <div className="flex items-start gap-4 rounded-2xl border border-[rgba(193,80,42,0.2)] bg-[#121214] p-5">
+            <Reveal as="div" key={f.factor} delay={0.08 * (i + 1)}>
+              <div className="flex items-start gap-5 border-b border-white/[0.07] py-5">
                 <span
                   aria-hidden
-                  className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[0.95rem] font-medium ${
+                  className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[0.95rem] ${
                     f.dir === "up"
                       ? "bg-[rgba(193,80,42,0.16)] text-[#E68A52]"
                       : "bg-white/[0.06] text-[#888888]"
@@ -55,16 +71,21 @@ export function WhyItFits() {
                 >
                   {f.dir === "up" ? "↑" : "↓"}
                 </span>
-                <p className="text-[1rem] font-light leading-relaxed text-[#E5E5E5]">
-                  <span className="sr-only">
-                    {f.dir === "up" ? "Raises the score: " : "Lowers the score: "}
-                  </span>
-                  {f.text}
-                </p>
+                <div className="min-w-0 flex-1">
+                  <p className="text-[0.65rem] font-medium uppercase tracking-[0.25em] text-[#C1502A]">
+                    {f.factor}
+                    <span className="sr-only">
+                      {f.dir === "up" ? " — raises the score" : " — lowers the score"}
+                    </span>
+                  </p>
+                  <p className="mt-1.5 text-[1rem] font-light leading-relaxed text-[#E5E5E5]">
+                    {f.line}
+                  </p>
+                </div>
               </div>
             </Reveal>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
