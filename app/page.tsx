@@ -1,4 +1,5 @@
 import { ScrollHero } from "@/components/lp/ScrollHero";
+import { SeeItInAction } from "@/components/lp/SeeItInAction";
 import { HowItWorks } from "@/components/lp/HowItWorks";
 import { WhyItFits } from "@/components/lp/WhyItFits";
 import { ClosingCTA } from "@/components/lp/ClosingCTA";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <style>{`body{background:#0B0B0C}`}</style>
 
       <ScrollHero />
+      <SeeItInAction />
       <HowItWorks />
       <WhyItFits />
       <ClosingCTA />
