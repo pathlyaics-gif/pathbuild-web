@@ -164,7 +164,7 @@ export function ScrollHero() {
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
               className="mb-4 text-[0.65rem] font-medium uppercase tracking-[0.25em] text-[#C1502A]"
             >
               Built for your next move
@@ -172,7 +172,7 @@ export function ScrollHero() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.95, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="max-w-[16ch] font-light leading-[1.04] tracking-[-0.02em] text-white"
               style={{
                 fontFamily: "var(--font-playfair)",
@@ -184,7 +184,7 @@ export function ScrollHero() {
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 1.1, ease: "easeOut" }}
+              transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
               className="mt-6 max-w-[460px] text-[1.05rem] font-light leading-relaxed text-[#E5E5E5]"
             >
               PathBuild learns your best-fit career, then scores real jobs from 0
@@ -193,7 +193,7 @@ export function ScrollHero() {
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 1.25, ease: "easeOut" }}
+              transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
               className="mt-9"
             >
               <AppBadge />
