@@ -140,12 +140,22 @@ export function ScrollHero() {
   }, [reduce]);
 
   return (
-    <section ref={containerRef} className="relative h-[250vh]" aria-label="PathBuild hero">
+    <section ref={containerRef} className="relative h-[380vh]" aria-label="PathBuild hero">
       <div
         ref={stickyRef}
         className="sticky top-0 h-screen w-full overflow-hidden bg-[#0B0B0C]"
       >
         <canvas ref={canvasRef} className="block h-full w-full" aria-hidden />
+
+        {/* Vignette — darkens the edges for depth and focus on the device. */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          aria-hidden
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 45%, transparent 52%, rgba(11,11,12,0.55) 100%)",
+          }}
+        />
 
         {/* Overlay: copy pinned to the lower third, over a bottom-up scrim. */}
         <div className="pointer-events-none absolute inset-0 flex flex-col justify-end">
