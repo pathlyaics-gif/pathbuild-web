@@ -1,11 +1,11 @@
 import Image from "next/image";
+import { APP_STORE_URL } from "@/lib/site";
 
 /**
- * TODO(launch): swap APP_STORE_HREF for the live "Download on the App Store"
- * URL before launch. Kept as a clearly-marked placeholder so nothing ships
- * pointing at a guessed link.
+ * Live "Download on the App Store" link, sourced from lib/site.ts
+ * (apps.apple.com/app/pathbuild/...). Verify it's the correct listing before launch.
  */
-export const APP_STORE_HREF = "#"; // TODO(launch): real App Store URL
+export const APP_STORE_HREF = APP_STORE_URL;
 
 /**
  * Official Apple "Download on the App Store" badge — unmodified black artwork,
@@ -16,6 +16,8 @@ export function AppBadge({ className = "" }: { className?: string }) {
   return (
     <a
       href={APP_STORE_HREF}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label="Download PathBuild on the App Store"
       className={`pointer-events-auto inline-block p-1.5 transition-transform duration-300 hover:-translate-y-0.5 ${className}`}
     >
