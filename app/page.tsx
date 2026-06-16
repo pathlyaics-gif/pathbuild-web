@@ -1,5 +1,5 @@
 import { ScrollHero } from "@/components/lp/ScrollHero";
-import { SeeItInAction } from "@/components/lp/SeeItInAction";
+import { ScrollPhoneShowcase } from "@/components/lp/ScrollPhoneShowcase";
 import { HowItWorks } from "@/components/lp/HowItWorks";
 import { WhyItFits } from "@/components/lp/WhyItFits";
 import { ClosingCTA } from "@/components/lp/ClosingCTA";
@@ -9,7 +9,7 @@ export default function HomePage() {
     // Inter as the page's base font; Playfair is applied per-heading.
     // The global <main> lives in layout.tsx — this is the dark landing surface.
     <div
-      className="bg-[#0B0B0C] text-white overflow-x-hidden"
+      className="bg-[#0B0B0C] text-white overflow-x-clip"
       style={{ fontFamily: "var(--font-inter)" }}
     >
       {/* Page-scoped body color so overscroll edges stay near-black on this
@@ -17,7 +17,7 @@ export default function HomePage() {
       <style>{`body{background:#0B0B0C}`}</style>
 
       <ScrollHero />
-      <SeeItInAction />
+      <ScrollPhoneShowcase />
       <HowItWorks />
       <WhyItFits />
       <ClosingCTA />
