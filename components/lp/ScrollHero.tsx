@@ -140,7 +140,7 @@ export function ScrollHero() {
   }, [reduce]);
 
   return (
-    <section ref={containerRef} className="relative h-[300vh]" aria-label="PathBuild hero">
+    <section ref={containerRef} className="relative h-[250vh]" aria-label="PathBuild hero">
       <div
         ref={stickyRef}
         className="sticky top-0 h-screen w-full overflow-hidden bg-[#0B0B0C]"
