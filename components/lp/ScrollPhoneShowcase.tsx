@@ -189,7 +189,7 @@ export function ScrollPhoneShowcase() {
           >
             <div
               className="relative overflow-hidden rounded-[2.1rem] bg-[#0e0e10]"
-              style={{ height: "min(50vh, 460px)", aspectRatio: "1179 / 2556" }}
+              style={{ height: "min(64vh, 620px)", aspectRatio: "1179 / 2556" }}
             >
               {SHOTS.map((s, i) => (
                 <div
