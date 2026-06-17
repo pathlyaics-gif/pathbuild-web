@@ -5,116 +5,54 @@ import { motion, useReducedMotion } from "framer-motion";
 import { AppBadge } from "./AppBadge";
 
 /**
- * Number of extracted hero frames in /public/frames (frame_0001.jpg …).
- * Kept in sync with the ffmpeg extraction step.
+ * Scroll-scrubbed hero. A 380vh track pins a phone in a near-black void; scroll
+ * progress drives a code-rendered FIT-SCORE ring + number that counts EXACTLY
+ * 1 → 100 (every value, monotonic, perfectly legible) — no baked video frames,
+ * so the count can never skip. The same rAF loop fades the overlay copy away.
+ * No <video>, no scroll listener (rAF + getBoundingClientRect). Reduced-motion
+ * users get a static, fully-drawn ring at 100.
  */
-export const FRAME_COUNT = 121;
+const SIZE = 232;
+const STROKE = 11;
+const R = SIZE / 2 - STROKE;
+const C = 2 * Math.PI * R;
 
-const framePath = (i: number) =>
-  `/frames/frame_${String(i + 1).padStart(4, "0")}.jpg`;
-
-/**
- * Scroll-scrubbed hero. A 300vh track pins a full-viewport <canvas>; scroll
- * progress maps to a frame index, and we redraw only when the index changes.
- * The same rAF loop fades the overlay copy away as you scroll in — no <video>,
- * no scroll listener, no useScroll. Reduced-motion users get one static frame
- * and no loop.
- */
 export function ScrollHero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const stickyRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const arcRef = useRef<SVGCircleElement>(null);
+  const numRef = useRef<HTMLSpanElement>(null);
   const copyRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
 
   useEffect(() => {
     const container = containerRef.current;
-    const sticky = stickyRef.current;
-    const canvas = canvasRef.current;
-    if (!container || !sticky || !canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    const arc = arcRef.current;
+    const num = numRef.current;
+    if (!container || !arc || !num) return;
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    let current = -1;
-    let raf = 0;
-
-    const sizeCanvas = () => {
-      const w = sticky.clientWidth;
-      const h = sticky.clientHeight;
-      canvas.width = Math.round(w * dpr);
-      canvas.height = Math.round(h * dpr);
-      canvas.style.width = `${w}px`;
-      canvas.style.height = `${h}px`;
+    const setValue = (v: number) => {
+      const val = Math.max(0, Math.min(100, v));
+      arc.style.strokeDashoffset = `${C * (1 - val / 100)}`;
+      num.textContent = `${Math.round(val)}`;
     };
 
-    // Cover-fit draw: scale = max(cw/iw, ch/ih), centered, black behind.
-    const draw = (img: HTMLImageElement) => {
-      if (!img || !img.complete || img.naturalWidth === 0) return;
-      const cw = canvas.width;
-      const ch = canvas.height;
-      const iw = img.naturalWidth;
-      const ih = img.naturalHeight;
-      const scale = Math.max(cw / iw, ch / ih);
-      const dw = iw * scale;
-      const dh = ih * scale;
-      ctx.fillStyle = "#0B0B0C";
-      ctx.fillRect(0, 0, cw, ch);
-      ctx.drawImage(img, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
-    };
-
-    sizeCanvas();
-
-    // Reduced motion: one representative frame (the completed ring), held still.
+    // Reduced motion: hold the completed ring at 100, no scrub.
     if (reduce) {
-      const still = new Image();
-      still.src = framePath(FRAME_COUNT - 1);
-      const paint = () => {
-        current = FRAME_COUNT - 1;
-        draw(still);
-      };
-      if (still.complete) paint();
-      else still.onload = paint;
-      const onResizeStatic = () => {
-        sizeCanvas();
-        draw(still);
-      };
-      window.addEventListener("resize", onResizeStatic);
-      return () => window.removeEventListener("resize", onResizeStatic);
+      setValue(100);
+      return;
     }
 
-    // Preload every frame; draw frame 0 as soon as it lands.
-    const images: HTMLImageElement[] = new Array(FRAME_COUNT);
-    for (let i = 0; i < FRAME_COUNT; i++) {
-      const img = new Image();
-      img.src = framePath(i);
-      if (i === 0) {
-        img.onload = () => {
-          if (current === -1) {
-            current = 0;
-            draw(img);
-          }
-        };
-      }
-      images[i] = img;
-    }
-
+    setValue(1);
+    let raf = 0;
     const render = () => {
       const rect = container.getBoundingClientRect();
       const range = container.offsetHeight - window.innerHeight;
       const progress = Math.min(1, Math.max(0, -rect.top / (range || 1)));
 
-      // Scrub the canvas frame.
-      const target = Math.round(progress * (FRAME_COUNT - 1));
-      if (target !== current) {
-        const img = images[target];
-        if (img && img.complete && img.naturalWidth) {
-          current = target;
-          draw(img);
-        }
-      }
+      // 1 → 100 across the scroll; reach 100 a touch before the end, then hold.
+      const eased = Math.min(1, progress / 0.88);
+      setValue(1 + eased * 99);
 
-      // Fade + lift the overlay copy away over the first third of the scroll.
       const cr = copyRef.current;
       if (cr) {
         const fade = Math.max(0, Math.min(1, 1 - progress / 0.32));
@@ -124,28 +62,89 @@ export function ScrollHero() {
 
       raf = requestAnimationFrame(render);
     };
-
-    const onResize = () => {
-      sizeCanvas();
-      const img = images[current >= 0 ? current : 0];
-      if (img) draw(img);
-    };
-    window.addEventListener("resize", onResize);
     raf = requestAnimationFrame(render);
-
-    return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener("resize", onResize);
-    };
+    return () => cancelAnimationFrame(raf);
   }, [reduce]);
 
   return (
     <section ref={containerRef} className="relative h-[380vh]" aria-label="PathBuild hero">
-      <div
-        ref={stickyRef}
-        className="sticky top-0 h-screen w-full overflow-hidden bg-[#0B0B0C]"
-      >
-        <canvas ref={canvasRef} className="block h-full w-full" aria-hidden />
+      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#0B0B0C]">
+        {/* Warm terracotta light behind the device. */}
+        <div
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[640px] w-[640px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          aria-hidden
+          style={{
+            background:
+              "radial-gradient(circle, rgba(193,80,42,0.22), rgba(193,80,42,0.06) 42%, transparent 70%)",
+          }}
+        />
+
+        {/* Phone, centered, gently floating with a subtle 3D tilt. */}
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+          style={{ perspective: "1500px" }}
+          aria-hidden
+        >
+          <motion.div
+            className="relative w-[270px] rounded-[46px] border border-white/10 bg-[#1b1b1e] p-2.5 shadow-[0_50px_120px_-30px_rgba(0,0,0,0.9)] sm:w-[300px]"
+            style={{ transform: "rotateY(-9deg) rotateX(4deg)", transformStyle: "preserve-3d" }}
+            animate={reduce ? undefined : { y: [0, -12, 0] }}
+            transition={reduce ? undefined : { duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <div
+              className="relative flex items-center justify-center overflow-hidden rounded-[36px] bg-[#0e0e10]"
+              style={{ aspectRatio: "1179 / 2556" }}
+            >
+              {/* Dynamic island */}
+              <div className="absolute left-1/2 top-4 h-[22px] w-[82px] -translate-x-1/2 rounded-full bg-black" />
+
+              {/* Fit-score ring + number */}
+              <div className="relative flex items-center justify-center" style={{ width: SIZE, height: SIZE }}>
+                <svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`}>
+                  <defs>
+                    <linearGradient id="heroRing" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#C1502A" />
+                      <stop offset="100%" stopColor="#E68A52" />
+                    </linearGradient>
+                  </defs>
+                  <circle
+                    cx={SIZE / 2}
+                    cy={SIZE / 2}
+                    r={R}
+                    fill="none"
+                    stroke="rgba(242,239,234,0.08)"
+                    strokeWidth={STROKE}
+                  />
+                  <circle
+                    ref={arcRef}
+                    cx={SIZE / 2}
+                    cy={SIZE / 2}
+                    r={R}
+                    fill="none"
+                    stroke="url(#heroRing)"
+                    strokeWidth={STROKE}
+                    strokeLinecap="round"
+                    strokeDasharray={C}
+                    strokeDashoffset={C}
+                    transform={`rotate(-90 ${SIZE / 2} ${SIZE / 2})`}
+                    style={{ filter: "drop-shadow(0 0 10px rgba(193,80,42,0.55))" }}
+                  />
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <span className="text-[0.55rem] font-medium uppercase tracking-[0.28em] text-[#8A857D]">
+                    Job fit score
+                  </span>
+                  <span className="mt-1 flex items-baseline font-medium leading-none tabular-nums text-white">
+                    <span ref={numRef} className="text-[3.2rem]">
+                      1
+                    </span>
+                    <span className="text-[1.4rem] text-[#888888]">%</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Vignette — darkens the edges for depth and focus on the device. */}
         <div
@@ -164,7 +163,7 @@ export function ScrollHero() {
             aria-hidden
             style={{
               background:
-                "linear-gradient(to top, rgba(11,11,12,0.88), rgba(11,11,12,0.35) 50%, transparent)",
+                "linear-gradient(to top, rgba(11,11,12,0.92), rgba(11,11,12,0.4) 50%, transparent)",
             }}
           />
           <div
