@@ -1,5 +1,4 @@
 import { ScrollHero } from "@/components/lp/ScrollHero";
-import { ThreeNumbers } from "@/components/lp/ThreeNumbers";
 import { HowItWorks } from "@/components/lp/HowItWorks";
 import { RealAppProof } from "@/components/lp/RealAppProof";
 import { Credibility } from "@/components/lp/Credibility";
@@ -17,10 +16,9 @@ export default function HomePage() {
           route only — the rest of the site keeps its light theme. */}
       <style>{`body{background:#0B0B0C}`}</style>
 
-      {/* Section rhythm: hero film → 3 numbers → how it works →
+      {/* Section rhythm: hero film → how it works →
           real app proof → credibility → one-line CTA. */}
       <ScrollHero />
-      <ThreeNumbers />
       <HowItWorks />
       <RealAppProof />
       <Credibility />
