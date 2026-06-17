@@ -183,13 +183,15 @@ export function ScrollHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="max-w-[16ch] font-light leading-[1.04] tracking-[-0.02em] text-white"
+              className="max-w-[15ch] font-light leading-[1.02] tracking-[-0.02em] text-white"
               style={{
                 fontFamily: "var(--font-playfair)",
                 fontSize: "clamp(2.4rem, 6vw, 5.5rem)",
               }}
             >
-              See which jobs fit you — and why.
+              One tap.
+              <br />
+              Your whole job search.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -197,8 +199,8 @@ export function ScrollHero() {
               transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
               className="mt-6 max-w-[460px] text-[1.05rem] font-light leading-relaxed text-[#E5E5E5]"
             >
-              PathBuild learns your best-fit career, then scores real jobs from 0
-              to 100 — so you see why each one fits before you apply.
+              PathBuild learns your best-fit career, scores every job 0–100, and
+              drafts each application for you to review and send.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 16 }}

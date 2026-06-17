@@ -1,7 +1,8 @@
 import { ScrollHero } from "@/components/lp/ScrollHero";
-import { ScrollPhoneShowcase } from "@/components/lp/ScrollPhoneShowcase";
+import { ThreeNumbers } from "@/components/lp/ThreeNumbers";
 import { HowItWorks } from "@/components/lp/HowItWorks";
-import { WhyItFits } from "@/components/lp/WhyItFits";
+import { RealAppProof } from "@/components/lp/RealAppProof";
+import { Credibility } from "@/components/lp/Credibility";
 import { ClosingCTA } from "@/components/lp/ClosingCTA";
 
 export default function HomePage() {
@@ -16,10 +17,13 @@ export default function HomePage() {
           route only — the rest of the site keeps its light theme. */}
       <style>{`body{background:#0B0B0C}`}</style>
 
+      {/* Section rhythm: hero film → 3 numbers → how it works →
+          real app proof → credibility → one-line CTA. */}
       <ScrollHero />
-      <ScrollPhoneShowcase />
+      <ThreeNumbers />
       <HowItWorks />
-      <WhyItFits />
+      <RealAppProof />
+      <Credibility />
       <ClosingCTA />
 
       <script
