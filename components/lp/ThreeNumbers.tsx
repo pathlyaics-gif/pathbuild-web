@@ -12,7 +12,6 @@ import { Reveal } from "./Reveal";
  */
 const NUMBERS = [
   { value: "0–100", label: "Fit score on every job" },
-  { value: "3 → 200", label: "Applications / month with Pro" },
   { value: "1 tap", label: "Apply, drafted for you" },
 ];
 
@@ -36,7 +35,7 @@ export function ThreeNumbers() {
         transition={reduce ? undefined : { duration: 9, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative mx-auto grid w-full max-w-[1100px] grid-cols-1 gap-y-20 text-center md:grid-cols-3 md:gap-x-10">
+      <div className="relative mx-auto grid w-full max-w-[760px] grid-cols-1 gap-y-20 text-center md:grid-cols-2 md:gap-x-16">
         {NUMBERS.map((n, i) => (
           <Reveal key={n.label} delay={0.1 * i} className="flex flex-col items-center">
             <span
