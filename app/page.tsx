@@ -1,3 +1,4 @@
+import { LandingNav } from "@/components/landing/LandingNav";
 import { ScrollHero } from "@/components/lp/ScrollHero";
 import { HowItWorks } from "@/components/lp/HowItWorks";
 import { RealAppProof } from "@/components/lp/RealAppProof";
@@ -15,6 +16,9 @@ export default function HomePage() {
       {/* Page-scoped body color so overscroll edges stay near-black on this
           route only — the rest of the site keeps its light theme. */}
       <style>{`body{background:#0B0B0C}`}</style>
+
+      {/* Minimal sticky header — wordmark + Download, grabbable from anywhere. */}
+      <LandingNav />
 
       {/* Section rhythm: hero film → how it works →
           real app proof → credibility → one-line CTA. */}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { AppBadge } from "./AppBadge";
 import { Reveal } from "./Reveal";
+import { MONTHLY_PRICE, ANNUAL_PRICE, TRIAL_DAYS } from "@/lib/site";
 
 export function ClosingCTA() {
   const reduce = useReducedMotion();
@@ -52,6 +53,27 @@ export function ClosingCTA() {
           >
             <AppBadge />
           </motion.div>
+        </Reveal>
+
+        {/* Honest pricing — free to start, Pro adds the deeper tools. */}
+        <Reveal delay={0.4}>
+          <div className="mx-auto mt-8 max-w-[540px]">
+            <p className="text-[0.95rem] font-light leading-relaxed text-[#E5E5E5]">
+              Free to start — the career quiz, your matches, and company
+              discovery cost nothing. PathBuild Pro adds salary intel, AI résumé
+              tailoring, and interview prep.
+            </p>
+            <p className="mt-2.5 text-[0.8rem] font-light text-[#888888]">
+              {MONTHLY_PRICE}/mo or {ANNUAL_PRICE}/yr · {TRIAL_DAYS}-day free
+              trial · cancel anytime.{" "}
+              <Link
+                href="/pricing"
+                className="text-[#B7B2AA] underline-offset-4 transition-colors hover:text-white hover:underline"
+              >
+                See full pricing
+              </Link>
+            </p>
+          </div>
         </Reveal>
       </div>
 

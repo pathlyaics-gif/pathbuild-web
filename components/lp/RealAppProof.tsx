@@ -37,7 +37,7 @@ const SHOTS: Shot[] = [
 function PhoneFrame({ src, alt, float }: { src: string; alt: string; float: boolean }) {
   return (
     <motion.div
-      className="relative mx-auto w-full max-w-[280px] rounded-[2.6rem] border border-white/10 bg-[#1b1b1e] p-2.5 shadow-[0_50px_120px_-30px_rgba(0,0,0,0.9)]"
+      className="relative mx-auto w-full max-w-[240px] rounded-[2.6rem] border border-white/10 bg-[#1b1b1e] p-2.5 shadow-[0_50px_120px_-30px_rgba(0,0,0,0.9)] sm:max-w-[280px]"
       animate={float ? { y: [0, -14, 0] } : undefined}
       transition={float ? { duration: 7, repeat: Infinity, ease: "easeInOut" } : undefined}
     >
@@ -45,7 +45,13 @@ function PhoneFrame({ src, alt, float }: { src: string; alt: string; float: bool
         className="relative overflow-hidden rounded-[2.1rem] bg-[#0e0e10]"
         style={{ aspectRatio: "1179 / 2556" }}
       >
-        <Image src={src} alt={alt} fill sizes="280px" className="object-cover" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 640px) 240px, 280px"
+          className="object-cover"
+        />
       </div>
     </motion.div>
   );
