@@ -11,3 +11,12 @@ Source: `PATHBUILD_WEB_SECURITY_AUDIT.md`. No P0/P1 issues found. Items below ar
 - [x] **Dependencies (F5, P2)** — DONE: bumped `next` 15.5.12→15.5.20 (clears Next.js runtime advisories), rebuilt + verified. Residual postcss/picomatch are transitive build-time only with no non-breaking fix; revisit when Next updates them.
 - [ ] **(Optional)** narrow `.claude/settings.local.json` git permissions (F4, P3).
 - [ ] **Separate audit: PathBuild iOS backend** — Supabase RLS, service-role/AI keys, CV upload & storage privacy, auth/OAuth/session. This is the real secret/PII surface; it does not exist in the web repo.
+
+## Non-security follow-ups (surfaced during the independent re-audit)
+
+- [ ] **Intro video 404** — `app/intro/page.tsx:144` references `/intro/pathbuild-intro.mp4`, which does not exist in `public/`. The `/intro` splash video fails to load (Skip button still works, but auto-advance won't fire). Add the file, or handle `onError`/remove the video phase. Functional, not security.
+- [ ] **Marketing screenshot polish** — `public/screenshots/should-you-apply.png` shows a phone status bar with a partially visible contact name. Cosmetic/privacy polish; consider a clean re-capture.
+
+## Acceptance
+
+- ✅ **Independent security re-audit (2026-07-03): PASS** — no secret exposure (source, client bundle, or 82-commit history); all remediations verified real and live in production.

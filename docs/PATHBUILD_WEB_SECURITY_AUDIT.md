@@ -21,7 +21,7 @@ Confirmed **absent** from this repo (verified, not assumed):
 | Middleware | No | no `middleware.ts` tracked |
 | Server actions | No | no `"use server"` in source |
 | Auth / OAuth / sessions | No | no auth SDK in `package.json`; no session code |
-| Supabase / database | No | no `@supabase/*` dependency; no `SUPABASE*` references |
+| Supabase / database | No | no `@supabase/*` dependency, SDK, or env usage; the name appears only in privacy-policy prose and a "Powered by Supabase" marketing badge (not code) |
 | File / CV upload | No | no upload code or storage SDK |
 | Network calls to backends | No | no `fetch`/`axios`/`createClient` to any API |
 | Analytics / trackers | No | no gtag/posthog/segment/mixpanel/vercel-analytics |
@@ -108,6 +108,8 @@ Format: `ID · Priority · Confidence · Surface · Risk · Evidence · Remediat
 - **CLIENT BUNDLE SECRETS ✅ NONE** — source has zero secrets/env-vars; a build is a deterministic transform, so no secret can materialize in the bundle. (`.next` is also read-denied by `.claude/settings.json`.)
 - **NPM AUDIT — documented (F5)** — build-time advisories only; no runtime exposure.
 - **REGRESSION ✅** — home + `/legal/privacy` return 200; static generation succeeded for all 13 routes.
+- **INDEPENDENT ACCEPTANCE RE-AUDIT ✅ PASS** — a separate security reviewer independently re-verified secrets (source + 82-commit history), live production headers, XSS/redirects, and dependencies from scratch. Confirmed no secret exposure and that all remediations are real and live; no missed high/critical issues.
+- **Platform note:** production responses carry `Access-Control-Allow-Origin: *` (Vercel default for public static assets). Harmless here — the site has no auth, cookies, or credentialed responses; not overridden.
 
 ## 6. Verdict
 
