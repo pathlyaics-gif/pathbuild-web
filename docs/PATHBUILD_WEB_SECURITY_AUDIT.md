@@ -95,8 +95,8 @@ Format: `ID · Priority · Confidence · Surface · Risk · Evidence · Remediat
 | `postcss` (transitive) | moderate | **Build-time only** (XSS via unescaped `</style>` in CSS stringify) — no attacker-controlled CSS is processed. |
 
 - Lockfile committed; no `postinstall`/lifecycle scripts.
-- **`npm audit fix` (non-force) does not clear these** (dry-run: changes 7 packages, 3 vulns remain); a full fix needs `--force` (breaking major bumps). **Not auto-applied** — would be an untested breaking upgrade to a production-deploying site.
-- **Recommendation:** bump to the next patched `next` 15.x when available, then rebuild. Tracked in backlog.
+- **Applied + verified:** bumped `next` **15.5.12 → 15.5.20** (patched `backport` release, within the existing `^15.x` range) — this **clears the Next.js runtime advisories** (SSRF, middleware/proxy bypass, RSC cache poisoning). Rebuilt clean (13/13 static routes); headers re-verified at runtime (home 200).
+- **Residual (no non-breaking fix):** `postcss` (moderate) and `picomatch` (high) remain as **transitive build-time** deps; npm's only offered fix is a `--force` downgrade to `next@9` (rejected). No runtime impact on this static site — clears when Next updates its transitive deps.
 
 ---
 
@@ -114,4 +114,4 @@ Format: `ID · Priority · Confidence · Surface · Risk · Evidence · Remediat
 - **Secret exposure (the primary concern): NONE FOUND** — no secrets in source, git history (82 commits), config, CI, or client bundle; no client-exposed env keys exist.
 - **P0 / P1: none.**
 - **P2 / P3 hardening:** F1 (headers) **fixed + verified**; F2 (`.gitignore`) **fixed**; F3 (HSTS directives) and F5 (dependency advisories) documented for founder decision.
-- **Status: READY FOR INTERNAL TESTING.** No ship-blocking security issue. Remediation is staged in the working tree and **not committed or pushed** — awaiting founder approval (a push auto-deploys via Vercel).
+- **Status: READY FOR INTERNAL TESTING.** No ship-blocking security issue. Remediation (F1, F2, F5) is committed on `main` and pushed to production with founder approval; the push triggers the Vercel deploy.

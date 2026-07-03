@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-03 · **Repo:** `pathlyaics-gif/pathbuild-web` @ `93ffcfe`
 
-## Applied in working tree (pending your approval to commit — nothing pushed)
+## Applied (committed on `main`; pushed to production with founder approval)
 
 | # | Change | File | Fixes | Risk of change |
 |---|---|---|---|---|
@@ -23,4 +23,4 @@ See `PATHBUILD_WEB_SECURITY_RELEASE_GATE.md` — build green, five headers emitt
 The PathBuild **iOS app + backend** is where Supabase/RLS, service-role & AI keys, CV upload/storage, and auth/OAuth actually live. None of it exists in this marketing repo. That backend is the higher-value secret/PII surface and should be audited on its own.
 
 ## Explicitly NOT done (require your approval per project rules)
-- No key rotation/revocation. No Vercel/production/billing changes. No git history rewrite. No RLS/schema changes. **No commit, no push.**
+- No key rotation/revocation. No Vercel/production/billing changes. No git history rewrite. No RLS/schema changes. (Commit + push of the code/doc changes were explicitly approved by the founder.)

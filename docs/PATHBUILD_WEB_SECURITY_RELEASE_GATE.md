@@ -16,7 +16,7 @@ Ship criteria for the web marketing site.
 | Security headers present | ✅ PASS | verified at runtime on local prod server — 6 headers emit, `X-Powered-By` absent |
 | Production build green | ✅ PASS | `npm run build` exit 0; 13/13 static routes |
 | No page regressions under new CSP | ✅ PASS | home + legal 200; CSP loads no external resources |
-| `npm audit` (high/critical) | ⚠️ DOCUMENTED | 2 high + 1 moderate, all **build-time** tooling; no runtime exposure; see audit §4 (F5) |
+| `npm audit` (Next.js advisories) | ✅ FIXED | bumped `next` 15.5.12→15.5.20 — clears Next.js SSRF/middleware/cache advisories; residual postcss/picomatch are build-time only with no non-breaking fix (audit §4/F5) |
 
 ## Verdict
 **READY FOR INTERNAL TESTING.** No P0/P1. The ship-blocking concern — secret leakage to the browser bundle, git history, or CI — is **not present**. P2 headers (F1) fixed and verified at runtime; P3 (F3 HSTS directives) and dependency (F5) items are documented for a founder decision. All changes are staged in the working tree and **not committed or pushed** — awaiting founder approval (a push to `main` auto-deploys via Vercel).
