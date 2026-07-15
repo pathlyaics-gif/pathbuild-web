@@ -1,43 +1,11 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Instrument_Sans, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 
-const dmSerif = DM_Serif_Display({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-dm-serif",
-  display: "swap",
-});
-
-const instrumentSans = Instrument_Sans({
-  subsets: ["latin"],
-  variable: "--font-instrument",
-  display: "swap",
-});
-
-// Landing-page type system (scoped via CSS vars; the rest of the site keeps
-// its existing DM Serif / Instrument Sans fonts).
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const META_TITLE = "PathBuild — See what fits.";
+const META_TITLE = "PathBuild — Your whole job search. One app.";
 const META_DESCRIPTION =
-  "PathBuild scores every job against your skills, pay, and goals — a 0–100 fit score before you apply. Swipe right and PathBuild drafts the application; you review, you send. For iPhone.";
+  "PathBuild scores every job 0–100, prepares each application, fills supported employer forms, and submits after you approve — then keeps employer replies in one place. Built for iPhone.";
 
 export const metadata: Metadata = {
   title: META_TITLE,
@@ -45,15 +13,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://pathbuild.app"),
   authors: [{ name: "PathBuild" }],
   keywords: [
-    "career fit score",
-    "job fit",
-    "swipe to apply",
-    "job search app",
-    "career match",
-    "application tracker",
-    "what job fits me",
-    "PathBuild",
-    "iOS",
+    "ai job application assistant",
+    "iphone job search",
+    "job application tracker",
+    "resume tailoring",
+    "job fit score",
+    "employer replies",
+    "apply for jobs with ai",
+    "career matching",
   ],
   openGraph: {
     title: META_TITLE,
@@ -67,7 +34,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "PathBuild wordmark beside a 98% fit score ring on a dark background",
+        alt: "PathBuild — your whole job search in one iPhone app",
       },
     ],
   },
@@ -92,15 +59,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${dmSerif.variable} ${instrumentSans.variable} ${playfair.variable} ${inter.variable}`}
-    >
-      <body className={`${instrumentSans.className} font-sans antialiased`}>
-        <div className="grain-overlay" aria-hidden />
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+    <html lang="en">
+      <body className="font-sans antialiased">
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
+        <SiteHeader />
+        <main id="main-content" className="min-h-screen">
+          {children}
+        </main>
+        <SiteFooter />
       </body>
     </html>
   );
