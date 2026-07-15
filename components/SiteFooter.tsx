@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { APP_STORE_URL, CONTACT_MAILTO } from "@/lib/site";
+import { APP_STORE_LIVE, APP_STORE_URL, CONTACT_MAILTO } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 
 type FooterLink = { label: string; href: string };
@@ -12,7 +12,8 @@ const COLUMNS: FooterColumn[] = [
     links: [
       { label: "How it works", href: "/how-it-works" },
       { label: "Pricing", href: "/pricing" },
-      { label: "Download", href: APP_STORE_URL },
+      // Restored automatically when the App Store listing goes live.
+      ...(APP_STORE_LIVE ? [{ label: "Download", href: APP_STORE_URL }] : []),
     ],
   },
   {

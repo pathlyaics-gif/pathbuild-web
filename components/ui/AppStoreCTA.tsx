@@ -1,5 +1,11 @@
 import Image from "next/image";
-import { APP_STORE_URL, APP_STORE_A11Y_LABEL, CTA_PRIMARY } from "@/lib/site";
+import {
+  APP_STORE_LIVE,
+  APP_STORE_URL,
+  APP_STORE_A11Y_LABEL,
+  CTA_COMING_SOON,
+  CTA_PRIMARY,
+} from "@/lib/site";
 import { Button } from "./Button";
 
 type AppStoreCTAProps = {
@@ -39,6 +45,21 @@ export function AppStoreCTA({
   size = "md",
   className = "",
 }: AppStoreCTAProps) {
+  // Until the App Store listing is public, every variant renders an honest,
+  // non-interactive "coming soon" state instead of linking to a 404.
+  if (!APP_STORE_LIVE) {
+    const sizeClasses =
+      size === "lg" ? "h-14 px-8 text-base" : "h-11 px-5 text-[15px]";
+    return (
+      <span
+        className={`inline-flex items-center justify-center gap-2 rounded-pill font-semibold whitespace-nowrap bg-surface border border-divider text-ink/70 ${sizeClasses} ${className}`.trim()}
+      >
+        <AppleGlyph />
+        {CTA_COMING_SOON}
+      </span>
+    );
+  }
+
   if (variant === "badge") {
     const dim = BADGE_SIZES[size];
     return (

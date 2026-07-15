@@ -10,7 +10,8 @@
  * TODO(founder review): confirm before production —
  *  - support@pathbuild.app / privacy@pathbuild.app mailboxes are live
  *  - exact Free vs Pro boundaries match the live App Store listing
- *  - App Store id 6743108030 resolves to the published app
+ *  - App Store id 6743108030: checked 2026-07-15, NOT yet public (US/MY/SG/
+ *    GB/AU/CA lookups empty). Flip APP_STORE_LIVE to true at launch.
  */
 
 // ─── Contact ─────────────────────────────────────────────────────────────────
@@ -20,8 +21,13 @@ export const PRIVACY_EMAIL = "privacy@pathbuild.app";
 export const PRIVACY_MAILTO = `mailto:${PRIVACY_EMAIL}`;
 
 // ─── App identity ────────────────────────────────────────────────────────────
+export const SITE_URL = "https://pathbuild.app";
 export const APP_STORE_URL =
   "https://apps.apple.com/app/pathbuild/id6743108030";
+// The app is not yet public on the App Store (verified 2026-07-15). While
+// false, every download CTA renders an honest "coming soon" state instead of
+// linking to a 404. Flip to true on launch day to restore all CTAs site-wide.
+export const APP_STORE_LIVE = false;
 export const APP_NAME = "PathBuild";
 
 export const APP_TAGLINE =
@@ -40,6 +46,7 @@ export const HERO_TRUST_LINE = "You approve every application.";
 export const HERO_QUALIFIER =
   "Some roles are external-apply or need one quick secure step from you.";
 export const CTA_PRIMARY = "Download for iPhone";
+export const CTA_COMING_SOON = "Coming soon to the App Store";
 export const CTA_SECONDARY = "See how it works";
 export const APP_STORE_A11Y_LABEL = "Download PathBuild on the App Store";
 
