@@ -6,7 +6,13 @@ import { RepliesSection } from "@/components/home/RepliesSection";
 import { PricingTeaser } from "@/components/home/PricingTeaser";
 import { FAQ } from "@/components/home/FAQ";
 import { FinalCTA } from "@/components/home/FinalCTA";
-import { APP_NAME, APP_STORE_URL, FAQ_ITEMS } from "@/lib/site";
+import {
+  APP_NAME,
+  APP_STORE_LIVE,
+  APP_STORE_URL,
+  FAQ_ITEMS,
+  SITE_URL,
+} from "@/lib/site";
 
 // Honest SoftwareApplication schema — a job-search & application assistant that
 // submits supported applications only after the user approves them, on iOS.
@@ -16,7 +22,7 @@ const softwareApplicationLd = {
   name: APP_NAME,
   operatingSystem: "iOS",
   applicationCategory: "BusinessApplication",
-  url: APP_STORE_URL,
+  url: APP_STORE_LIVE ? APP_STORE_URL : SITE_URL,
   description:
     "PathBuild is an iPhone job-search and application assistant. It scores every job 0–100 for fit, prepares each application from your profile, fills supported employer forms, and submits after you approve — then keeps employer replies in one place. Some roles are external-apply or need one secure step.",
   offers: {
