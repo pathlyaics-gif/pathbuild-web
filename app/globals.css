@@ -2,72 +2,139 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ════════════════════════════════════════════════════════════════════════
+   PathBuild Web — Calm Kinetic Editorial design system
+   Light, Apple-native, warm terracotta accent. One system, site-wide.
+   Semantic tokens below are the single source of truth; Tailwind maps to them.
+   ════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Surfaces — warm near-white */
+  --background-primary: #fbf8f3;
+  --background-secondary: #f5efe6;
+  --surface-primary: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-peach: #fbeee6;
+
+  /* Text — espresso on warm white */
+  --text-primary: #1a1410;
+  --text-secondary: #574c42;
+  --text-tertiary: #77695b;
+  --text-on-accent: #ffffff;
+
+  /* Accent — PathBuild terracotta (one accent) */
+  --accent: #c1502a;
+  --accent-hover: #a8431f;
+  --accent-strong: #9e3f1d; /* small text / links on light — AA */
+  --accent-soft: #fbeee6;
+  --accent-border: #e9c7b6;
+
+  /* Status — restrained */
+  --success: #3f7d53;
+  --warning: #a86a1a;
+  --error: #c0392b;
+
+  /* Structure */
+  --divider: #ebe3d6;
+  --focus-ring: #c1502a;
+
+  /* Motion */
+  --motion-fast: 150ms;
+  --motion-standard: 260ms;
+  --motion-slow: 560ms;
+  --motion-editorial: 900ms;
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Layout */
+  --nav-height: 64px;
+}
+
 @layer base {
   html {
-    overscroll-behavior: none;
     scroll-behavior: smooth;
     font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
     margin: 0;
     padding: 0;
-    background: #fbf7f0;
-    color: #1a1410;
+    background: var(--background-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+      "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Consistent, visible focus for keyboard users everywhere. */
+  :where(a, button, summary, input, [tabindex]):focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: rgba(193, 80, 42, 0.18);
+    color: var(--text-primary);
+  }
+
+  /* Anchored sections clear the fixed header. */
+  section[id],
+  [id].scroll-anchor {
+    scroll-margin-top: calc(var(--nav-height) + 24px);
+  }
+}
+
+@layer components {
+  /* Skip link — visually hidden until focused. */
+  .skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 100;
+    transform: translateY(-150%);
+    background: var(--surface-primary);
+    color: var(--text-primary);
+    padding: 10px 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(44, 34, 24, 0.16);
+    transition: transform var(--motion-standard) var(--ease-smooth);
+  }
+  .skip-link:focus {
+    transform: translateY(0);
   }
 }
 
 @layer utilities {
-  /* Subtle film grain — fixed over the whole page for a premium, tactile feel. */
-  .grain-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 60;
-    pointer-events: none;
-    opacity: 0.045;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
-  /* Animated coral gradient text for headline accents. */
-  .text-gradient-coral {
-    background: linear-gradient(
-      100deg,
-      #d45a30 0%,
-      #e8734a 35%,
-      #f09070 50%,
-      #e8734a 65%,
-      #d45a30 100%
-    );
-    background-size: 220% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    animation: shimmer 6s linear infinite;
-  }
-
-  @keyframes shimmer {
-    to {
-      background-position: 220% center;
-    }
-  }
-
-  /* Frosted-glass surface. */
+  /* Frosted-glass surface for the sticky header material. */
   .glass {
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(16px) saturate(1.4);
-    -webkit-backdrop-filter: blur(16px) saturate(1.4);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(251, 248, 243, 0.72);
+    backdrop-filter: blur(18px) saturate(1.6);
+    -webkit-backdrop-filter: blur(18px) saturate(1.6);
   }
 
-  /* Slow vertical float for accent elements. */
+  /* Reveal-on-scroll. IntersectionObserver adds .is-in once. Motion-safe only. */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity var(--motion-slow) var(--ease-smooth),
+      transform var(--motion-slow) var(--ease-smooth);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Slow, bounded float for ambient accent elements. */
   .float-slow {
     animation: floatSlow 7s ease-in-out infinite;
   }
-
   @keyframes floatSlow {
     0%,
     100% {
@@ -79,102 +146,25 @@
   }
 }
 
+/* ── Reduced motion: show final states, kill ambient + scrubbing ─────────── */
 @media (prefers-reduced-motion: reduce) {
-  .text-gradient-coral,
-  .float-slow {
-    animation: none !important;
-  }
   html {
     scroll-behavior: auto;
   }
-}
-
-/* ════════════════════════════════════════════════════════════════════════
-   Landing page (dark) — scoped under .landing so the rest of the site
-   keeps its light theme. Motion uses transform + opacity only.
-   ════════════════════════════════════════════════════════════════════════ */
-
-.landing {
-  background: #0b0b0c;
-  color: #f2efea;
-}
-
-.landing ::selection {
-  background: rgba(193, 80, 42, 0.55);
-  color: #f2efea;
-}
-
-.landing :is(a, button, summary):focus-visible {
-  outline: 2px solid #e68a52;
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-/* Anchored sections shouldn't hide under the fixed nav. */
-.landing section[id] {
-  scroll-margin-top: 88px;
-}
-
-/* Reveal-on-first-scroll-into-view. JS adds .is-in once. */
-.landing [data-reveal] {
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 0.56s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.56s cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: var(--d, 0ms);
-  will-change: opacity, transform;
-}
-.landing [data-reveal].is-in {
-  opacity: 1;
-  transform: none;
-}
-
-/* Soft terracotta light, gradient only (no filters — cheap to composite). */
-.landing .glow-orb {
-  position: absolute;
-  border-radius: 9999px;
-  pointer-events: none;
-  background: radial-gradient(
-    circle,
-    rgba(193, 80, 42, 0.28) 0%,
-    rgba(193, 80, 42, 0.1) 38%,
-    transparent 68%
-  );
-}
-
-/* Light grain lift for the dark canvas (the global overlay multiplies to
-   black here, so the landing brings its own). */
-.landing .landing-grain {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: screen;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Scroll-scrubbed swipe stage. JS drives transforms; .is-static collapses
-   the theater for reduced-motion users. */
-.landing .swipe-stage {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  height: 100svh;
-}
-.landing .swipe-card {
-  will-change: transform, opacity;
-}
-.landing .swipe-track.is-static .swipe-stage {
-  position: static;
-  height: auto;
-  padding: 48px 0 64px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .landing [data-reveal] {
-    opacity: 1;
-    transform: none;
-    transition: none;
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .float-slow {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -1,48 +1,65 @@
-import { LandingNav } from "@/components/landing/LandingNav";
-import { ScrollHero } from "@/components/lp/ScrollHero";
-import { HowItWorks } from "@/components/lp/HowItWorks";
-import { RealAppProof } from "@/components/lp/RealAppProof";
-import { Credibility } from "@/components/lp/Credibility";
-import { ClosingCTA } from "@/components/lp/ClosingCTA";
+import { Hero } from "@/components/home/Hero";
+import { ScrollStory } from "@/components/home/ScrollStory";
+import { RealProduct } from "@/components/home/RealProduct";
+import { TrustSection } from "@/components/home/TrustSection";
+import { RepliesSection } from "@/components/home/RepliesSection";
+import { PricingTeaser } from "@/components/home/PricingTeaser";
+import { FAQ } from "@/components/home/FAQ";
+import { FinalCTA } from "@/components/home/FinalCTA";
+import { APP_NAME, APP_STORE_URL, FAQ_ITEMS } from "@/lib/site";
+
+// Honest SoftwareApplication schema — a job-search & application assistant that
+// submits supported applications only after the user approves them, on iOS.
+const softwareApplicationLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: APP_NAME,
+  operatingSystem: "iOS",
+  applicationCategory: "BusinessApplication",
+  url: APP_STORE_URL,
+  description:
+    "PathBuild is an iPhone job-search and application assistant. It scores every job 0–100 for fit, prepares each application from your profile, fills supported employer forms, and submits after you approve — then keeps employer replies in one place. Some roles are external-apply or need one secure step.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
+
+// FAQPage is emitted only because the same questions are visible on this page.
+const faqPageLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export default function HomePage() {
   return (
-    // Inter as the page's base font; Playfair is applied per-heading.
-    // The global <main> lives in layout.tsx — this is the dark landing surface.
-    <div
-      className="bg-[#0B0B0C] text-white overflow-x-clip"
-      style={{ fontFamily: "var(--font-inter)" }}
-    >
-      {/* Page-scoped body color so overscroll edges stay near-black on this
-          route only — the rest of the site keeps its light theme. */}
-      <style>{`body{background:#0B0B0C}`}</style>
-
-      {/* Minimal sticky header — wordmark + Download, grabbable from anywhere. */}
-      <LandingNav />
-
-      {/* Section rhythm: hero film → how it works →
-          real app proof → credibility → one-line CTA. */}
-      <ScrollHero />
-      <HowItWorks />
-      <RealAppProof />
-      <Credibility />
-      <ClosingCTA />
+    <>
+      <Hero />
+      <ScrollStory />
+      <RealProduct />
+      <TrustSection />
+      <RepliesSection />
+      <PricingTeaser />
+      <FAQ />
+      <FinalCTA />
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "PathBuild",
-            operatingSystem: "iOS",
-            applicationCategory: "BusinessApplication",
-            url: "https://pathbuild.app",
-            description:
-              "PathBuild learns your best-fit career and scores real jobs 0–100 so you see why each one fits. It drafts each application for you to review and send — nothing auto-sends — and surfaces recruiter replies in-app.",
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationLd) }}
       />
-    </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageLd) }}
+      />
+    </>
   );
 }

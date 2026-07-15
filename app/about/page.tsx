@@ -1,137 +1,106 @@
 import type { Metadata } from "next";
-import { Heart, Sparkles, Shield, Compass } from "lucide-react";
-import { APP_STORE_URL, ANNUAL_TRIAL_DAYS, ANNUAL_PRICE, MONTHLY_PRICE } from "@/lib/site";
+import { Check } from "lucide-react";
+import { Section } from "@/components/ui/Section";
+import { MotionReveal } from "@/components/ui/MotionReveal";
+import { AppStoreCTA } from "@/components/ui/AppStoreCTA";
+import { APP_TAGLINE, TRUST_POINTS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About — PathBuild",
   description:
-    "PathBuild is an AI career discovery app for iOS. We help you find the careers that genuinely fit you — and the companies hiring for them.",
+    "PathBuild is an iPhone job-search and application assistant. Our mission: help you apply to jobs that fit, while you stay in control of every application.",
 };
-
-const VALUES = [
-  {
-    icon: Heart,
-    title: "Empathy First",
-    description:
-      "Figuring out a career is stressful. Every interaction is calm, supportive, and judgment-free.",
-  },
-  {
-    icon: Sparkles,
-    title: "AI With Purpose",
-    description:
-      "We use AI to surface paths that genuinely fit you — not to replace your judgment, just to widen it.",
-  },
-  {
-    icon: Compass,
-    title: "Discovery, Not Quizzes",
-    description:
-      "Most career quizzes give vague archetypes. PathBuild gives you ranked careers, real companies hiring, and the tools to land them.",
-  },
-  {
-    icon: Shield,
-    title: "Private by Design",
-    description:
-      "Your answers stay yours. Encrypted at rest. Never sold, never shared with recruiters, deletable anytime.",
-  },
-];
 
 export default function AboutPage() {
   return (
-    <div className="bg-cream pt-36 pb-24">
-      <div className="mx-auto max-w-3xl px-6 lg:px-8">
-        <div className="mb-16 text-center">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.15em] text-coral">
-            About PathBuild
+    <>
+      <Section aria-label="About PathBuild">
+        <MotionReveal className="mx-auto max-w-prose text-center">
+          <p className="text-sm font-semibold uppercase tracking-wide text-accent-strong">
+            About
           </p>
-          <h1 className="font-serif text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-[-0.02em] text-ink">
-            We help you find the{" "}
-            <em className="not-italic text-coral">career that fits</em>
+          <h1 className="mt-4 text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+            Apply to jobs that fit — on your terms
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-[1rem] leading-[1.75] text-ink-secondary">
-            PathBuild is a small team building an AI career discovery app for
-            iOS. We believe most people don&apos;t need another job board — they
-            need clarity about what to pursue, and proof that the right
-            companies are hiring.
+          <p className="mt-6 text-lg leading-relaxed text-ink-secondary">
+            {APP_TAGLINE}
           </p>
-        </div>
+        </MotionReveal>
+      </Section>
 
-        <div className="mb-10 rounded-2xl border border-[rgba(44,34,24,0.06)] bg-white p-8 shadow-pb-sm lg:p-10">
-          <h2 className="mb-4 font-serif text-[1.4rem] tracking-[-0.01em] text-ink">
-            Why we built it
+      <Section alt aria-label="Why we built PathBuild">
+        <div className="mx-auto max-w-prose space-y-6">
+          <MotionReveal>
+            <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+              Why we built it
+            </h2>
+          </MotionReveal>
+          <MotionReveal delay={60}>
+            <p className="text-lg leading-relaxed text-ink-secondary">
+              A job search gets scattered fast — postings on one site, your
+              résumé somewhere else, half-finished forms, and replies buried in
+              your inbox. It is hard to tell which roles are worth your time, and
+              even harder to keep track once you start applying.
+            </p>
+          </MotionReveal>
+          <MotionReveal delay={120}>
+            <p className="text-lg leading-relaxed text-ink-secondary">
+              PathBuild brings it into one place. It scores each job 0–100 for
+              fit so you can see where to focus, prepares each application from
+              your profile, and submits supported employer forms after you
+              approve. Some roles are external-apply or need one quick secure
+              step from you. Employer replies come back into the app, linked to
+              the application.
+            </p>
+          </MotionReveal>
+        </div>
+      </Section>
+
+      <Section aria-label="How we keep you in control">
+        <div className="mx-auto max-w-prose">
+          <MotionReveal>
+            <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+              You stay in control
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-ink-secondary">
+              Nothing goes to an employer until you review and approve that
+              specific application. The rest of the product is built the same
+              way.
+            </p>
+          </MotionReveal>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+            {TRUST_POINTS.map((point, i) => (
+              <MotionReveal as="li" key={point} delay={i * 50}>
+                <div className="flex h-full items-start gap-3 rounded-lg border border-divider bg-surface p-5 shadow-pb-sm">
+                  <Check
+                    size={18}
+                    strokeWidth={2.5}
+                    aria-hidden
+                    className="mt-0.5 shrink-0 text-accent-strong"
+                  />
+                  <span className="leading-relaxed text-ink-secondary">
+                    {point}
+                  </span>
+                </div>
+              </MotionReveal>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      <Section alt aria-label="Get PathBuild">
+        <MotionReveal className="mx-auto max-w-prose text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+            Your whole job search. One app.
           </h2>
-          <p className="mb-4 text-[0.95rem] leading-[1.75] text-ink-secondary">
-            Job boards show you what&apos;s open. Career quizzes spit out vague
-            personality archetypes. Neither tells you{" "}
-            <em className="not-italic text-ink">what you should pursue</em> — or
-            shows you the companies hiring for that.
+          <p className="mt-4 text-lg leading-relaxed text-ink-secondary">
+            Built for iPhone. You approve every application.
           </p>
-          <p className="text-[0.95rem] leading-[1.75] text-ink-secondary">
-            PathBuild does both. Answer a short, thoughtful quiz. AI surfaces
-            the careers that match how you actually think. Then we close the
-            loop — showing real companies hiring, salary intel, AI-tailored
-            resume notes, and interview prep so you can actually land the role.
-          </p>
-        </div>
-
-        <div className="mb-16 grid grid-cols-1 gap-4 md:grid-cols-2">
-          {VALUES.map((value) => (
-            <div
-              key={value.title}
-              className="rounded-2xl border border-[rgba(44,34,24,0.06)] bg-white p-7 transition-all hover:-translate-y-0.5 hover:shadow-pb-md"
-            >
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-coral/[0.08]">
-                <value.icon
-                  size={20}
-                  className="text-coral"
-                  strokeWidth={1.8}
-                />
-              </div>
-              <h3 className="mb-2 font-serif text-[1.1rem] tracking-[-0.01em] text-ink">
-                {value.title}
-              </h3>
-              <p className="text-[0.9rem] leading-[1.65] text-ink-secondary">
-                {value.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Pricing summary */}
-        <div className="mb-10 rounded-2xl border border-[rgba(44,34,24,0.06)] bg-white p-8 shadow-pb-sm lg:p-10">
-          <h2 className="mb-4 font-serif text-[1.4rem] tracking-[-0.01em] text-ink">
-            Free to start. Pro when you need it.
-          </h2>
-          <p className="mb-4 text-[0.95rem] leading-[1.75] text-ink-secondary">
-            The core experience — career quiz, AI matching, company discovery,
-            and application tracking — is completely free. No credit card.
-          </p>
-          <p className="text-[0.95rem] leading-[1.75] text-ink-secondary">
-            PathBuild Pro unlocks salary intel, AI resume tailoring, interview
-            prep, job-fit analysis, and side-by-side comparisons. Pro is{" "}
-            <strong className="text-ink">{MONTHLY_PRICE}/month</strong> or{" "}
-            <strong className="text-ink">{ANNUAL_PRICE}/year</strong> — both
-            plans include a{" "}
-            <strong className="text-ink">{ANNUAL_TRIAL_DAYS}-day free trial</strong>.
-          </p>
-        </div>
-
-        <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-[#FDEADF] via-[#FCD5C4] to-[#F9C2AC] p-10 text-center lg:p-14">
-          <h2 className="mb-3 font-serif text-[clamp(1.5rem,3vw,2.25rem)] tracking-[-0.02em] text-ink">
-            Discover what fits.
-          </h2>
-          <p className="mx-auto mb-7 max-w-md text-[0.95rem] leading-[1.65] text-wood-mid">
-            Five-minute quiz, ranked career matches, real companies hiring. Free to start.
-          </p>
-          <a
-            href={APP_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-pill bg-ebony px-7 py-3.5 text-[0.9rem] font-semibold text-white shadow-pb-md transition-all hover:-translate-y-0.5 hover:bg-coral hover:shadow-glow"
-          >
-            Download on the App Store
-          </a>
-        </div>
-      </div>
-    </div>
+          <div className="mt-8 flex justify-center">
+            <AppStoreCTA size="lg" />
+          </div>
+        </MotionReveal>
+      </Section>
+    </>
   );
 }
