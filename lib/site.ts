@@ -9,9 +9,13 @@
  *
  * TODO(founder review): confirm before production —
  *  - support@pathbuild.app / privacy@pathbuild.app mailboxes are live
- *  - exact Free vs Pro boundaries match the live App Store listing
  *  - App Store id 6743108030: checked 2026-07-15, NOT yet public (US/MY/SG/
  *    GB/AU/CA lookups empty). Flip APP_STORE_LIVE to true at launch.
+ *
+ * Pricing + Free/Pro boundaries verified 2026-07-23 against the live App
+ * Store product config and the shipping app: ONE purchasable subscription
+ * (PathBuild Pro Monthly, $9.99/month founding-member pricing), NO free
+ * trial, NO annual plan.
  */
 
 // ─── Contact ─────────────────────────────────────────────────────────────────
@@ -51,37 +55,38 @@ export const CTA_SECONDARY = "See how it works";
 export const APP_STORE_A11Y_LABEL = "Download PathBuild on the App Store";
 
 // ─── Pricing ─────────────────────────────────────────────────────────────────
-export const MONTHLY_PRICE = "$14.99";
-export const ANNUAL_PRICE = "$34.99";
-export const TRIAL_DAYS = 3;
-export const MONTHLY_TRIAL_DAYS = TRIAL_DAYS;
-export const ANNUAL_TRIAL_DAYS = TRIAL_DAYS;
+// Verified 2026-07-23 against the live App Store product config and the
+// shipping app: exactly ONE purchasable subscription — PathBuild Pro Monthly.
+// There is NO free trial or introductory offer and NO annual plan. Do not
+// re-add trial or annual copy unless the App Store products actually change.
+export const MONTHLY_PRICE = "$9.99";
 
 export const PRICING_HEADLINE = "Start free. Go Pro when you're moving fast.";
 export const PRICING_SUB =
   "Score jobs, prepare applications, and track replies for free. Upgrade to PathBuild Pro when you want to apply at volume with AI-tailored materials.";
-export const PRICING_FOOTNOTE = `Both plans include a ${TRIAL_DAYS}-day free trial. Payment is charged to your Apple ID. Cancel anytime in Settings → Apple ID → Subscriptions.`;
+export const PRICING_FOOTNOTE = `PathBuild Pro is ${MONTHLY_PRICE}/month — current founding-member pricing, billed through your Apple ID. There is no free trial. Prices may vary by region, and the exact plan and price are always shown in the app before you subscribe. Cancel anytime in Settings → Apple ID → Subscriptions.`;
 
 // Near-CTA subscription disclosure (App Store compliant).
-export const SUBSCRIPTION_DISCLOSURE = `${TRIAL_DAYS}-day free trial, then ${MONTHLY_PRICE}/month or ${ANNUAL_PRICE}/year. Subscription auto-renews until cancelled. Cancel anytime in Settings → Apple ID → Subscriptions → PathBuild.`;
+export const SUBSCRIPTION_DISCLOSURE = `${MONTHLY_PRICE}/month — current founding-member pricing. No free trial. Subscription auto-renews until cancelled; cancel anytime in Settings → Apple ID → Subscriptions → PathBuild. Prices may vary by region, and the exact price is shown in the app before purchase.`;
 
 // ─── Free vs Pro ─────────────────────────────────────────────────────────────
-// TODO(founder review): verify exact limits/features against the live app.
+// Boundaries verified 2026-07-23 against the shipping app. Exact limits are
+// always shown in the app.
 export const FREE_FEATURES = [
-  "0–100 fit score on every job, before you spend time applying",
-  "Swipe to build your application list",
-  "PathBuild prepares each application from your profile",
+  "Job search with a fit explanation on every role",
+  "Save jobs and build your application list",
+  "A limited number of included in-app applications",
   "Track every application and its status in one place",
-  "Employer replies collected in the app",
+  "Employer replies collected in the PathBuild inbox",
   "You review and approve before anything is sent",
 ];
 
 export const PRO_FEATURES = [
   "Everything in Free",
-  "Apply at volume — a much higher monthly application limit",
-  "AI-tailored résumé and application materials for each role",
-  "Priority preparation for supported employer forms",
-  "Every future update, included",
+  "Unlimited in-app applications — each submitted only after you approve",
+  "Application materials tailored to each job",
+  "Notifications when employers reply",
+  "Priority support",
 ];
 
 // ─── Feature cards (product, not a quiz) ─────────────────────────────────────
@@ -196,11 +201,11 @@ export const FAQ_ITEMS = [
   },
   {
     q: "What's free?",
-    a: "Fit scores on every job, swiping to build your application list, application preparation and tracking, and employer replies in the app are free. Upgrade to Pro to apply at higher volume with AI-tailored materials.",
+    a: "Job search with fit explanations, saved jobs, application tracking, a limited number of included in-app applications, and employer replies in the PathBuild inbox are all free. Upgrade to Pro for unlimited in-app applications and application materials tailored to each job.",
   },
   {
     q: "How much does PathBuild Pro cost?",
-    a: `PathBuild Pro is ${MONTHLY_PRICE}/month or ${ANNUAL_PRICE}/year. Both plans include a ${TRIAL_DAYS}-day free trial — no charge until the trial ends.`,
+    a: `PathBuild Pro is ${MONTHLY_PRICE}/month — current founding-member pricing, billed through the Apple App Store. There is no free trial. Prices may vary by region, and the exact plan and price are always shown in the app before you subscribe.`,
   },
   {
     q: "How do I cancel?",

@@ -6,13 +6,10 @@ import {
   CONTACT_EMAIL,
   CONTACT_MAILTO,
   MONTHLY_PRICE,
-  ANNUAL_PRICE,
-  TRIAL_DAYS,
 } from "@/lib/site";
 
 // Unified effective date across all PathBuild legal pages.
-// TODO(founder): confirm the real effective date before production.
-const EFFECTIVE_DATE = "July 15, 2026";
+const EFFECTIVE_DATE = "July 23, 2026";
 
 export const metadata: Metadata = {
   title: "Terms of Service — PathBuild",
@@ -222,15 +219,15 @@ export default function TermsPage() {
 
       <h2 id="subscriptions">8. Subscriptions and payments</h2>
       <p>
-        PathBuild offers a paid subscription, <strong>PathBuild Pro</strong>,
-        which is currently available. Pro is offered at {MONTHLY_PRICE} per month
-        or {ANNUAL_PRICE} per year, and each plan includes a {TRIAL_DAYS}-day free
-        trial for eligible new subscribers.
+        PathBuild offers one paid subscription, <strong>PathBuild Pro</strong>{" "}
+        (monthly), currently offered at {MONTHLY_PRICE} per month — our current
+        founding-member pricing. There is no free trial or other introductory
+        offer, and no annual plan. Prices may vary by region, and the exact plan
+        and price are always shown in the App before you subscribe.
       </p>
       <ul>
         <li>
-          Payment is charged to your Apple ID at confirmation of purchase, or when
-          a free trial ends if you have not cancelled beforehand.
+          Payment is charged to your Apple ID at confirmation of purchase.
         </li>
         <li>
           Subscriptions renew automatically unless you turn off auto-renew at
@@ -245,7 +242,7 @@ export default function TermsPage() {
       <p>
         See our{" "}
         <a href="/legal/subscription">Subscription Terms</a> for full details on
-        pricing, trials, billing, and cancellation.
+        pricing, billing, and cancellation.
       </p>
 
       <h2 id="third-parties">9. Third-party services</h2>

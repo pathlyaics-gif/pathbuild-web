@@ -4,7 +4,6 @@ import { Section } from "@/components/ui/Section";
 import { MotionReveal } from "@/components/ui/MotionReveal";
 import { AppStoreCTA } from "@/components/ui/AppStoreCTA";
 import {
-  ANNUAL_PRICE,
   FAQ_ITEMS,
   FREE_FEATURES,
   MONTHLY_PRICE,
@@ -13,12 +12,11 @@ import {
   PRICING_SUB,
   PRO_FEATURES,
   SUBSCRIPTION_DISCLOSURE,
-  TRIAL_DAYS,
 } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Pricing — PathBuild",
-  description: `Score jobs, prepare applications, and track replies for free. Go Pro to apply at volume with AI-tailored materials — ${MONTHLY_PRICE}/month or ${ANNUAL_PRICE}/year, each with a ${TRIAL_DAYS}-day free trial.`,
+  description: `Score jobs, prepare applications, and track replies for free. Go Pro for unlimited in-app applications and tailored materials — ${MONTHLY_PRICE}/month, billed through Apple.`,
 };
 
 // Reuse the pricing-relevant questions from the single FAQ source in lib/site.
@@ -97,12 +95,12 @@ export default function PricingPage() {
               </h2>
               <p className="mt-4 flex items-baseline gap-2">
                 <span className="text-4xl font-bold tracking-tight text-ink">
-                  {ANNUAL_PRICE}
+                  {MONTHLY_PRICE}
                 </span>
-                <span className="text-ink-secondary">/ year</span>
+                <span className="text-ink-secondary">/ month</span>
               </p>
               <p className="mt-2 text-ink-secondary">
-                or {MONTHLY_PRICE}/month · {TRIAL_DAYS}-day free trial
+                Current founding-member pricing · billed through Apple
               </p>
               <ul className="mt-8 flex-1 space-y-4">
                 {PRO_FEATURES.map((f) => (

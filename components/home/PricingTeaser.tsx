@@ -7,8 +7,6 @@ import {
   FREE_FEATURES,
   PRO_FEATURES,
   MONTHLY_PRICE,
-  ANNUAL_PRICE,
-  TRIAL_DAYS,
   SUBSCRIPTION_DISCLOSURE,
 } from "@/lib/site";
 
@@ -75,7 +73,7 @@ export function PricingTeaser() {
             </span>
           </p>
           <p className="mt-1 text-sm text-ink-muted">
-            or {ANNUAL_PRICE}/year · {TRIAL_DAYS}-day free trial
+            Current founding-member pricing · billed through Apple
           </p>
           <FeatureList items={PRO} />
         </div>

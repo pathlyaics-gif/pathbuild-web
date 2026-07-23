@@ -6,28 +6,20 @@ import {
   CONTACT_EMAIL,
   CONTACT_MAILTO,
   MONTHLY_PRICE,
-  ANNUAL_PRICE,
-  TRIAL_DAYS,
   PRO_FEATURES,
 } from "@/lib/site";
 
 // Unified effective date across all PathBuild legal pages.
-// TODO(founder): confirm the real effective date before production.
-const EFFECTIVE_DATE = "July 15, 2026";
-
-// Approximate per-month cost of the annual plan, derived from ANNUAL_PRICE.
-const ANNUAL_PER_MONTH = `$${(
-  Number(ANNUAL_PRICE.replace("$", "")) / 12
-).toFixed(2)}`;
+const EFFECTIVE_DATE = "July 23, 2026";
 
 export const metadata: Metadata = {
   title: "Subscription Terms — PathBuild",
-  description: `How PathBuild Pro subscriptions work — ${MONTHLY_PRICE}/month or ${ANNUAL_PRICE}/year, each with a ${TRIAL_DAYS}-day free trial, billed through Apple. Cancel anytime.`,
+  description: `How the PathBuild Pro subscription works — ${MONTHLY_PRICE}/month, billed through Apple. No free trial. Cancel anytime.`,
 };
 
 const TOC = [
-  { id: "plans", label: "1. PathBuild Pro plans" },
-  { id: "trial", label: "2. Free trial" },
+  { id: "plans", label: "1. The PathBuild Pro plan" },
+  { id: "trial", label: "2. No free trial" },
   { id: "includes", label: "3. What Pro includes" },
   { id: "billing", label: "4. Billing and payment" },
   { id: "manage", label: "5. Managing your subscription" },
@@ -51,51 +43,29 @@ export default function SubscriptionPage() {
         <a href="/legal/privacy">Privacy Policy</a>.
       </p>
 
-      <h2 id="plans">1. PathBuild Pro plans</h2>
-      <p>PathBuild offers two subscription plans for PathBuild Pro:</p>
+      <h2 id="plans">1. The PathBuild Pro plan</h2>
+      <p>PathBuild offers one subscription plan:</p>
       <ul>
         <li>
-          <strong>Monthly plan:</strong> {MONTHLY_PRICE} per month, billed
-          monthly. Includes a <strong>{TRIAL_DAYS}-day free trial</strong> for
-          eligible new subscribers — you are not charged until the trial ends.
-        </li>
-        <li>
-          <strong>Annual plan:</strong> {ANNUAL_PRICE} per year, billed annually.
-          Includes a <strong>{TRIAL_DAYS}-day free trial</strong> for eligible new
-          subscribers. This works out to about {ANNUAL_PER_MONTH} per month.
+          <strong>PathBuild Pro Monthly:</strong> {MONTHLY_PRICE} per month,
+          billed monthly through your Apple ID. This is our current
+          founding-member pricing. No annual plan is offered.
         </li>
       </ul>
       <p>
         Pricing is in USD and may vary by region based on Apple&apos;s pricing
-        tiers. Applicable taxes may apply depending on your location.
+        tiers. Applicable taxes may apply depending on your location. The exact
+        plan and price are always shown in the App before you subscribe.
       </p>
 
-      <h2 id="trial">2. Free trial</h2>
+      <h2 id="trial">2. No free trial</h2>
       <p>
-        Both the monthly and annual plans include a{" "}
-        <strong>{TRIAL_DAYS}-day free trial</strong> for eligible new subscribers.
-        During the trial you have full access to PathBuild Pro at no charge.
+        PathBuild Pro does <strong>not</strong> currently include a free trial
+        or any other introductory offer. Your Apple ID is charged when you
+        confirm the purchase. If we introduce a trial or introductory offer in
+        the future, its exact terms will be shown in the App before you
+        subscribe.
       </p>
-      <ul>
-        <li>
-          If you do not cancel before the trial ends, your subscription
-          automatically converts to a paid subscription and you are charged{" "}
-          {MONTHLY_PRICE} for the monthly plan or {ANNUAL_PRICE} for the annual
-          plan, depending on the plan you selected.
-        </li>
-        <li>
-          Free-trial eligibility is determined by Apple and is limited to one free
-          trial per Apple ID per subscription group.
-        </li>
-        <li>
-          You can cancel during the trial at any time through your Apple ID
-          settings without being charged.
-        </li>
-        <li>
-          The unused portion of a free trial is forfeited if you purchase a
-          subscription before the trial ends.
-        </li>
-      </ul>
 
       <h2 id="includes">3. What PathBuild Pro includes</h2>
       <p>A PathBuild Pro subscription includes:</p>
@@ -105,8 +75,9 @@ export default function SubscriptionPage() {
         ))}
       </ul>
       <p>
-        PathBuild&rsquo;s free features — including fit scores on jobs, preparing
-        and tracking applications, and employer replies in the app — remain
+        PathBuild&rsquo;s free features — including job search with fit
+        explanations, saved jobs, application tracking, a limited number of
+        included in-app applications, and employer replies in the app — remain
         available without a subscription. Exact plan limits and features are shown
         in the App and on our pricing page and may change over time.
       </p>
@@ -114,8 +85,7 @@ export default function SubscriptionPage() {
       <h2 id="billing">4. Billing and payment</h2>
       <ul>
         <li>
-          Payment is charged to your Apple ID at confirmation of purchase, or at
-          the end of a free trial if you have not cancelled.
+          Payment is charged to your Apple ID at confirmation of purchase.
         </li>
         <li>
           Subscriptions renew automatically unless auto-renew is turned off at

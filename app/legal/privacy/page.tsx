@@ -5,8 +5,7 @@ import { LegalLayout } from "@/components/LegalLayout";
 import { PRIVACY_EMAIL, PRIVACY_MAILTO } from "@/lib/site";
 
 // Unified effective date across all PathBuild legal pages.
-// TODO(founder): confirm the real effective date before production.
-const EFFECTIVE_DATE = "July 15, 2026";
+const EFFECTIVE_DATE = "July 23, 2026";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — PathBuild",
@@ -106,7 +105,7 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>Subscription data:</strong> subscription status, plan type,
-          trial eligibility, and transaction information provided by Apple.
+          and transaction information provided by Apple.
         </li>
         <li>
           <strong>Push-notification token:</strong> if you enable notifications
