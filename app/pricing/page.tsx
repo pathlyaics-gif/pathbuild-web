@@ -12,11 +12,13 @@ import {
   PRICING_SUB,
   PRO_FEATURES,
   SUBSCRIPTION_DISCLOSURE,
+  TRIAL_NOTE,
+  WEEKLY_PRICE,
 } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Pricing — PathBuild",
-  description: `Score jobs, prepare applications, and track replies for free. Go Pro for unlimited in-app applications and tailored materials — ${MONTHLY_PRICE}/month, billed through Apple.`,
+  description: `Score jobs, prepare applications, and track replies for free. Go Pro for unlimited in-app applications and tailored materials — ${WEEKLY_PRICE}/week or ${MONTHLY_PRICE}/month with a 3-day free trial for eligible new subscribers, billed through Apple.`,
 };
 
 // Reuse the pricing-relevant questions from the single FAQ source in lib/site.
@@ -95,12 +97,15 @@ export default function PricingPage() {
               </h2>
               <p className="mt-4 flex items-baseline gap-2">
                 <span className="text-4xl font-bold tracking-tight text-ink">
-                  {MONTHLY_PRICE}
+                  {WEEKLY_PRICE}
                 </span>
-                <span className="text-ink-secondary">/ month</span>
+                <span className="text-ink-secondary">/ week</span>
+              </p>
+              <p className="mt-1 text-ink-secondary">
+                or {MONTHLY_PRICE}/month — save ~30% vs weekly
               </p>
               <p className="mt-2 text-ink-secondary">
-                Current founding-member pricing · billed through Apple
+                {TRIAL_NOTE} · billed through Apple
               </p>
               <ul className="mt-8 flex-1 space-y-4">
                 {PRO_FEATURES.map((f) => (

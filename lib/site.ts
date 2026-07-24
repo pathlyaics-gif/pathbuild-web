@@ -12,10 +12,10 @@
  *  - App Store id 6743108030: checked 2026-07-15, NOT yet public (US/MY/SG/
  *    GB/AU/CA lookups empty). Flip APP_STORE_LIVE to true at launch.
  *
- * Pricing + Free/Pro boundaries verified 2026-07-23 against the live App
- * Store product config and the shipping app: ONE purchasable subscription
- * (PathBuild Pro Monthly, $9.99/month founding-member pricing), NO free
- * trial, NO annual plan.
+ * Pricing (THIS BRANCH — merge only when App Store Connect sells it):
+ * founder-approved FINAL lineup 2026-07-24 — PathBuild Weekly $9.99/week and
+ * PathBuild Monthly $29.99/month, both with a 3-day free trial for eligible
+ * new subscribers; one subscription group; no annual or 3-month plan.
  */
 
 // ─── Contact ─────────────────────────────────────────────────────────────────
@@ -55,19 +55,24 @@ export const CTA_SECONDARY = "See how it works";
 export const APP_STORE_A11Y_LABEL = "Download PathBuild on the App Store";
 
 // ─── Pricing ─────────────────────────────────────────────────────────────────
-// Verified 2026-07-23 against the live App Store product config and the
-// shipping app: exactly ONE purchasable subscription — PathBuild Pro Monthly.
-// There is NO free trial or introductory offer and NO annual plan. Do not
-// re-add trial or annual copy unless the App Store products actually change.
-export const MONTHLY_PRICE = "$9.99";
+// FINAL founder-approved lineup (2026-07-24): TWO purchasable subscriptions —
+// PathBuild Weekly $9.99/week and PathBuild Monthly $29.99/month, both with a
+// 3-day free trial for eligible new subscribers (Apple grants one
+// introductory offer per Apple ID per subscription group). THIS BRANCH MUST
+// MERGE ONLY once App Store Connect actually sells this lineup — until then
+// main's one-plan/no-trial copy remains the live truth. Do not alter these
+// claims unless the App Store products change again.
+export const WEEKLY_PRICE = "$9.99";
+export const MONTHLY_PRICE = "$29.99";
+export const TRIAL_NOTE = "3-day free trial for eligible new subscribers";
 
 export const PRICING_HEADLINE = "Start free. Go Pro when you're moving fast.";
 export const PRICING_SUB =
   "Score jobs, prepare applications, and track replies for free. Upgrade to PathBuild Pro when you want to apply at volume with AI-tailored materials.";
-export const PRICING_FOOTNOTE = `PathBuild Pro is ${MONTHLY_PRICE}/month — current founding-member pricing, billed through your Apple ID. There is no free trial. Prices may vary by region, and the exact plan and price are always shown in the app before you subscribe. Cancel anytime in Settings → Apple ID → Subscriptions.`;
+export const PRICING_FOOTNOTE = `PathBuild Pro is ${WEEKLY_PRICE}/week or ${MONTHLY_PRICE}/month — both with a ${TRIAL_NOTE}. Billed through your Apple ID; prices may vary by region, and the exact plans, prices, and any offer that applies to you are always shown in the app before you subscribe. Cancel anytime in Settings → Apple ID → Subscriptions.`;
 
 // Near-CTA subscription disclosure (App Store compliant).
-export const SUBSCRIPTION_DISCLOSURE = `${MONTHLY_PRICE}/month — current founding-member pricing. No free trial. Subscription auto-renews until cancelled; cancel anytime in Settings → Apple ID → Subscriptions → PathBuild. Prices may vary by region, and the exact price is shown in the app before purchase.`;
+export const SUBSCRIPTION_DISCLOSURE = `${WEEKLY_PRICE}/week or ${MONTHLY_PRICE}/month, each with a ${TRIAL_NOTE} — a trial converts to a paid subscription unless cancelled at least 24 hours before it ends. Auto-renews until cancelled; cancel anytime in Settings → Apple ID → Subscriptions → PathBuild. Prices may vary by region, and the exact price is shown in the app before purchase.`;
 
 // ─── Free vs Pro ─────────────────────────────────────────────────────────────
 // Boundaries verified 2026-07-23 against the shipping app. Exact limits are
@@ -205,7 +210,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "How much does PathBuild Pro cost?",
-    a: `PathBuild Pro is ${MONTHLY_PRICE}/month — current founding-member pricing, billed through the Apple App Store. There is no free trial. Prices may vary by region, and the exact plan and price are always shown in the app before you subscribe.`,
+    a: `PathBuild Pro is ${WEEKLY_PRICE}/week or ${MONTHLY_PRICE}/month — both with a ${TRIAL_NOTE}, billed through the Apple App Store. Prices may vary by region, and the exact plans, prices, and any offer that applies to you are always shown in the app before you subscribe.`,
   },
   {
     q: "How do I cancel?",
