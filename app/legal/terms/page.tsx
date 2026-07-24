@@ -6,6 +6,7 @@ import {
   CONTACT_EMAIL,
   CONTACT_MAILTO,
   MONTHLY_PRICE,
+  WEEKLY_PRICE,
 } from "@/lib/site";
 
 // Unified effective date across all PathBuild legal pages.
@@ -219,11 +220,14 @@ export default function TermsPage() {
 
       <h2 id="subscriptions">8. Subscriptions and payments</h2>
       <p>
-        PathBuild offers one paid subscription, <strong>PathBuild Pro</strong>{" "}
-        (monthly), currently offered at {MONTHLY_PRICE} per month — our current
-        founding-member pricing. There is no free trial or other introductory
-        offer, and no annual plan. Prices may vary by region, and the exact plan
-        and price are always shown in the App before you subscribe.
+        PathBuild offers one paid subscription, <strong>PathBuild Pro</strong>,
+        on two billing periods: {WEEKLY_PRICE} per week or {MONTHLY_PRICE} per
+        month, each with a 3-day free trial for eligible new subscribers (one
+        introductory offer per Apple ID per subscription group). No annual or
+        3-month plan is offered. Prices may vary by region, and the exact
+        plans, prices, and any offer that applies to you are always shown in
+        the App before you subscribe. Full details are in our{" "}
+        <a href="/legal/subscription">Subscription Terms</a>.
       </p>
       <ul>
         <li>
